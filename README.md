@@ -83,16 +83,16 @@ In this test, I'm testing all edge cases. some of these edge cases are listed be
 
 ### Simulation
 
-![simulation1](https://s8.uupload.ir/files/simulation_result_fff3.png)
+![simulation1](https://github.com/mohaliza138/DSD-final-project/blob/main/assets/simulation_result.png)
 
 ### Synthesization
 - max frequency
 
-  ![synthesize1](https://s8.uupload.ir/files/synthesize_result1_i4ie.png)
+  ![synthesize1](https://github.com/mohaliza138/DSD-final-project/blob/main/assets/synthesize_result1.png)
 
 - setup time
  
-  ![synthesize2](https://s8.uupload.ir/files/synthesize_result2_0kxg.png)
+  ![synthesize2](https://github.com/mohaliza138/DSD-final-project/blob/main/assets/synthesize_result2.png)
 
 
 ## Author
