@@ -81,10 +81,9 @@ In this test, I'm testing all edge cases. some of these edge cases are listed be
 
 ## Results
 
-#### Simulation
+### Simulation
 
 ![simulation1](https://s8.uupload.ir/files/simulation_result_fff3.png)
----
 
 ### Synthesization
 - max frequency
