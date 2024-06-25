@@ -1,0 +1,15 @@
+C:/University/DSD/Project/verilog/TB.v {1 {vlog -work work C:/University/DSD/Project/verilog/TB.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module TB
+
+Top level modules:
+	TB
+
+} {} {}} C:/University/DSD/Project/verilog/PARKING_CU.v {1 {vlog -work work C:/University/DSD/Project/verilog/PARKING_CU.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module PARKING_CU
+
+Top level modules:
+	PARKING_CU
+
+} {} {}}

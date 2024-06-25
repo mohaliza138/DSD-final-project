@@ -1,0 +1,322 @@
+ -- Copyright (C) 1991-2013 Altera Corporation
+ -- Your use of Altera Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Altera Program License 
+ -- Subscription Agreement, Altera MegaCore Function License 
+ -- Agreement, or other applicable license agreement, including, 
+ -- without limitation, that your use is for the sole purpose of 
+ -- programming logic devices manufactured by Altera and sold by 
+ -- Altera or its authorized distributors.  Please refer to the 
+ -- applicable agreement for further details.
+ -- 
+ -- This is a Quartus II output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus II input file. This file cannot be used
+ -- to make Quartus II pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus II help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.8V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --					Bank 1:		3.3V
+ --					Bank 2:		3.3V
+ --					Bank 3:		3.3V
+ --					Bank 4:		3.3V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --					It can also be used to report unused dedicated pins. The connection
+ --					on the board for unused dedicated pins depends on whether this will
+ --					be used in a future design. One example is device migration. When
+ --					using device migration, refer to the device pin-tables. If it is a
+ --					GND pin in the pin table or if it will not be used in a future design
+ --					for another purpose the it MUST be connected to GND. If it is an unused
+ --					dedicated pin, then it can be connected to a valid signal on the board
+ --					(low, high, or toggling) if that signal is required for a different
+ --					revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --					This pin should be connected to GND. It may also be connected  to a
+ --					valid signal  on the board  (low, high, or toggling)  if that signal
+ --					is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --           	    or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+CHIP  "simulation"  ASSIGNED TO AN: 5M1270ZF256C4
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+GNDIO                        : A1        : gnd    :                   :         :           :                
+GND*                         : A2        :        :                   :         : 2         :                
+VCCIO2                       : A3        : power  :                   : 3.3V    : 2         :                
+is_uni_car_exited            : A4        : input  : 3.3-V LVTTL       :         : 2         : N              
+vacated_space[21]            : A5        : output : 3.3-V LVTTL       :         : 2         : N              
+parked_car[20]               : A6        : output : 3.3-V LVTTL       :         : 2         : N              
+uni_vacated_space[0]         : A7        : output : 3.3-V LVTTL       :         : 2         : N              
+uni_vacated_space[25]        : A8        : output : 3.3-V LVTTL       :         : 2         : N              
+vacated_space[26]            : A9        : output : 3.3-V LVTTL       :         : 2         : N              
+uni_vacated_space[16]        : A10       : output : 3.3-V LVTTL       :         : 2         : N              
+uni_vacated_space[17]        : A11       : output : 3.3-V LVTTL       :         : 2         : N              
+uni_vacated_space[23]        : A12       : output : 3.3-V LVTTL       :         : 2         : N              
+vacated_space[16]            : A13       : output : 3.3-V LVTTL       :         : 2         : N              
+VCCIO2                       : A14       : power  :                   : 3.3V    : 2         :                
+uni_vacated_space[26]        : A15       : output : 3.3-V LVTTL       :         : 2         : N              
+GNDIO                        : A16       : gnd    :                   :         :           :                
+GND*                         : B1        :        :                   :         : 2         :                
+GNDIO                        : B2        : gnd    :                   :         :           :                
+GND*                         : B3        :        :                   :         : 2         :                
+GND*                         : B4        :        :                   :         : 2         :                
+vacated_space[24]            : B5        : output : 3.3-V LVTTL       :         : 2         : N              
+vacated_space[28]            : B6        : output : 3.3-V LVTTL       :         : 2         : N              
+vacated_space[15]            : B7        : output : 3.3-V LVTTL       :         : 2         : N              
+vacated_space[30]            : B8        : output : 3.3-V LVTTL       :         : 2         : N              
+vacated_space[14]            : B9        : output : 3.3-V LVTTL       :         : 2         : N              
+uni_vacated_space[24]        : B10       : output : 3.3-V LVTTL       :         : 2         : N              
+uni_vacated_space[31]        : B11       : output : 3.3-V LVTTL       :         : 2         : N              
+uni_parked_car[12]           : B12       : output : 3.3-V LVTTL       :         : 2         : N              
+vacated_space[17]            : B13       : output : 3.3-V LVTTL       :         : 2         : N              
+vacated_space[31]            : B14       : output : 3.3-V LVTTL       :         : 2         : N              
+GNDIO                        : B15       : gnd    :                   :         :           :                
+GND*                         : B16       :        :                   :         : 2         :                
+VCCIO1                       : C1        : power  :                   : 3.3V    : 1         :                
+GND*                         : C2        :        :                   :         : 1         :                
+GND*                         : C3        :        :                   :         : 1         :                
+GND*                         : C4        :        :                   :         : 2         :                
+GND*                         : C5        :        :                   :         : 2         :                
+GND*                         : C6        :        :                   :         : 2         :                
+GND*                         : C7        :        :                   :         : 2         :                
+vacated_space[13]            : C8        : output : 3.3-V LVTTL       :         : 2         : N              
+vacated_space[22]            : C9        : output : 3.3-V LVTTL       :         : 2         : N              
+uni_vacated_space[22]        : C10       : output : 3.3-V LVTTL       :         : 2         : N              
+is_vacated_space             : C11       : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : C12       :        :                   :         : 2         :                
+GND*                         : C13       :        :                   :         : 2         :                
+GND*                         : C14       :        :                   :         : 3         :                
+GND*                         : C15       :        :                   :         : 3         :                
+VCCIO3                       : C16       : power  :                   : 3.3V    : 3         :                
+GND*                         : D1        :        :                   :         : 1         :                
+GND*                         : D2        :        :                   :         : 1         :                
+GND*                         : D3        :        :                   :         : 1         :                
+GND*                         : D4        :        :                   :         : 2         :                
+GND*                         : D5        :        :                   :         : 2         :                
+GND*                         : D6        :        :                   :         : 2         :                
+vacated_space[25]            : D7        : output : 3.3-V LVTTL       :         : 2         : N              
+vacated_space[12]            : D8        : output : 3.3-V LVTTL       :         : 2         : N              
+vacated_space[23]            : D9        : output : 3.3-V LVTTL       :         : 2         : N              
+uni_vacated_space[20]        : D10       : output : 3.3-V LVTTL       :         : 2         : N              
+uni_vacated_space[27]        : D11       : output : 3.3-V LVTTL       :         : 2         : N              
+uni_parked_car[27]           : D12       : output : 3.3-V LVTTL       :         : 2         : N              
+vacated_space[20]            : D13       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[26]           : D14       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[29]           : D15       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[23]           : D16       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : E1        :        :                   :         : 1         :                
+GND*                         : E2        :        :                   :         : 1         :                
+GND*                         : E3        :        :                   :         : 1         :                
+GND*                         : E4        :        :                   :         : 1         :                
+GND*                         : E5        :        :                   :         : 1         :                
+GND*                         : E6        :        :                   :         : 2         :                
+parked_car[17]               : E7        : output : 3.3-V LVTTL       :         : 2         : N              
+uni_vacated_space[12]        : E8        : output : 3.3-V LVTTL       :         : 2         : N              
+vacated_space[27]            : E9        : output : 3.3-V LVTTL       :         : 2         : N              
+uni_vacated_space[18]        : E10       : output : 3.3-V LVTTL       :         : 2         : N              
+uni_vacated_space[28]        : E11       : output : 3.3-V LVTTL       :         : 2         : N              
+uni_parked_car[28]           : E12       : output : 3.3-V LVTTL       :         : 3         : N              
+vacated_space[19]            : E13       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : E14       :        :                   :         : 3         :                
+uni_parked_car[18]           : E15       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_vacated_space[21]        : E16       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : F1        :        :                   :         : 1         :                
+GND*                         : F2        :        :                   :         : 1         :                
+GND*                         : F3        :        :                   :         : 1         :                
+GND*                         : F4        :        :                   :         : 1         :                
+GND*                         : F5        :        :                   :         : 1         :                
+GND*                         : F6        :        :                   :         : 1         :                
+parked_car[16]               : F7        : output : 3.3-V LVTTL       :         : 2         : N              
+VCCIO2                       : F8        : power  :                   : 3.3V    : 2         :                
+VCCIO2                       : F9        : power  :                   : 3.3V    : 2         :                
+uni_vacated_space[19]        : F10       : output : 3.3-V LVTTL       :         : 2         : N              
+uni_parked_car[19]           : F11       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[25]           : F12       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[31]           : F13       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[30]           : F14       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[10]           : F15       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[14]           : F16       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : G1        :        :                   :         : 1         :                
+GND*                         : G2        :        :                   :         : 1         :                
+GND*                         : G3        :        :                   :         : 1         :                
+GND*                         : G4        :        :                   :         : 1         :                
+GNDIO                        : G5        : gnd    :                   :         :           :                
+parked_car[6]                : G6        : output : 3.3-V LVTTL       :         : 1         : N              
+GNDIO                        : G7        : gnd    :                   :         :           :                
+GNDIO                        : G8        : gnd    :                   :         :           :                
+GNDIO                        : G9        : gnd    :                   :         :           :                
+GNDIO                        : G10       : gnd    :                   :         :           :                
+uni_parked_car[11]           : G11       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[17]           : G12       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[13]           : G13       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[21]           : G14       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[15]           : G15       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[24]           : G16       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : H1        :        :                   :         : 1         :                
+parked_car[2]                : H2        : output : 3.3-V LVTTL       :         : 1         : N              
+parked_car[7]                : H3        : output : 3.3-V LVTTL       :         : 1         : N              
+uni_vacated_space[2]         : H4        : output : 3.3-V LVTTL       :         : 1         : N              
+clk                          : H5        : input  : 3.3-V LVTTL       :         : 1         : N              
+VCCIO1                       : H6        : power  :                   : 3.3V    : 1         :                
+GNDINT                       : H7        : gnd    :                   :         :           :                
+VCCINT                       : H8        : power  :                   : 1.8V    :           :                
+GNDINT                       : H9        : gnd    :                   :         :           :                
+VCCINT                       : H10       : power  :                   : 1.8V    :           :                
+VCCIO3                       : H11       : power  :                   : 3.3V    : 3         :                
+car_exited                   : H12       : input  : 3.3-V LVTTL       :         : 3         : N              
+uni_vacated_space[30]        : H13       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[16]           : H14       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[22]           : H15       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[20]           : H16       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : J1        :        :                   :         : 1         :                
+uni_vacated_space[15]        : J2        : output : 3.3-V LVTTL       :         : 1         : N              
+uni_vacated_space[7]         : J3        : output : 3.3-V LVTTL       :         : 1         : N              
+parked_car[22]               : J4        : output : 3.3-V LVTTL       :         : 1         : N              
+car_entered                  : J5        : input  : 3.3-V LVTTL       :         : 1         : N              
+VCCIO1                       : J6        : power  :                   : 3.3V    : 1         :                
+VCCINT                       : J7        : power  :                   : 1.8V    :           :                
+GNDINT                       : J8        : gnd    :                   :         :           :                
+VCCINT                       : J9        : power  :                   : 1.8V    :           :                
+GNDINT                       : J10       : gnd    :                   :         :           :                
+VCCIO3                       : J11       : power  :                   : 3.3V    : 3         :                
+uni_parked_car[3]            : J12       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[9]            : J13       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[8]            : J14       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[6]            : J15       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[1]            : J16       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_vacated_space[1]         : K1        : output : 3.3-V LVTTL       :         : 1         : N              
+uni_vacated_space[5]         : K2        : output : 3.3-V LVTTL       :         : 1         : N              
+vacated_space[5]             : K3        : output : 3.3-V LVTTL       :         : 1         : N              
+vacated_space[3]             : K4        : output : 3.3-V LVTTL       :         : 1         : N              
+vacated_space[7]             : K5        : output : 3.3-V LVTTL       :         : 1         : N              
+uni_vacated_space[3]         : K6        : output : 3.3-V LVTTL       :         : 1         : N              
+GNDIO                        : K7        : gnd    :                   :         :           :                
+GNDIO                        : K8        : gnd    :                   :         :           :                
+GNDIO                        : K9        : gnd    :                   :         :           :                
+GNDIO                        : K10       : gnd    :                   :         :           :                
+uni_is_vacated_space         : K11       : output : 3.3-V LVTTL       :         : 3         : N              
+vacated_space[10]            : K12       : output : 3.3-V LVTTL       :         : 3         : N              
+is_uni_car_entered           : K13       : input  : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : K14       :        :                   :         : 3         :                
+uni_parked_car[5]            : K15       : output : 3.3-V LVTTL       :         : 3         : N              
+uni_parked_car[2]            : K16       : output : 3.3-V LVTTL       :         : 3         : N              
+vacated_space[2]             : L1        : output : 3.3-V LVTTL       :         : 1         : N              
+vacated_space[6]             : L2        : output : 3.3-V LVTTL       :         : 1         : N              
+vacated_space[1]             : L3        : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : L4        :        :                   :         : 1         :                
+GND*                         : L5        :        :                   :         : 1         :                
+TDI                          : L6        : input  :                   :         : 1         :                
+parked_car[21]               : L7        : output : 3.3-V LVTTL       :         : 4         : N              
+VCCIO4                       : L8        : power  :                   : 3.3V    : 4         :                
+VCCIO4                       : L9        : power  :                   : 3.3V    : 4         :                
+uni_vacated_space[8]         : L10       : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : L11       :        :                   :         : 3         :                
+GND*                         : L12       :        :                   :         : 3         :                
+GND*                         : L13       :        :                   :         : 3         :                
+GND*                         : L14       :        :                   :         : 3         :                
+GND*                         : L15       :        :                   :         : 3         :                
+vacated_space[8]             : L16       : output : 3.3-V LVTTL       :         : 3         : N              
+vacated_space[0]             : M1        : output : 3.3-V LVTTL       :         : 1         : N              
+vacated_space[4]             : M2        : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : M3        :        :                   :         : 1         :                
+GND*                         : M4        :        :                   :         : 1         :                
+TDO                          : M5        : output :                   :         : 1         :                
+parked_car[4]                : M6        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[10]               : M7        : output : 3.3-V LVTTL       :         : 4         : N              
+uni_vacated_space[11]        : M8        : output : 3.3-V LVTTL       :         : 4         : N              
+uni_vacated_space[13]        : M9        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[27]               : M10       : output : 3.3-V LVTTL       :         : 4         : N              
+vacated_space[9]             : M11       : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : M12       :        :                   :         : 4         :                
+GND*                         : M13       :        :                   :         : 3         :                
+GND*                         : M14       :        :                   :         : 3         :                
+GND*                         : M15       :        :                   :         : 3         :                
+GND*                         : M16       :        :                   :         : 3         :                
+GND*                         : N1        :        :                   :         : 1         :                
+parked_car[1]                : N2        : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : N3        :        :                   :         : 1         :                
+TMS                          : N4        : input  :                   :         : 1         :                
+parked_car[12]               : N5        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[18]               : N6        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[8]                : N7        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[26]               : N8        : output : 3.3-V LVTTL       :         : 4         : N              
+uni_vacated_space[9]         : N9        : output : 3.3-V LVTTL       :         : 4         : N              
+uni_parked_car[0]            : N10       : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : N11       :        :                   :         : 4         :                
+GND*                         : N12       :        :                   :         : 4         :                
+GND*                         : N13       :        :                   :         : 3         :                
+GND*                         : N14       :        :                   :         : 3         :                
+GND*                         : N15       :        :                   :         : 3         :                
+GND*                         : N16       :        :                   :         : 3         :                
+VCCIO1                       : P1        : power  :                   : 3.3V    : 1         :                
+GND*                         : P2        :        :                   :         : 1         :                
+TCK                          : P3        : input  :                   :         : 1         :                
+GND*                         : P4        :        :                   :         : 4         :                
+parked_car[14]               : P5        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[11]               : P6        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[5]                : P7        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[29]               : P8        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[31]               : P9        : output : 3.3-V LVTTL       :         : 4         : N              
+uni_parked_car[7]            : P10       : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : P11       :        :                   :         : 4         :                
+GND*                         : P12       :        :                   :         : 4         :                
+GND*                         : P13       :        :                   :         : 4         :                
+GND*                         : P14       :        :                   :         : 3         :                
+GND*                         : P15       :        :                   :         : 3         :                
+VCCIO3                       : P16       : power  :                   : 3.3V    : 3         :                
+GND*                         : R1        :        :                   :         : 4         :                
+GNDIO                        : R2        : gnd    :                   :         :           :                
+parked_car[23]               : R3        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[15]               : R4        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[25]               : R5        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[9]                : R6        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[19]               : R7        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[28]               : R8        : output : 3.3-V LVTTL       :         : 4         : N              
+uni_vacated_space[6]         : R9        : output : 3.3-V LVTTL       :         : 4         : N              
+uni_vacated_space[10]        : R10       : output : 3.3-V LVTTL       :         : 4         : N              
+uni_vacated_space[29]        : R11       : output : 3.3-V LVTTL       :         : 4         : N              
+vacated_space[18]            : R12       : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : R13       :        :                   :         : 4         :                
+GND*                         : R14       :        :                   :         : 4         :                
+GNDIO                        : R15       : gnd    :                   :         :           :                
+GND*                         : R16       :        :                   :         : 4         :                
+GNDIO                        : T1        : gnd    :                   :         :           :                
+parked_car[3]                : T2        : output : 3.3-V LVTTL       :         : 4         : N              
+VCCIO4                       : T3        : power  :                   : 3.3V    : 4         :                
+parked_car[0]                : T4        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[13]               : T5        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[24]               : T6        : output : 3.3-V LVTTL       :         : 4         : N              
+parked_car[30]               : T7        : output : 3.3-V LVTTL       :         : 4         : N              
+uni_vacated_space[4]         : T8        : output : 3.3-V LVTTL       :         : 4         : N              
+uni_vacated_space[14]        : T9        : output : 3.3-V LVTTL       :         : 4         : N              
+vacated_space[29]            : T10       : output : 3.3-V LVTTL       :         : 4         : N              
+uni_parked_car[4]            : T11       : output : 3.3-V LVTTL       :         : 4         : N              
+vacated_space[11]            : T12       : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : T13       :        :                   :         : 4         :                
+VCCIO4                       : T14       : power  :                   : 3.3V    : 4         :                
+GND*                         : T15       :        :                   :         : 4         :                
+GNDIO                        : T16       : gnd    :                   :         :           :                

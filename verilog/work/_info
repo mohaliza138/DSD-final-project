@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1
+vPARKING_CU
+Z1 I8Pjzo@Bb6aSV^j]gai^]g0
+Z2 VAz2:0ijeNg73Fle8QhKdg0
+Z3 dC:\University\DSD\Project\verilog
+Z4 w1719345066
+Z5 8C:/University/DSD/Project/verilog/PARKING_CU.v
+Z6 FC:/University/DSD/Project/verilog/PARKING_CU.v
+L0 1
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+Z9 n@p@a@r@k@i@n@g_@c@u
+!i10b 1
+Z10 !s100 ANcIVA`hWK_5m[AK@fNFf3
+!s85 0
+Z11 !s108 1719350406.148000
+Z12 !s107 C:/University/DSD/Project/verilog/PARKING_CU.v|
+Z13 !s90 -reportprogress|300|-work|work|C:/University/DSD/Project/verilog/PARKING_CU.v|
+!s101 -O0
+vTB
+!i10b 1
+!s100 L>;7[Vh27@h?4VRg^SgC`2
+I4f1nhlNJ:e<[hBMQ8I^]i2
+Vc<=32996OT2f`M7E_UhYX1
+R3
+w1719349296
+8C:/University/DSD/Project/verilog/TB.v
+FC:/University/DSD/Project/verilog/TB.v
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1719350406.271000
+!s107 C:/University/DSD/Project/verilog/TB.v|
+!s90 -reportprogress|300|-work|work|C:/University/DSD/Project/verilog/TB.v|
+!s101 -O0
+R8
+n@t@b

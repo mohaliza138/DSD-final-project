@@ -1,0 +1,1869 @@
+TimeQuest Timing Analyzer report for simulation
+Wed Jun 26 00:35:36 2024
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'car_entered'
+ 12. Setup: 'clk'
+ 13. Setup: 'car_exited'
+ 14. Hold: 'car_entered'
+ 15. Hold: 'car_exited'
+ 16. Hold: 'clk'
+ 17. Minimum Pulse Width: 'car_entered'
+ 18. Minimum Pulse Width: 'car_exited'
+ 19. Minimum Pulse Width: 'clk'
+ 20. Setup Times
+ 21. Hold Times
+ 22. Clock to Output Times
+ 23. Minimum Clock to Output Times
+ 24. Setup Transfers
+ 25. Hold Transfers
+ 26. Report TCCS
+ 27. Report RSKM
+ 28. Unconstrained Paths
+ 29. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name      ; simulation                                         ;
+; Device Family      ; MAX V                                              ;
+; Device Name        ; 5M1270ZF256C4                                      ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Slow Model                                         ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                   ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+; Clock Name  ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets         ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+; car_entered ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { car_entered } ;
+; car_exited  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { car_exited }  ;
+; clk         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }         ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+
+
++---------------------------------------------------+
+; Fmax Summary                                      ;
++------------+-----------------+-------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name  ; Note ;
++------------+-----------------+-------------+------+
+; 45.72 MHz  ; 45.72 MHz       ; car_entered ;      ;
+; 81.91 MHz  ; 81.91 MHz       ; clk         ;      ;
+; 100.91 MHz ; 100.91 MHz      ; car_exited  ;      ;
++------------+-----------------+-------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------+
+; Setup Summary                         ;
++-------------+---------+---------------+
+; Clock       ; Slack   ; End Point TNS ;
++-------------+---------+---------------+
+; car_entered ; -20.873 ; -1269.973     ;
+; clk         ; -11.209 ; -509.366      ;
+; car_exited  ; -8.910  ; -532.422      ;
++-------------+---------+---------------+
+
+
++-------------------------------------+
+; Hold Summary                        ;
++-------------+-------+---------------+
+; Clock       ; Slack ; End Point TNS ;
++-------------+-------+---------------+
+; car_entered ; 1.550 ; 0.000         ;
+; car_exited  ; 1.712 ; 0.000         ;
+; clk         ; 1.908 ; 0.000         ;
++-------------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------------+
+; Minimum Pulse Width Summary          ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; car_entered ; -2.289 ; -2.289        ;
+; car_exited  ; -2.289 ; -2.289        ;
+; clk         ; -2.289 ; -2.289        ;
++-------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Setup: 'car_entered'                                                                                                  ;
++---------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; -20.873 ; uni_entrances[1]  ; reg_entrances[1]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.602     ;
+; -20.873 ; uni_entrances[1]  ; reg_entrances[2]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.602     ;
+; -20.873 ; uni_entrances[1]  ; reg_entrances[3]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.602     ;
+; -20.873 ; uni_entrances[1]  ; reg_entrances[4]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.602     ;
+; -20.873 ; uni_entrances[1]  ; reg_entrances[5]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.602     ;
+; -20.871 ; uni_entrances[1]  ; reg_entrances[6]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.600     ;
+; -20.871 ; uni_entrances[1]  ; reg_entrances[7]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.600     ;
+; -20.871 ; uni_entrances[1]  ; reg_entrances[8]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.600     ;
+; -20.871 ; uni_entrances[1]  ; reg_entrances[9]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.600     ;
+; -20.871 ; uni_entrances[1]  ; reg_entrances[10] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.600     ;
+; -20.871 ; uni_entrances[1]  ; reg_entrances[11] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.600     ;
+; -20.871 ; uni_entrances[1]  ; reg_entrances[12] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.600     ;
+; -20.871 ; uni_entrances[1]  ; reg_entrances[13] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.600     ;
+; -20.871 ; uni_entrances[1]  ; reg_entrances[14] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.600     ;
+; -20.871 ; uni_entrances[1]  ; reg_entrances[15] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.600     ;
+; -20.870 ; reg_entrances[0]  ; reg_entrances[1]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.599     ;
+; -20.870 ; reg_entrances[0]  ; reg_entrances[2]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.599     ;
+; -20.870 ; reg_entrances[0]  ; reg_entrances[3]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.599     ;
+; -20.870 ; reg_entrances[0]  ; reg_entrances[4]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.599     ;
+; -20.870 ; reg_entrances[0]  ; reg_entrances[5]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.599     ;
+; -20.868 ; uni_entrances[1]  ; reg_entrances[16] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; uni_entrances[1]  ; reg_entrances[17] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; uni_entrances[1]  ; reg_entrances[18] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; uni_entrances[1]  ; reg_entrances[19] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; uni_entrances[1]  ; reg_entrances[20] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; uni_entrances[1]  ; reg_entrances[21] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; uni_entrances[1]  ; reg_entrances[22] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; uni_entrances[1]  ; reg_entrances[23] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; uni_entrances[1]  ; reg_entrances[24] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; uni_entrances[1]  ; reg_entrances[25] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; reg_entrances[0]  ; reg_entrances[6]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; reg_entrances[0]  ; reg_entrances[7]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; reg_entrances[0]  ; reg_entrances[8]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; reg_entrances[0]  ; reg_entrances[9]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; reg_entrances[0]  ; reg_entrances[10] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; reg_entrances[0]  ; reg_entrances[11] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; reg_entrances[0]  ; reg_entrances[12] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; reg_entrances[0]  ; reg_entrances[13] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; reg_entrances[0]  ; reg_entrances[14] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.868 ; reg_entrances[0]  ; reg_entrances[15] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.597     ;
+; -20.865 ; reg_entrances[0]  ; reg_entrances[16] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.594     ;
+; -20.865 ; reg_entrances[0]  ; reg_entrances[17] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.594     ;
+; -20.865 ; reg_entrances[0]  ; reg_entrances[18] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.594     ;
+; -20.865 ; reg_entrances[0]  ; reg_entrances[19] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.594     ;
+; -20.865 ; reg_entrances[0]  ; reg_entrances[20] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.594     ;
+; -20.865 ; reg_entrances[0]  ; reg_entrances[21] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.594     ;
+; -20.865 ; reg_entrances[0]  ; reg_entrances[22] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.594     ;
+; -20.865 ; reg_entrances[0]  ; reg_entrances[23] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.594     ;
+; -20.865 ; reg_entrances[0]  ; reg_entrances[24] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.594     ;
+; -20.865 ; reg_entrances[0]  ; reg_entrances[25] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.594     ;
+; -20.700 ; uni_entrances[2]  ; reg_entrances[1]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.429     ;
+; -20.700 ; uni_entrances[2]  ; reg_entrances[2]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.429     ;
+; -20.700 ; uni_entrances[2]  ; reg_entrances[3]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.429     ;
+; -20.700 ; uni_entrances[2]  ; reg_entrances[4]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.429     ;
+; -20.700 ; uni_entrances[2]  ; reg_entrances[5]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.429     ;
+; -20.698 ; uni_entrances[2]  ; reg_entrances[6]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.427     ;
+; -20.698 ; uni_entrances[2]  ; reg_entrances[7]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.427     ;
+; -20.698 ; uni_entrances[2]  ; reg_entrances[8]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.427     ;
+; -20.698 ; uni_entrances[2]  ; reg_entrances[9]  ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.427     ;
+; -20.698 ; uni_entrances[2]  ; reg_entrances[10] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.427     ;
+; -20.698 ; uni_entrances[2]  ; reg_entrances[11] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.427     ;
+; -20.698 ; uni_entrances[2]  ; reg_entrances[12] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.427     ;
+; -20.698 ; uni_entrances[2]  ; reg_entrances[13] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.427     ;
+; -20.698 ; uni_entrances[2]  ; reg_entrances[14] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.427     ;
+; -20.698 ; uni_entrances[2]  ; reg_entrances[15] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.427     ;
+; -20.695 ; uni_entrances[2]  ; reg_entrances[16] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.424     ;
+; -20.695 ; uni_entrances[2]  ; reg_entrances[17] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.424     ;
+; -20.695 ; uni_entrances[2]  ; reg_entrances[18] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.424     ;
+; -20.695 ; uni_entrances[2]  ; reg_entrances[19] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.424     ;
+; -20.695 ; uni_entrances[2]  ; reg_entrances[20] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.424     ;
+; -20.695 ; uni_entrances[2]  ; reg_entrances[21] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.424     ;
+; -20.695 ; uni_entrances[2]  ; reg_entrances[22] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.424     ;
+; -20.695 ; uni_entrances[2]  ; reg_entrances[23] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.424     ;
+; -20.695 ; uni_entrances[2]  ; reg_entrances[24] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.424     ;
+; -20.695 ; uni_entrances[2]  ; reg_entrances[25] ; car_entered  ; car_entered ; 1.000        ; 0.000      ; 21.424     ;
+; -20.692 ; uni_departures[3] ; reg_entrances[1]  ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.518     ;
+; -20.692 ; uni_departures[3] ; reg_entrances[2]  ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.518     ;
+; -20.692 ; uni_departures[3] ; reg_entrances[3]  ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.518     ;
+; -20.692 ; uni_departures[3] ; reg_entrances[4]  ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.518     ;
+; -20.692 ; uni_departures[3] ; reg_entrances[5]  ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.518     ;
+; -20.690 ; uni_departures[3] ; reg_entrances[6]  ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.516     ;
+; -20.690 ; uni_departures[3] ; reg_entrances[7]  ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.516     ;
+; -20.690 ; uni_departures[3] ; reg_entrances[8]  ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.516     ;
+; -20.690 ; uni_departures[3] ; reg_entrances[9]  ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.516     ;
+; -20.690 ; uni_departures[3] ; reg_entrances[10] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.516     ;
+; -20.690 ; uni_departures[3] ; reg_entrances[11] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.516     ;
+; -20.690 ; uni_departures[3] ; reg_entrances[12] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.516     ;
+; -20.690 ; uni_departures[3] ; reg_entrances[13] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.516     ;
+; -20.690 ; uni_departures[3] ; reg_entrances[14] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.516     ;
+; -20.690 ; uni_departures[3] ; reg_entrances[15] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.516     ;
+; -20.687 ; uni_departures[3] ; reg_entrances[16] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.513     ;
+; -20.687 ; uni_departures[3] ; reg_entrances[17] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.513     ;
+; -20.687 ; uni_departures[3] ; reg_entrances[18] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.513     ;
+; -20.687 ; uni_departures[3] ; reg_entrances[19] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.513     ;
+; -20.687 ; uni_departures[3] ; reg_entrances[20] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.513     ;
+; -20.687 ; uni_departures[3] ; reg_entrances[21] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.513     ;
+; -20.687 ; uni_departures[3] ; reg_entrances[22] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.513     ;
+; -20.687 ; uni_departures[3] ; reg_entrances[23] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.513     ;
+; -20.687 ; uni_departures[3] ; reg_entrances[24] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.513     ;
+; -20.687 ; uni_departures[3] ; reg_entrances[25] ; car_exited   ; car_entered ; 1.000        ; 0.097      ; 21.513     ;
++---------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                  ;
++---------+-------------+-----------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node   ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-------------+-----------------+--------------+-------------+--------------+------------+------------+
+; -11.209 ; daytime[3]  ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.938     ;
+; -11.080 ; daytime[3]  ; reg_capacity[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.809     ;
+; -11.079 ; daytime[3]  ; reg_capacity[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.808     ;
+; -11.078 ; daytime[3]  ; reg_capacity[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.807     ;
+; -11.071 ; daytime[3]  ; reg_capacity[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.800     ;
+; -11.070 ; daytime[3]  ; reg_capacity[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.799     ;
+; -11.070 ; daytime[3]  ; reg_capacity[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.799     ;
+; -10.899 ; daytime[6]  ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.628     ;
+; -10.871 ; daytime[2]  ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.600     ;
+; -10.770 ; daytime[6]  ; reg_capacity[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.499     ;
+; -10.769 ; daytime[6]  ; reg_capacity[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.498     ;
+; -10.768 ; daytime[6]  ; reg_capacity[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.497     ;
+; -10.761 ; daytime[6]  ; reg_capacity[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.490     ;
+; -10.760 ; daytime[6]  ; reg_capacity[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.489     ;
+; -10.760 ; daytime[6]  ; reg_capacity[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.489     ;
+; -10.742 ; daytime[2]  ; reg_capacity[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.471     ;
+; -10.741 ; daytime[2]  ; reg_capacity[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.470     ;
+; -10.740 ; daytime[2]  ; reg_capacity[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.469     ;
+; -10.733 ; daytime[2]  ; reg_capacity[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.462     ;
+; -10.732 ; daytime[2]  ; reg_capacity[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.461     ;
+; -10.732 ; daytime[2]  ; reg_capacity[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.461     ;
+; -10.712 ; daytime[0]  ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.441     ;
+; -10.708 ; daytime[8]  ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.437     ;
+; -10.657 ; daytime[11] ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.386     ;
+; -10.583 ; daytime[0]  ; reg_capacity[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.312     ;
+; -10.582 ; daytime[0]  ; reg_capacity[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.311     ;
+; -10.581 ; daytime[0]  ; reg_capacity[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.310     ;
+; -10.579 ; daytime[8]  ; reg_capacity[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.308     ;
+; -10.578 ; daytime[8]  ; reg_capacity[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.307     ;
+; -10.577 ; daytime[8]  ; reg_capacity[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.306     ;
+; -10.574 ; daytime[0]  ; reg_capacity[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.303     ;
+; -10.573 ; daytime[0]  ; reg_capacity[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.302     ;
+; -10.573 ; daytime[0]  ; reg_capacity[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.302     ;
+; -10.570 ; daytime[8]  ; reg_capacity[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.299     ;
+; -10.569 ; daytime[8]  ; reg_capacity[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.298     ;
+; -10.569 ; daytime[8]  ; reg_capacity[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.298     ;
+; -10.541 ; daytime[12] ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.270     ;
+; -10.528 ; daytime[11] ; reg_capacity[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.257     ;
+; -10.527 ; daytime[11] ; reg_capacity[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.256     ;
+; -10.526 ; daytime[11] ; reg_capacity[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.255     ;
+; -10.525 ; daytime[13] ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.254     ;
+; -10.519 ; daytime[9]  ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.248     ;
+; -10.519 ; daytime[11] ; reg_capacity[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.248     ;
+; -10.518 ; daytime[11] ; reg_capacity[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.247     ;
+; -10.518 ; daytime[11] ; reg_capacity[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.247     ;
+; -10.498 ; daytime[1]  ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.227     ;
+; -10.497 ; daytime[10] ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.226     ;
+; -10.496 ; daytime[5]  ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.225     ;
+; -10.412 ; daytime[12] ; reg_capacity[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.141     ;
+; -10.411 ; daytime[12] ; reg_capacity[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.140     ;
+; -10.410 ; daytime[12] ; reg_capacity[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.139     ;
+; -10.403 ; daytime[12] ; reg_capacity[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.132     ;
+; -10.402 ; daytime[12] ; reg_capacity[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.131     ;
+; -10.402 ; daytime[12] ; reg_capacity[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.131     ;
+; -10.396 ; daytime[13] ; reg_capacity[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.125     ;
+; -10.395 ; daytime[13] ; reg_capacity[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.124     ;
+; -10.394 ; daytime[13] ; reg_capacity[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.123     ;
+; -10.390 ; daytime[15] ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.119     ;
+; -10.390 ; daytime[9]  ; reg_capacity[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.119     ;
+; -10.389 ; daytime[9]  ; reg_capacity[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.118     ;
+; -10.388 ; daytime[9]  ; reg_capacity[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.117     ;
+; -10.387 ; daytime[13] ; reg_capacity[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.116     ;
+; -10.386 ; daytime[13] ; reg_capacity[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.115     ;
+; -10.386 ; daytime[13] ; reg_capacity[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.115     ;
+; -10.381 ; daytime[9]  ; reg_capacity[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.110     ;
+; -10.380 ; daytime[9]  ; reg_capacity[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.109     ;
+; -10.380 ; daytime[9]  ; reg_capacity[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.109     ;
+; -10.369 ; daytime[1]  ; reg_capacity[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.098     ;
+; -10.368 ; daytime[10] ; reg_capacity[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.097     ;
+; -10.368 ; daytime[1]  ; reg_capacity[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.097     ;
+; -10.367 ; daytime[5]  ; reg_capacity[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.096     ;
+; -10.367 ; daytime[10] ; reg_capacity[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.096     ;
+; -10.367 ; daytime[1]  ; reg_capacity[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.096     ;
+; -10.366 ; daytime[5]  ; reg_capacity[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.095     ;
+; -10.366 ; daytime[10] ; reg_capacity[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.095     ;
+; -10.365 ; daytime[5]  ; reg_capacity[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.094     ;
+; -10.360 ; daytime[1]  ; reg_capacity[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.089     ;
+; -10.359 ; daytime[10] ; reg_capacity[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.088     ;
+; -10.359 ; daytime[1]  ; reg_capacity[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.088     ;
+; -10.359 ; daytime[1]  ; reg_capacity[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.088     ;
+; -10.358 ; daytime[5]  ; reg_capacity[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.087     ;
+; -10.358 ; daytime[10] ; reg_capacity[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.087     ;
+; -10.358 ; daytime[10] ; reg_capacity[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.087     ;
+; -10.357 ; daytime[5]  ; reg_capacity[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.086     ;
+; -10.357 ; daytime[5]  ; reg_capacity[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.086     ;
+; -10.334 ; daytime[16] ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 11.063     ;
+; -10.261 ; daytime[15] ; reg_capacity[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.990     ;
+; -10.260 ; daytime[15] ; reg_capacity[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.989     ;
+; -10.259 ; daytime[15] ; reg_capacity[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.988     ;
+; -10.252 ; daytime[15] ; reg_capacity[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.981     ;
+; -10.251 ; daytime[15] ; reg_capacity[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.980     ;
+; -10.251 ; daytime[15] ; reg_capacity[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.980     ;
+; -10.205 ; daytime[16] ; reg_capacity[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.934     ;
+; -10.204 ; daytime[16] ; reg_capacity[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.933     ;
+; -10.203 ; daytime[16] ; reg_capacity[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.932     ;
+; -10.196 ; daytime[16] ; reg_capacity[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.925     ;
+; -10.195 ; daytime[16] ; reg_capacity[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.924     ;
+; -10.195 ; daytime[16] ; reg_capacity[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.924     ;
+; -10.190 ; daytime[4]  ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.919     ;
+; -10.151 ; daytime[7]  ; reg_capacity[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.880     ;
++---------+-------------+-----------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'car_exited'                                                                                                    ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; -8.910 ; reg_departures[1]  ; reg_departures[1]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.639      ;
+; -8.910 ; reg_departures[1]  ; reg_departures[2]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.639      ;
+; -8.910 ; reg_departures[1]  ; reg_departures[3]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.639      ;
+; -8.910 ; reg_departures[1]  ; reg_departures[4]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.639      ;
+; -8.910 ; reg_departures[1]  ; reg_departures[5]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.639      ;
+; -8.854 ; reg_entrances[8]   ; reg_departures[1]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.486      ;
+; -8.854 ; reg_entrances[8]   ; reg_departures[2]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.486      ;
+; -8.854 ; reg_entrances[8]   ; reg_departures[3]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.486      ;
+; -8.854 ; reg_entrances[8]   ; reg_departures[4]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.486      ;
+; -8.854 ; reg_entrances[8]   ; reg_departures[5]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.486      ;
+; -8.827 ; reg_entrances[0]   ; reg_departures[1]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.459      ;
+; -8.827 ; reg_entrances[0]   ; reg_departures[2]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.459      ;
+; -8.827 ; reg_entrances[0]   ; reg_departures[3]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.459      ;
+; -8.827 ; reg_entrances[0]   ; reg_departures[4]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.459      ;
+; -8.827 ; reg_entrances[0]   ; reg_departures[5]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.459      ;
+; -8.792 ; reg_entrances[6]   ; reg_departures[1]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.424      ;
+; -8.792 ; reg_entrances[6]   ; reg_departures[2]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.424      ;
+; -8.792 ; reg_entrances[6]   ; reg_departures[3]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.424      ;
+; -8.792 ; reg_entrances[6]   ; reg_departures[4]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.424      ;
+; -8.792 ; reg_entrances[6]   ; reg_departures[5]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.424      ;
+; -8.782 ; reg_entrances[2]   ; reg_departures[1]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.414      ;
+; -8.782 ; reg_entrances[2]   ; reg_departures[2]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.414      ;
+; -8.782 ; reg_entrances[2]   ; reg_departures[3]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.414      ;
+; -8.782 ; reg_entrances[2]   ; reg_departures[4]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.414      ;
+; -8.782 ; reg_entrances[2]   ; reg_departures[5]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.414      ;
+; -8.602 ; reg_departures[2]  ; reg_departures[1]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.331      ;
+; -8.602 ; reg_departures[2]  ; reg_departures[2]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.331      ;
+; -8.602 ; reg_departures[2]  ; reg_departures[3]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.331      ;
+; -8.602 ; reg_departures[2]  ; reg_departures[4]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.331      ;
+; -8.602 ; reg_departures[2]  ; reg_departures[5]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.331      ;
+; -8.588 ; reg_entrances[22]  ; reg_departures[1]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.220      ;
+; -8.588 ; reg_entrances[22]  ; reg_departures[2]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.220      ;
+; -8.588 ; reg_entrances[22]  ; reg_departures[3]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.220      ;
+; -8.588 ; reg_entrances[22]  ; reg_departures[4]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.220      ;
+; -8.588 ; reg_entrances[22]  ; reg_departures[5]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.220      ;
+; -8.555 ; reg_entrances[5]   ; reg_departures[1]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.187      ;
+; -8.555 ; reg_entrances[5]   ; reg_departures[2]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.187      ;
+; -8.555 ; reg_entrances[5]   ; reg_departures[3]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.187      ;
+; -8.555 ; reg_entrances[5]   ; reg_departures[4]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.187      ;
+; -8.555 ; reg_entrances[5]   ; reg_departures[5]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.187      ;
+; -8.537 ; reg_departures[1]  ; reg_departures[31] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.266      ;
+; -8.537 ; reg_departures[1]  ; reg_departures[26] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.266      ;
+; -8.537 ; reg_departures[1]  ; reg_departures[27] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.266      ;
+; -8.537 ; reg_departures[1]  ; reg_departures[28] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.266      ;
+; -8.537 ; reg_departures[1]  ; reg_departures[29] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.266      ;
+; -8.537 ; reg_departures[1]  ; reg_departures[30] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.266      ;
+; -8.536 ; reg_departures[1]  ; reg_departures[16] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.265      ;
+; -8.536 ; reg_departures[1]  ; reg_departures[17] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.265      ;
+; -8.536 ; reg_departures[1]  ; reg_departures[18] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.265      ;
+; -8.536 ; reg_departures[1]  ; reg_departures[19] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.265      ;
+; -8.536 ; reg_departures[1]  ; reg_departures[20] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.265      ;
+; -8.536 ; reg_departures[1]  ; reg_departures[21] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.265      ;
+; -8.536 ; reg_departures[1]  ; reg_departures[22] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.265      ;
+; -8.536 ; reg_departures[1]  ; reg_departures[23] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.265      ;
+; -8.536 ; reg_departures[1]  ; reg_departures[24] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.265      ;
+; -8.536 ; reg_departures[1]  ; reg_departures[25] ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.265      ;
+; -8.519 ; reg_entrances[3]   ; reg_departures[1]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.151      ;
+; -8.519 ; reg_entrances[3]   ; reg_departures[2]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.151      ;
+; -8.519 ; reg_entrances[3]   ; reg_departures[3]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.151      ;
+; -8.519 ; reg_entrances[3]   ; reg_departures[4]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.151      ;
+; -8.519 ; reg_entrances[3]   ; reg_departures[5]  ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.151      ;
+; -8.509 ; reg_departures[4]  ; reg_departures[1]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.238      ;
+; -8.509 ; reg_departures[4]  ; reg_departures[2]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.238      ;
+; -8.509 ; reg_departures[4]  ; reg_departures[3]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.238      ;
+; -8.509 ; reg_departures[4]  ; reg_departures[4]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.238      ;
+; -8.509 ; reg_departures[4]  ; reg_departures[5]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.238      ;
+; -8.498 ; reg_departures[11] ; reg_departures[1]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.227      ;
+; -8.498 ; reg_departures[11] ; reg_departures[2]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.227      ;
+; -8.498 ; reg_departures[11] ; reg_departures[3]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.227      ;
+; -8.498 ; reg_departures[11] ; reg_departures[4]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.227      ;
+; -8.498 ; reg_departures[11] ; reg_departures[5]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.227      ;
+; -8.489 ; uni_departures[1]  ; uni_departures[1]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.218      ;
+; -8.489 ; uni_departures[1]  ; uni_departures[2]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.218      ;
+; -8.489 ; uni_departures[1]  ; uni_departures[3]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.218      ;
+; -8.489 ; uni_departures[1]  ; uni_departures[4]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.218      ;
+; -8.489 ; uni_departures[1]  ; uni_departures[5]  ; car_exited   ; car_exited  ; 1.000        ; 0.000      ; 9.218      ;
+; -8.481 ; reg_entrances[8]   ; reg_departures[31] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.113      ;
+; -8.481 ; reg_entrances[8]   ; reg_departures[26] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.113      ;
+; -8.481 ; reg_entrances[8]   ; reg_departures[27] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.113      ;
+; -8.481 ; reg_entrances[8]   ; reg_departures[28] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.113      ;
+; -8.481 ; reg_entrances[8]   ; reg_departures[29] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.113      ;
+; -8.481 ; reg_entrances[8]   ; reg_departures[30] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.113      ;
+; -8.480 ; reg_entrances[8]   ; reg_departures[16] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.112      ;
+; -8.480 ; reg_entrances[8]   ; reg_departures[17] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.112      ;
+; -8.480 ; reg_entrances[8]   ; reg_departures[18] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.112      ;
+; -8.480 ; reg_entrances[8]   ; reg_departures[19] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.112      ;
+; -8.480 ; reg_entrances[8]   ; reg_departures[20] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.112      ;
+; -8.480 ; reg_entrances[8]   ; reg_departures[21] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.112      ;
+; -8.480 ; reg_entrances[8]   ; reg_departures[22] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.112      ;
+; -8.480 ; reg_entrances[8]   ; reg_departures[23] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.112      ;
+; -8.480 ; reg_entrances[8]   ; reg_departures[24] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.112      ;
+; -8.480 ; reg_entrances[8]   ; reg_departures[25] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.112      ;
+; -8.454 ; reg_entrances[0]   ; reg_departures[31] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.086      ;
+; -8.454 ; reg_entrances[0]   ; reg_departures[26] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.086      ;
+; -8.454 ; reg_entrances[0]   ; reg_departures[27] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.086      ;
+; -8.454 ; reg_entrances[0]   ; reg_departures[28] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.086      ;
+; -8.454 ; reg_entrances[0]   ; reg_departures[29] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.086      ;
+; -8.454 ; reg_entrances[0]   ; reg_departures[30] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.086      ;
+; -8.453 ; reg_entrances[0]   ; reg_departures[16] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.085      ;
+; -8.453 ; reg_entrances[0]   ; reg_departures[17] ; car_entered  ; car_exited  ; 1.000        ; -0.097     ; 9.085      ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Hold: 'car_entered'                                                                                                 ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+; 1.550 ; reg_entrances[0]  ; reg_entrances[0]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.729      ;
+; 1.712 ; uni_entrances[0]  ; uni_entrances[0]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.891      ;
+; 1.712 ; uni_entrances[3]  ; uni_entrances[3]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.891      ;
+; 1.712 ; uni_entrances[5]  ; uni_entrances[5]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.891      ;
+; 1.712 ; uni_entrances[26] ; uni_entrances[26] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.891      ;
+; 1.712 ; reg_entrances[3]  ; reg_entrances[3]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.891      ;
+; 1.712 ; reg_entrances[5]  ; reg_entrances[5]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.891      ;
+; 1.712 ; reg_entrances[26] ; reg_entrances[26] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.891      ;
+; 1.719 ; uni_entrances[6]  ; uni_entrances[6]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.898      ;
+; 1.719 ; uni_entrances[16] ; uni_entrances[16] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.898      ;
+; 1.719 ; reg_entrances[6]  ; reg_entrances[6]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.898      ;
+; 1.719 ; reg_entrances[16] ; reg_entrances[16] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.898      ;
+; 1.720 ; uni_entrances[13] ; uni_entrances[13] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; uni_entrances[23] ; uni_entrances[23] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; uni_entrances[27] ; uni_entrances[27] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; uni_entrances[28] ; uni_entrances[28] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; reg_entrances[13] ; reg_entrances[13] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; reg_entrances[23] ; reg_entrances[23] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; reg_entrances[27] ; reg_entrances[27] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; reg_entrances[28] ; reg_entrances[28] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.899      ;
+; 1.727 ; uni_entrances[7]  ; uni_entrances[7]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.906      ;
+; 1.727 ; uni_entrances[17] ; uni_entrances[17] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.906      ;
+; 1.727 ; reg_entrances[7]  ; reg_entrances[7]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.906      ;
+; 1.727 ; reg_entrances[17] ; reg_entrances[17] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.906      ;
+; 1.728 ; uni_entrances[8]  ; uni_entrances[8]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.907      ;
+; 1.728 ; uni_entrances[15] ; uni_entrances[15] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.907      ;
+; 1.728 ; uni_entrances[18] ; uni_entrances[18] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.907      ;
+; 1.728 ; uni_entrances[25] ; uni_entrances[25] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.907      ;
+; 1.728 ; reg_entrances[8]  ; reg_entrances[8]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.907      ;
+; 1.728 ; reg_entrances[15] ; reg_entrances[15] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.907      ;
+; 1.728 ; reg_entrances[18] ; reg_entrances[18] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.907      ;
+; 1.728 ; reg_entrances[25] ; reg_entrances[25] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.907      ;
+; 1.797 ; uni_entrances[4]  ; uni_entrances[4]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.976      ;
+; 1.797 ; uni_entrances[29] ; uni_entrances[29] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.976      ;
+; 1.797 ; reg_entrances[4]  ; reg_entrances[4]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.976      ;
+; 1.797 ; reg_entrances[29] ; reg_entrances[29] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.976      ;
+; 1.804 ; uni_entrances[31] ; uni_entrances[31] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.983      ;
+; 1.804 ; reg_entrances[31] ; reg_entrances[31] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.983      ;
+; 1.805 ; uni_entrances[1]  ; uni_entrances[1]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; uni_entrances[2]  ; uni_entrances[2]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; uni_entrances[9]  ; uni_entrances[9]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; uni_entrances[14] ; uni_entrances[14] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; uni_entrances[19] ; uni_entrances[19] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; uni_entrances[24] ; uni_entrances[24] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; uni_entrances[30] ; uni_entrances[30] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; reg_entrances[1]  ; reg_entrances[1]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; reg_entrances[2]  ; reg_entrances[2]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; reg_entrances[9]  ; reg_entrances[9]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; reg_entrances[14] ; reg_entrances[14] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; reg_entrances[19] ; reg_entrances[19] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; reg_entrances[24] ; reg_entrances[24] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; reg_entrances[30] ; reg_entrances[30] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.984      ;
+; 1.812 ; uni_entrances[11] ; uni_entrances[11] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.991      ;
+; 1.812 ; uni_entrances[12] ; uni_entrances[12] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.991      ;
+; 1.812 ; uni_entrances[21] ; uni_entrances[21] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.991      ;
+; 1.812 ; uni_entrances[22] ; uni_entrances[22] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.991      ;
+; 1.812 ; reg_entrances[11] ; reg_entrances[11] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.991      ;
+; 1.812 ; reg_entrances[12] ; reg_entrances[12] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.991      ;
+; 1.812 ; reg_entrances[21] ; reg_entrances[21] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.991      ;
+; 1.812 ; reg_entrances[22] ; reg_entrances[22] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.991      ;
+; 1.813 ; uni_entrances[10] ; uni_entrances[10] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.992      ;
+; 1.813 ; uni_entrances[20] ; uni_entrances[20] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.992      ;
+; 1.813 ; reg_entrances[10] ; reg_entrances[10] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.992      ;
+; 1.813 ; reg_entrances[20] ; reg_entrances[20] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 1.992      ;
+; 2.388 ; uni_entrances[3]  ; uni_entrances[4]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.567      ;
+; 2.388 ; uni_entrances[26] ; uni_entrances[27] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.567      ;
+; 2.388 ; reg_entrances[3]  ; reg_entrances[4]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.567      ;
+; 2.388 ; reg_entrances[26] ; reg_entrances[27] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.567      ;
+; 2.395 ; uni_entrances[6]  ; uni_entrances[7]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.574      ;
+; 2.395 ; uni_entrances[16] ; uni_entrances[17] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.574      ;
+; 2.395 ; reg_entrances[6]  ; reg_entrances[7]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.574      ;
+; 2.395 ; reg_entrances[16] ; reg_entrances[17] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.574      ;
+; 2.396 ; uni_entrances[13] ; uni_entrances[14] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; uni_entrances[23] ; uni_entrances[24] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; uni_entrances[27] ; uni_entrances[28] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; uni_entrances[28] ; uni_entrances[29] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; reg_entrances[13] ; reg_entrances[14] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; reg_entrances[23] ; reg_entrances[24] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; reg_entrances[27] ; reg_entrances[28] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; reg_entrances[28] ; reg_entrances[29] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.575      ;
+; 2.403 ; uni_entrances[7]  ; uni_entrances[8]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.582      ;
+; 2.403 ; uni_entrances[17] ; uni_entrances[18] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.582      ;
+; 2.403 ; reg_entrances[7]  ; reg_entrances[8]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.582      ;
+; 2.403 ; reg_entrances[17] ; reg_entrances[18] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.582      ;
+; 2.404 ; uni_entrances[8]  ; uni_entrances[9]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.583      ;
+; 2.404 ; uni_entrances[18] ; uni_entrances[19] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.583      ;
+; 2.404 ; reg_entrances[8]  ; reg_entrances[9]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.583      ;
+; 2.404 ; reg_entrances[18] ; reg_entrances[19] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.583      ;
+; 2.478 ; uni_entrances[3]  ; uni_entrances[5]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.657      ;
+; 2.478 ; reg_entrances[3]  ; reg_entrances[5]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.657      ;
+; 2.478 ; uni_entrances[26] ; uni_entrances[28] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.657      ;
+; 2.478 ; reg_entrances[26] ; reg_entrances[28] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.657      ;
+; 2.485 ; uni_entrances[6]  ; uni_entrances[8]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.664      ;
+; 2.485 ; uni_entrances[16] ; uni_entrances[18] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.664      ;
+; 2.485 ; reg_entrances[6]  ; reg_entrances[8]  ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.664      ;
+; 2.485 ; reg_entrances[16] ; reg_entrances[18] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.664      ;
+; 2.486 ; uni_entrances[13] ; uni_entrances[15] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.665      ;
+; 2.486 ; uni_entrances[23] ; uni_entrances[25] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.665      ;
+; 2.486 ; uni_entrances[28] ; uni_entrances[30] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.665      ;
+; 2.486 ; reg_entrances[13] ; reg_entrances[15] ; car_entered  ; car_entered ; 0.000        ; 0.000      ; 2.665      ;
++-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Hold: 'car_exited'                                                                                                    ;
++-------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; 1.712 ; uni_departures[3]  ; uni_departures[3]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.891      ;
+; 1.712 ; uni_departures[5]  ; uni_departures[5]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.891      ;
+; 1.712 ; uni_departures[26] ; uni_departures[26] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.891      ;
+; 1.712 ; reg_departures[3]  ; reg_departures[3]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.891      ;
+; 1.712 ; reg_departures[5]  ; reg_departures[5]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.891      ;
+; 1.712 ; reg_departures[26] ; reg_departures[26] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.891      ;
+; 1.719 ; uni_departures[6]  ; uni_departures[6]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.898      ;
+; 1.719 ; uni_departures[16] ; uni_departures[16] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.898      ;
+; 1.719 ; reg_departures[6]  ; reg_departures[6]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.898      ;
+; 1.719 ; reg_departures[16] ; reg_departures[16] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.898      ;
+; 1.720 ; uni_departures[13] ; uni_departures[13] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; uni_departures[23] ; uni_departures[23] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; uni_departures[27] ; uni_departures[27] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; uni_departures[28] ; uni_departures[28] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; reg_departures[13] ; reg_departures[13] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; reg_departures[23] ; reg_departures[23] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; reg_departures[27] ; reg_departures[27] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.899      ;
+; 1.720 ; reg_departures[28] ; reg_departures[28] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.899      ;
+; 1.727 ; uni_departures[7]  ; uni_departures[7]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.906      ;
+; 1.727 ; uni_departures[17] ; uni_departures[17] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.906      ;
+; 1.727 ; reg_departures[0]  ; reg_departures[0]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.906      ;
+; 1.727 ; reg_departures[7]  ; reg_departures[7]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.906      ;
+; 1.727 ; reg_departures[17] ; reg_departures[17] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.906      ;
+; 1.728 ; uni_departures[8]  ; uni_departures[8]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.907      ;
+; 1.728 ; uni_departures[15] ; uni_departures[15] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.907      ;
+; 1.728 ; uni_departures[18] ; uni_departures[18] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.907      ;
+; 1.728 ; uni_departures[25] ; uni_departures[25] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.907      ;
+; 1.728 ; reg_departures[8]  ; reg_departures[8]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.907      ;
+; 1.728 ; reg_departures[15] ; reg_departures[15] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.907      ;
+; 1.728 ; reg_departures[18] ; reg_departures[18] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.907      ;
+; 1.728 ; reg_departures[25] ; reg_departures[25] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.907      ;
+; 1.797 ; uni_departures[4]  ; uni_departures[4]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.976      ;
+; 1.797 ; uni_departures[29] ; uni_departures[29] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.976      ;
+; 1.797 ; reg_departures[4]  ; reg_departures[4]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.976      ;
+; 1.797 ; reg_departures[29] ; reg_departures[29] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.976      ;
+; 1.804 ; uni_departures[31] ; uni_departures[31] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.983      ;
+; 1.804 ; reg_departures[31] ; reg_departures[31] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.983      ;
+; 1.805 ; uni_departures[1]  ; uni_departures[1]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; uni_departures[2]  ; uni_departures[2]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; uni_departures[9]  ; uni_departures[9]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; uni_departures[14] ; uni_departures[14] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; uni_departures[19] ; uni_departures[19] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; uni_departures[24] ; uni_departures[24] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; uni_departures[30] ; uni_departures[30] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; reg_departures[1]  ; reg_departures[1]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; reg_departures[2]  ; reg_departures[2]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; reg_departures[9]  ; reg_departures[9]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; reg_departures[14] ; reg_departures[14] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; reg_departures[19] ; reg_departures[19] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; reg_departures[24] ; reg_departures[24] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.984      ;
+; 1.805 ; reg_departures[30] ; reg_departures[30] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.984      ;
+; 1.812 ; uni_departures[11] ; uni_departures[11] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.991      ;
+; 1.812 ; uni_departures[12] ; uni_departures[12] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.991      ;
+; 1.812 ; uni_departures[21] ; uni_departures[21] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.991      ;
+; 1.812 ; uni_departures[22] ; uni_departures[22] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.991      ;
+; 1.812 ; reg_departures[11] ; reg_departures[11] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.991      ;
+; 1.812 ; reg_departures[12] ; reg_departures[12] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.991      ;
+; 1.812 ; reg_departures[21] ; reg_departures[21] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.991      ;
+; 1.812 ; reg_departures[22] ; reg_departures[22] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.991      ;
+; 1.813 ; uni_departures[10] ; uni_departures[10] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.992      ;
+; 1.813 ; uni_departures[20] ; uni_departures[20] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.992      ;
+; 1.813 ; reg_departures[10] ; reg_departures[10] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.992      ;
+; 1.813 ; reg_departures[20] ; reg_departures[20] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 1.992      ;
+; 1.821 ; uni_departures[0]  ; uni_departures[0]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.000      ;
+; 2.388 ; uni_departures[3]  ; uni_departures[4]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.567      ;
+; 2.388 ; uni_departures[26] ; uni_departures[27] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.567      ;
+; 2.388 ; reg_departures[3]  ; reg_departures[4]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.567      ;
+; 2.388 ; reg_departures[26] ; reg_departures[27] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.567      ;
+; 2.395 ; uni_departures[6]  ; uni_departures[7]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.574      ;
+; 2.395 ; uni_departures[16] ; uni_departures[17] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.574      ;
+; 2.395 ; reg_departures[6]  ; reg_departures[7]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.574      ;
+; 2.395 ; reg_departures[16] ; reg_departures[17] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.574      ;
+; 2.396 ; uni_departures[13] ; uni_departures[14] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; uni_departures[23] ; uni_departures[24] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; uni_departures[27] ; uni_departures[28] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; uni_departures[28] ; uni_departures[29] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; reg_departures[13] ; reg_departures[14] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; reg_departures[23] ; reg_departures[24] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; reg_departures[27] ; reg_departures[28] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.575      ;
+; 2.396 ; reg_departures[28] ; reg_departures[29] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.575      ;
+; 2.403 ; uni_departures[7]  ; uni_departures[8]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.582      ;
+; 2.403 ; uni_departures[17] ; uni_departures[18] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.582      ;
+; 2.403 ; reg_departures[7]  ; reg_departures[8]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.582      ;
+; 2.403 ; reg_departures[17] ; reg_departures[18] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.582      ;
+; 2.404 ; uni_departures[8]  ; uni_departures[9]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.583      ;
+; 2.404 ; uni_departures[18] ; uni_departures[19] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.583      ;
+; 2.404 ; reg_departures[8]  ; reg_departures[9]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.583      ;
+; 2.404 ; reg_departures[18] ; reg_departures[19] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.583      ;
+; 2.478 ; uni_departures[3]  ; uni_departures[5]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.657      ;
+; 2.478 ; reg_departures[3]  ; reg_departures[5]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.657      ;
+; 2.478 ; uni_departures[26] ; uni_departures[28] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.657      ;
+; 2.478 ; reg_departures[26] ; reg_departures[28] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.657      ;
+; 2.485 ; uni_departures[6]  ; uni_departures[8]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.664      ;
+; 2.485 ; uni_departures[16] ; uni_departures[18] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.664      ;
+; 2.485 ; reg_departures[6]  ; reg_departures[8]  ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.664      ;
+; 2.485 ; reg_departures[16] ; reg_departures[18] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.664      ;
+; 2.486 ; uni_departures[13] ; uni_departures[15] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.665      ;
+; 2.486 ; uni_departures[23] ; uni_departures[25] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.665      ;
+; 2.486 ; uni_departures[28] ; uni_departures[30] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.665      ;
+; 2.486 ; reg_departures[13] ; reg_departures[15] ; car_exited   ; car_exited  ; 0.000        ; 0.000      ; 2.665      ;
++-------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                 ;
++-------+-------------+-----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node   ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------+-----------------+--------------+-------------+--------------+------------+------------+
+; 1.908 ; sec[31]     ; sec[31]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.087      ;
+; 2.311 ; daytime[1]  ; daytime[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 2.490      ;
+; 2.323 ; sec[0]      ; sec[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.502      ;
+; 2.344 ; sec[3]      ; sec[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.523      ;
+; 2.346 ; daytime[26] ; daytime[26]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.525      ;
+; 2.351 ; sec[1]      ; sec[1]          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.530      ;
+; 2.461 ; sec[2]      ; sec[2]          ; clk          ; clk         ; 0.000        ; 0.000      ; 2.640      ;
+; 2.483 ; sec[30]     ; sec[30]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.662      ;
+; 2.543 ; sec[29]     ; sec[29]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.722      ;
+; 2.633 ; sec[28]     ; sec[28]         ; clk          ; clk         ; 0.000        ; 0.000      ; 2.812      ;
+; 2.753 ; daytime[31] ; daytime[31]     ; clk          ; clk         ; 0.000        ; 0.000      ; 2.932      ;
+; 2.969 ; daytime[27] ; daytime[27]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.148      ;
+; 2.988 ; daytime[5]  ; daytime[5]      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.167      ;
+; 2.993 ; sec[29]     ; sec[30]         ; clk          ; clk         ; 0.000        ; 0.000      ; 3.172      ;
+; 3.005 ; sec[1]      ; sec[2]          ; clk          ; clk         ; 0.000        ; 0.000      ; 3.184      ;
+; 3.069 ; sec[28]     ; sec[30]         ; clk          ; clk         ; 0.000        ; 0.000      ; 3.248      ;
+; 3.088 ; sec[1]      ; sec[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 3.267      ;
+; 3.092 ; daytime[2]  ; daytime[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.271      ;
+; 3.156 ; sec[2]      ; sec[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 3.335      ;
+; 3.164 ; daytime[14] ; daytime[14]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.343      ;
+; 3.172 ; daytime[7]  ; daytime[7]      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.351      ;
+; 3.184 ; sec[28]     ; sec[29]         ; clk          ; clk         ; 0.000        ; 0.000      ; 3.363      ;
+; 3.206 ; daytime[18] ; daytime[18]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.385      ;
+; 3.284 ; sec[0]      ; sec[3]          ; clk          ; clk         ; 0.000        ; 0.000      ; 3.463      ;
+; 3.285 ; daytime[29] ; daytime[29]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.464      ;
+; 3.291 ; sec[0]      ; sec[2]          ; clk          ; clk         ; 0.000        ; 0.000      ; 3.470      ;
+; 3.292 ; sec[0]      ; sec[1]          ; clk          ; clk         ; 0.000        ; 0.000      ; 3.471      ;
+; 3.299 ; daytime[4]  ; daytime[5]      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.478      ;
+; 3.302 ; daytime[26] ; daytime[27]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.481      ;
+; 3.316 ; sec[18]     ; sec[11]         ; clk          ; clk         ; 0.000        ; 0.000      ; 3.495      ;
+; 3.320 ; daytime[1]  ; daytime[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.499      ;
+; 3.324 ; sec[18]     ; sec[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 3.503      ;
+; 3.335 ; sec[29]     ; sec[31]         ; clk          ; clk         ; 0.000        ; 0.000      ; 3.514      ;
+; 3.406 ; sec[30]     ; sec[31]         ; clk          ; clk         ; 0.000        ; 0.000      ; 3.585      ;
+; 3.411 ; sec[28]     ; sec[31]         ; clk          ; clk         ; 0.000        ; 0.000      ; 3.590      ;
+; 3.423 ; daytime[30] ; daytime[30]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.602      ;
+; 3.437 ; daytime[0]  ; daytime[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.616      ;
+; 3.496 ; sec[18]     ; sec[10]         ; clk          ; clk         ; 0.000        ; 0.000      ; 3.675      ;
+; 3.497 ; sec[18]     ; sec[9]          ; clk          ; clk         ; 0.000        ; 0.000      ; 3.676      ;
+; 3.538 ; daytime[12] ; daytime[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.717      ;
+; 3.540 ; daytime[17] ; daytime[17]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.719      ;
+; 3.577 ; daytime[1]  ; daytime[5]      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.756      ;
+; 3.590 ; daytime[8]  ; daytime[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.769      ;
+; 3.663 ; daytime[0]  ; daytime[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.842      ;
+; 3.693 ; daytime[26] ; daytime[29]     ; clk          ; clk         ; 0.000        ; 0.000      ; 3.872      ;
+; 3.733 ; sec[8]      ; sec[11]         ; clk          ; clk         ; 0.000        ; 0.000      ; 3.912      ;
+; 3.741 ; sec[8]      ; sec[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 3.920      ;
+; 3.764 ; daytime[16] ; daytime[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 3.943      ;
+; 3.913 ; sec[8]      ; sec[10]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.092      ;
+; 3.914 ; sec[8]      ; sec[9]          ; clk          ; clk         ; 0.000        ; 0.000      ; 4.093      ;
+; 3.925 ; daytime[27] ; daytime[29]     ; clk          ; clk         ; 0.000        ; 0.000      ; 4.104      ;
+; 3.950 ; daytime[26] ; daytime[28]     ; clk          ; clk         ; 0.000        ; 0.000      ; 4.129      ;
+; 3.961 ; daytime[2]  ; daytime[5]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.140      ;
+; 3.967 ; daytime[4]  ; daytime[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.146      ;
+; 3.997 ; daytime[11] ; daytime[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.176      ;
+; 4.002 ; sec[5]      ; sec[11]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.181      ;
+; 4.004 ; daytime[0]  ; daytime[5]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.183      ;
+; 4.010 ; sec[5]      ; sec[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 4.189      ;
+; 4.012 ; sec[27]     ; sec[30]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.191      ;
+; 4.017 ; daytime[0]  ; daytime[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.196      ;
+; 4.038 ; daytime[26] ; daytime[30]     ; clk          ; clk         ; 0.000        ; 0.000      ; 4.217      ;
+; 4.051 ; sec[27]     ; sec[27]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.230      ;
+; 4.056 ; daytime[12] ; daytime[12]     ; clk          ; clk         ; 0.000        ; 0.000      ; 4.235      ;
+; 4.064 ; daytime[1]  ; reg_capacity[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.243      ;
+; 4.070 ; daytime[1]  ; reg_capacity[7] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.249      ;
+; 4.077 ; daytime[1]  ; reg_capacity[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.256      ;
+; 4.084 ; daytime[1]  ; reg_capacity[6] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.263      ;
+; 4.085 ; daytime[1]  ; reg_capacity[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.264      ;
+; 4.085 ; daytime[1]  ; reg_capacity[5] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.264      ;
+; 4.097 ; daytime[28] ; daytime[28]     ; clk          ; clk         ; 0.000        ; 0.000      ; 4.276      ;
+; 4.100 ; sec[14]     ; sec[14]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.279      ;
+; 4.116 ; sec[12]     ; sec[12]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.295      ;
+; 4.121 ; sec[7]      ; sec[7]          ; clk          ; clk         ; 0.000        ; 0.000      ; 4.300      ;
+; 4.121 ; sec[24]     ; sec[11]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.300      ;
+; 4.127 ; sec[27]     ; sec[29]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.306      ;
+; 4.129 ; sec[24]     ; sec[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 4.308      ;
+; 4.141 ; sec[27]     ; sec[28]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.320      ;
+; 4.150 ; sec[26]     ; sec[26]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.329      ;
+; 4.156 ; daytime[4]  ; daytime[14]     ; clk          ; clk         ; 0.000        ; 0.000      ; 4.335      ;
+; 4.159 ; sec[11]     ; sec[11]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.338      ;
+; 4.161 ; daytime[26] ; daytime[31]     ; clk          ; clk         ; 0.000        ; 0.000      ; 4.340      ;
+; 4.163 ; daytime[4]  ; daytime[7]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.342      ;
+; 4.167 ; sec[11]     ; sec[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 4.346      ;
+; 4.168 ; daytime[30] ; daytime[31]     ; clk          ; clk         ; 0.000        ; 0.000      ; 4.347      ;
+; 4.182 ; sec[5]      ; sec[10]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.361      ;
+; 4.182 ; daytime[27] ; daytime[28]     ; clk          ; clk         ; 0.000        ; 0.000      ; 4.361      ;
+; 4.183 ; sec[5]      ; sec[9]          ; clk          ; clk         ; 0.000        ; 0.000      ; 4.362      ;
+; 4.193 ; daytime[7]  ; daytime[8]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.372      ;
+; 4.195 ; daytime[8]  ; daytime[8]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.374      ;
+; 4.201 ; sec[8]      ; sec[8]          ; clk          ; clk         ; 0.000        ; 0.000      ; 4.380      ;
+; 4.202 ; daytime[20] ; daytime[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 4.381      ;
+; 4.211 ; sec[17]     ; sec[17]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.390      ;
+; 4.242 ; daytime[29] ; daytime[30]     ; clk          ; clk         ; 0.000        ; 0.000      ; 4.421      ;
+; 4.255 ; daytime[18] ; daytime[26]     ; clk          ; clk         ; 0.000        ; 0.000      ; 4.434      ;
+; 4.266 ; daytime[14] ; daytime[17]     ; clk          ; clk         ; 0.000        ; 0.000      ; 4.445      ;
+; 4.270 ; daytime[27] ; daytime[30]     ; clk          ; clk         ; 0.000        ; 0.000      ; 4.449      ;
+; 4.272 ; sec[22]     ; sec[22]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.451      ;
+; 4.276 ; sec[16]     ; sec[16]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.455      ;
+; 4.289 ; sec[26]     ; sec[30]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.468      ;
+; 4.295 ; sec[19]     ; sec[11]         ; clk          ; clk         ; 0.000        ; 0.000      ; 4.474      ;
++-------+-------------+-----------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'car_entered'                                                                       ;
++--------+--------------+----------------+------------------+-------------+------------+-------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock       ; Clock Edge ; Target            ;
++--------+--------------+----------------+------------------+-------------+------------+-------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; car_entered ; Rise       ; car_entered       ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[0]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[0]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[10] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[10] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[11] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[11] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[12] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[12] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[13] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[13] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[14] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[14] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[15] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[15] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[16] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[16] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[17] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[17] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[18] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[18] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[19] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[19] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[1]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[1]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[20] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[20] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[21] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[21] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[22] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[22] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[23] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[23] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[24] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[24] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[25] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[25] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[26] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[26] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[27] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[27] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[28] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[28] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[29] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[29] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[2]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[2]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[30] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[30] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[31] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[31] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[3]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[3]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[4]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[4]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[5]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[5]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[6]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[6]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[7]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[7]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[8]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[8]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; reg_entrances[9]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; reg_entrances[9]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[0]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[0]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[10] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[10] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[11] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[11] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[12] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[12] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[13] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[13] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[14] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[14] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[15] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[15] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[16] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[16] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[17] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[17] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[18] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[18] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[19] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[19] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[1]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[1]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[20] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[20] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[21] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[21] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[22] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[22] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[23] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[23] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[24] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_entered ; Rise       ; uni_entrances[24] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_entered ; Rise       ; uni_entrances[25] ;
++--------+--------------+----------------+------------------+-------------+------------+-------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'car_exited'                                                                        ;
++--------+--------------+----------------+------------------+------------+------------+--------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock      ; Clock Edge ; Target             ;
++--------+--------------+----------------+------------------+------------+------------+--------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; car_exited ; Rise       ; car_exited         ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[0]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[0]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[10] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[10] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[11] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[11] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[12] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[12] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[13] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[13] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[14] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[14] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[15] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[15] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[16] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[16] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[17] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[17] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[18] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[18] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[19] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[19] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[1]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[1]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[20] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[20] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[21] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[21] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[22] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[22] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[23] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[23] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[24] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[24] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[25] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[25] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[26] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[26] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[27] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[27] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[28] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[28] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[29] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[29] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[2]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[2]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[30] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[30] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[31] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[31] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[3]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[3]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[4]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[4]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[5]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[5]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[6]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[6]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[7]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[7]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[8]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[8]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; reg_departures[9]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; reg_departures[9]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[0]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[0]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[10] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[10] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[11] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[11] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[12] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[12] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[13] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[13] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[14] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[14] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[15] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[15] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[16] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[16] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[17] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[17] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[18] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[18] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[19] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[19] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[1]  ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[1]  ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[20] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[20] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[21] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[21] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[22] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[22] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[23] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[23] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[24] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; car_exited ; Rise       ; uni_departures[24] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; car_exited ; Rise       ; uni_departures[25] ;
++--------+--------------+----------------+------------------+------------+------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                       ;
++--------+--------------+----------------+------------------+-------+------------+-----------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target          ;
++--------+--------------+----------------+------------------+-------+------------+-----------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; clk   ; Rise       ; clk             ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[0]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[0]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[10]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[10]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[11]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[11]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[12]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[12]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[13]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[13]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[14]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[14]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[15]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[15]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[16]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[16]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[17]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[17]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[18]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[18]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[19]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[19]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[1]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[1]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[20]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[20]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[21]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[21]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[22]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[22]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[23]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[23]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[24]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[24]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[25]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[25]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[26]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[26]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[27]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[27]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[28]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[28]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[29]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[29]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[2]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[2]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[30]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[30]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[31]     ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[31]     ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[3]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[3]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[4]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[4]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[5]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[5]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[6]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[6]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[7]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[7]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[8]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[8]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; daytime[9]      ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; daytime[9]      ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reg_capacity[1] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; reg_capacity[1] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reg_capacity[2] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; reg_capacity[2] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reg_capacity[3] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; reg_capacity[3] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reg_capacity[4] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; reg_capacity[4] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reg_capacity[5] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; reg_capacity[5] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reg_capacity[6] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; reg_capacity[6] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; reg_capacity[7] ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; reg_capacity[7] ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; sec[0]          ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; sec[0]          ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; sec[10]         ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; sec[10]         ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; sec[11]         ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; sec[11]         ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; sec[12]         ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; sec[12]         ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; sec[13]         ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; sec[13]         ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; sec[14]         ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; sec[14]         ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; sec[15]         ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; sec[15]         ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; sec[16]         ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; sec[16]         ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; sec[17]         ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; sec[17]         ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; sec[18]         ;
+; 0.284  ; 0.500        ; 0.216          ; Low Pulse Width  ; clk   ; Rise       ; sec[18]         ;
+; 0.284  ; 0.500        ; 0.216          ; High Pulse Width ; clk   ; Rise       ; sec[19]         ;
++--------+--------------+----------------+------------------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Setup Times                                                                     ;
++--------------------+-------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+-------------+-------+-------+------------+-----------------+
+; is_uni_car_entered ; car_entered ; 8.088 ; 8.088 ; Rise       ; car_entered     ;
+; is_uni_car_exited  ; car_exited  ; 6.506 ; 6.506 ; Rise       ; car_exited      ;
++--------------------+-------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Hold Times                                                                        ;
++--------------------+-------------+--------+--------+------------+-----------------+
+; Data Port          ; Clock Port  ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------------+-------------+--------+--------+------------+-----------------+
+; is_uni_car_entered ; car_entered ; -1.943 ; -1.943 ; Rise       ; car_entered     ;
+; is_uni_car_exited  ; car_exited  ; -1.674 ; -1.674 ; Rise       ; car_exited      ;
++--------------------+-------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                 ;
++------------------------+-------------+--------+--------+------------+-----------------+
+; Data Port              ; Clock Port  ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------------------+-------------+--------+--------+------------+-----------------+
+; is_vacated_space       ; car_entered ; 27.752 ; 27.752 ; Rise       ; car_entered     ;
+; parked_car[*]          ; car_entered ; 15.939 ; 15.939 ; Rise       ; car_entered     ;
+;  parked_car[0]         ; car_entered ; 10.512 ; 10.512 ; Rise       ; car_entered     ;
+;  parked_car[1]         ; car_entered ; 11.413 ; 11.413 ; Rise       ; car_entered     ;
+;  parked_car[2]         ; car_entered ; 10.761 ; 10.761 ; Rise       ; car_entered     ;
+;  parked_car[3]         ; car_entered ; 11.664 ; 11.664 ; Rise       ; car_entered     ;
+;  parked_car[4]         ; car_entered ; 10.976 ; 10.976 ; Rise       ; car_entered     ;
+;  parked_car[5]         ; car_entered ; 10.860 ; 10.860 ; Rise       ; car_entered     ;
+;  parked_car[6]         ; car_entered ; 11.521 ; 11.521 ; Rise       ; car_entered     ;
+;  parked_car[7]         ; car_entered ; 13.590 ; 13.590 ; Rise       ; car_entered     ;
+;  parked_car[8]         ; car_entered ; 11.586 ; 11.586 ; Rise       ; car_entered     ;
+;  parked_car[9]         ; car_entered ; 12.609 ; 12.609 ; Rise       ; car_entered     ;
+;  parked_car[10]        ; car_entered ; 13.885 ; 13.885 ; Rise       ; car_entered     ;
+;  parked_car[11]        ; car_entered ; 12.417 ; 12.417 ; Rise       ; car_entered     ;
+;  parked_car[12]        ; car_entered ; 12.520 ; 12.520 ; Rise       ; car_entered     ;
+;  parked_car[13]        ; car_entered ; 11.519 ; 11.519 ; Rise       ; car_entered     ;
+;  parked_car[14]        ; car_entered ; 11.993 ; 11.993 ; Rise       ; car_entered     ;
+;  parked_car[15]        ; car_entered ; 12.127 ; 12.127 ; Rise       ; car_entered     ;
+;  parked_car[16]        ; car_entered ; 11.994 ; 11.994 ; Rise       ; car_entered     ;
+;  parked_car[17]        ; car_entered ; 11.992 ; 11.992 ; Rise       ; car_entered     ;
+;  parked_car[18]        ; car_entered ; 12.610 ; 12.610 ; Rise       ; car_entered     ;
+;  parked_car[19]        ; car_entered ; 11.994 ; 11.994 ; Rise       ; car_entered     ;
+;  parked_car[20]        ; car_entered ; 11.980 ; 11.980 ; Rise       ; car_entered     ;
+;  parked_car[21]        ; car_entered ; 13.420 ; 13.420 ; Rise       ; car_entered     ;
+;  parked_car[22]        ; car_entered ; 12.978 ; 12.978 ; Rise       ; car_entered     ;
+;  parked_car[23]        ; car_entered ; 12.887 ; 12.887 ; Rise       ; car_entered     ;
+;  parked_car[24]        ; car_entered ; 12.102 ; 12.102 ; Rise       ; car_entered     ;
+;  parked_car[25]        ; car_entered ; 14.264 ; 14.264 ; Rise       ; car_entered     ;
+;  parked_car[26]        ; car_entered ; 12.523 ; 12.523 ; Rise       ; car_entered     ;
+;  parked_car[27]        ; car_entered ; 13.474 ; 13.474 ; Rise       ; car_entered     ;
+;  parked_car[28]        ; car_entered ; 12.518 ; 12.518 ; Rise       ; car_entered     ;
+;  parked_car[29]        ; car_entered ; 12.509 ; 12.509 ; Rise       ; car_entered     ;
+;  parked_car[30]        ; car_entered ; 15.939 ; 15.939 ; Rise       ; car_entered     ;
+;  parked_car[31]        ; car_entered ; 13.962 ; 13.962 ; Rise       ; car_entered     ;
+; uni_is_vacated_space   ; car_entered ; 25.418 ; 25.418 ; Rise       ; car_entered     ;
+; uni_parked_car[*]      ; car_entered ; 13.662 ; 13.662 ; Rise       ; car_entered     ;
+;  uni_parked_car[0]     ; car_entered ; 11.281 ; 11.281 ; Rise       ; car_entered     ;
+;  uni_parked_car[1]     ; car_entered ; 11.422 ; 11.422 ; Rise       ; car_entered     ;
+;  uni_parked_car[2]     ; car_entered ; 11.623 ; 11.623 ; Rise       ; car_entered     ;
+;  uni_parked_car[3]     ; car_entered ; 11.295 ; 11.295 ; Rise       ; car_entered     ;
+;  uni_parked_car[4]     ; car_entered ; 11.719 ; 11.719 ; Rise       ; car_entered     ;
+;  uni_parked_car[5]     ; car_entered ; 11.924 ; 11.924 ; Rise       ; car_entered     ;
+;  uni_parked_car[6]     ; car_entered ; 12.111 ; 12.111 ; Rise       ; car_entered     ;
+;  uni_parked_car[7]     ; car_entered ; 12.296 ; 12.296 ; Rise       ; car_entered     ;
+;  uni_parked_car[8]     ; car_entered ; 12.709 ; 12.709 ; Rise       ; car_entered     ;
+;  uni_parked_car[9]     ; car_entered ; 12.996 ; 12.996 ; Rise       ; car_entered     ;
+;  uni_parked_car[10]    ; car_entered ; 11.517 ; 11.517 ; Rise       ; car_entered     ;
+;  uni_parked_car[11]    ; car_entered ; 12.668 ; 12.668 ; Rise       ; car_entered     ;
+;  uni_parked_car[12]    ; car_entered ; 11.742 ; 11.742 ; Rise       ; car_entered     ;
+;  uni_parked_car[13]    ; car_entered ; 12.674 ; 12.674 ; Rise       ; car_entered     ;
+;  uni_parked_car[14]    ; car_entered ; 11.501 ; 11.501 ; Rise       ; car_entered     ;
+;  uni_parked_car[15]    ; car_entered ; 11.534 ; 11.534 ; Rise       ; car_entered     ;
+;  uni_parked_car[16]    ; car_entered ; 12.601 ; 12.601 ; Rise       ; car_entered     ;
+;  uni_parked_car[17]    ; car_entered ; 12.606 ; 12.606 ; Rise       ; car_entered     ;
+;  uni_parked_car[18]    ; car_entered ; 12.983 ; 12.983 ; Rise       ; car_entered     ;
+;  uni_parked_car[19]    ; car_entered ; 12.601 ; 12.601 ; Rise       ; car_entered     ;
+;  uni_parked_car[20]    ; car_entered ; 13.662 ; 13.662 ; Rise       ; car_entered     ;
+;  uni_parked_car[21]    ; car_entered ; 12.616 ; 12.616 ; Rise       ; car_entered     ;
+;  uni_parked_car[22]    ; car_entered ; 12.544 ; 12.544 ; Rise       ; car_entered     ;
+;  uni_parked_car[23]    ; car_entered ; 13.435 ; 13.435 ; Rise       ; car_entered     ;
+;  uni_parked_car[24]    ; car_entered ; 12.599 ; 12.599 ; Rise       ; car_entered     ;
+;  uni_parked_car[25]    ; car_entered ; 12.489 ; 12.489 ; Rise       ; car_entered     ;
+;  uni_parked_car[26]    ; car_entered ; 13.036 ; 13.036 ; Rise       ; car_entered     ;
+;  uni_parked_car[27]    ; car_entered ; 12.603 ; 12.603 ; Rise       ; car_entered     ;
+;  uni_parked_car[28]    ; car_entered ; 13.629 ; 13.629 ; Rise       ; car_entered     ;
+;  uni_parked_car[29]    ; car_entered ; 13.105 ; 13.105 ; Rise       ; car_entered     ;
+;  uni_parked_car[30]    ; car_entered ; 13.608 ; 13.608 ; Rise       ; car_entered     ;
+;  uni_parked_car[31]    ; car_entered ; 13.058 ; 13.058 ; Rise       ; car_entered     ;
+; uni_vacated_space[*]   ; car_entered ; 21.746 ; 21.746 ; Rise       ; car_entered     ;
+;  uni_vacated_space[0]  ; car_entered ; 12.051 ; 12.051 ; Rise       ; car_entered     ;
+;  uni_vacated_space[1]  ; car_entered ; 15.756 ; 15.756 ; Rise       ; car_entered     ;
+;  uni_vacated_space[2]  ; car_entered ; 16.285 ; 16.285 ; Rise       ; car_entered     ;
+;  uni_vacated_space[3]  ; car_entered ; 17.148 ; 17.148 ; Rise       ; car_entered     ;
+;  uni_vacated_space[4]  ; car_entered ; 17.449 ; 17.449 ; Rise       ; car_entered     ;
+;  uni_vacated_space[5]  ; car_entered ; 17.873 ; 17.873 ; Rise       ; car_entered     ;
+;  uni_vacated_space[6]  ; car_entered ; 19.016 ; 19.016 ; Rise       ; car_entered     ;
+;  uni_vacated_space[7]  ; car_entered ; 19.400 ; 19.400 ; Rise       ; car_entered     ;
+;  uni_vacated_space[8]  ; car_entered ; 18.534 ; 18.534 ; Rise       ; car_entered     ;
+;  uni_vacated_space[9]  ; car_entered ; 18.486 ; 18.486 ; Rise       ; car_entered     ;
+;  uni_vacated_space[10] ; car_entered ; 19.164 ; 19.164 ; Rise       ; car_entered     ;
+;  uni_vacated_space[11] ; car_entered ; 19.282 ; 19.282 ; Rise       ; car_entered     ;
+;  uni_vacated_space[12] ; car_entered ; 20.895 ; 20.895 ; Rise       ; car_entered     ;
+;  uni_vacated_space[13] ; car_entered ; 19.284 ; 19.284 ; Rise       ; car_entered     ;
+;  uni_vacated_space[14] ; car_entered ; 19.379 ; 19.379 ; Rise       ; car_entered     ;
+;  uni_vacated_space[15] ; car_entered ; 20.167 ; 20.167 ; Rise       ; car_entered     ;
+;  uni_vacated_space[16] ; car_entered ; 21.263 ; 21.263 ; Rise       ; car_entered     ;
+;  uni_vacated_space[17] ; car_entered ; 20.745 ; 20.745 ; Rise       ; car_entered     ;
+;  uni_vacated_space[18] ; car_entered ; 20.222 ; 20.222 ; Rise       ; car_entered     ;
+;  uni_vacated_space[19] ; car_entered ; 20.300 ; 20.300 ; Rise       ; car_entered     ;
+;  uni_vacated_space[20] ; car_entered ; 20.878 ; 20.878 ; Rise       ; car_entered     ;
+;  uni_vacated_space[21] ; car_entered ; 20.725 ; 20.725 ; Rise       ; car_entered     ;
+;  uni_vacated_space[22] ; car_entered ; 20.840 ; 20.840 ; Rise       ; car_entered     ;
+;  uni_vacated_space[23] ; car_entered ; 20.791 ; 20.791 ; Rise       ; car_entered     ;
+;  uni_vacated_space[24] ; car_entered ; 20.668 ; 20.668 ; Rise       ; car_entered     ;
+;  uni_vacated_space[25] ; car_entered ; 21.187 ; 21.187 ; Rise       ; car_entered     ;
+;  uni_vacated_space[26] ; car_entered ; 20.957 ; 20.957 ; Rise       ; car_entered     ;
+;  uni_vacated_space[27] ; car_entered ; 21.509 ; 21.509 ; Rise       ; car_entered     ;
+;  uni_vacated_space[28] ; car_entered ; 21.625 ; 21.625 ; Rise       ; car_entered     ;
+;  uni_vacated_space[29] ; car_entered ; 21.693 ; 21.693 ; Rise       ; car_entered     ;
+;  uni_vacated_space[30] ; car_entered ; 20.586 ; 20.586 ; Rise       ; car_entered     ;
+;  uni_vacated_space[31] ; car_entered ; 21.746 ; 21.746 ; Rise       ; car_entered     ;
+; vacated_space[*]       ; car_entered ; 24.217 ; 24.217 ; Rise       ; car_entered     ;
+;  vacated_space[0]      ; car_entered ; 22.028 ; 22.028 ; Rise       ; car_entered     ;
+;  vacated_space[1]      ; car_entered ; 22.131 ; 22.131 ; Rise       ; car_entered     ;
+;  vacated_space[2]      ; car_entered ; 21.684 ; 21.684 ; Rise       ; car_entered     ;
+;  vacated_space[3]      ; car_entered ; 22.038 ; 22.038 ; Rise       ; car_entered     ;
+;  vacated_space[4]      ; car_entered ; 21.585 ; 21.585 ; Rise       ; car_entered     ;
+;  vacated_space[5]      ; car_entered ; 21.683 ; 21.683 ; Rise       ; car_entered     ;
+;  vacated_space[6]      ; car_entered ; 21.541 ; 21.541 ; Rise       ; car_entered     ;
+;  vacated_space[7]      ; car_entered ; 21.551 ; 21.551 ; Rise       ; car_entered     ;
+;  vacated_space[8]      ; car_entered ; 21.610 ; 21.610 ; Rise       ; car_entered     ;
+;  vacated_space[9]      ; car_entered ; 22.021 ; 22.021 ; Rise       ; car_entered     ;
+;  vacated_space[10]     ; car_entered ; 22.184 ; 22.184 ; Rise       ; car_entered     ;
+;  vacated_space[11]     ; car_entered ; 21.942 ; 21.942 ; Rise       ; car_entered     ;
+;  vacated_space[12]     ; car_entered ; 22.941 ; 22.941 ; Rise       ; car_entered     ;
+;  vacated_space[13]     ; car_entered ; 22.487 ; 22.487 ; Rise       ; car_entered     ;
+;  vacated_space[14]     ; car_entered ; 22.984 ; 22.984 ; Rise       ; car_entered     ;
+;  vacated_space[15]     ; car_entered ; 23.049 ; 23.049 ; Rise       ; car_entered     ;
+;  vacated_space[16]     ; car_entered ; 22.432 ; 22.432 ; Rise       ; car_entered     ;
+;  vacated_space[17]     ; car_entered ; 22.416 ; 22.416 ; Rise       ; car_entered     ;
+;  vacated_space[18]     ; car_entered ; 23.288 ; 23.288 ; Rise       ; car_entered     ;
+;  vacated_space[19]     ; car_entered ; 22.831 ; 22.831 ; Rise       ; car_entered     ;
+;  vacated_space[20]     ; car_entered ; 23.382 ; 23.382 ; Rise       ; car_entered     ;
+;  vacated_space[21]     ; car_entered ; 22.671 ; 22.671 ; Rise       ; car_entered     ;
+;  vacated_space[22]     ; car_entered ; 21.711 ; 21.711 ; Rise       ; car_entered     ;
+;  vacated_space[23]     ; car_entered ; 21.829 ; 21.829 ; Rise       ; car_entered     ;
+;  vacated_space[24]     ; car_entered ; 23.010 ; 23.010 ; Rise       ; car_entered     ;
+;  vacated_space[25]     ; car_entered ; 23.138 ; 23.138 ; Rise       ; car_entered     ;
+;  vacated_space[26]     ; car_entered ; 23.046 ; 23.046 ; Rise       ; car_entered     ;
+;  vacated_space[27]     ; car_entered ; 22.441 ; 22.441 ; Rise       ; car_entered     ;
+;  vacated_space[28]     ; car_entered ; 24.217 ; 24.217 ; Rise       ; car_entered     ;
+;  vacated_space[29]     ; car_entered ; 22.239 ; 22.239 ; Rise       ; car_entered     ;
+;  vacated_space[30]     ; car_entered ; 22.361 ; 22.361 ; Rise       ; car_entered     ;
+;  vacated_space[31]     ; car_entered ; 23.905 ; 23.905 ; Rise       ; car_entered     ;
+; is_vacated_space       ; car_exited  ; 27.492 ; 27.492 ; Rise       ; car_exited      ;
+; parked_car[*]          ; car_exited  ; 15.681 ; 15.681 ; Rise       ; car_exited      ;
+;  parked_car[0]         ; car_exited  ; 8.747  ; 8.747  ; Rise       ; car_exited      ;
+;  parked_car[1]         ; car_exited  ; 9.689  ; 9.689  ; Rise       ; car_exited      ;
+;  parked_car[2]         ; car_exited  ; 9.631  ; 9.631  ; Rise       ; car_exited      ;
+;  parked_car[3]         ; car_exited  ; 11.218 ; 11.218 ; Rise       ; car_exited      ;
+;  parked_car[4]         ; car_exited  ; 10.630 ; 10.630 ; Rise       ; car_exited      ;
+;  parked_car[5]         ; car_exited  ; 10.604 ; 10.604 ; Rise       ; car_exited      ;
+;  parked_car[6]         ; car_exited  ; 11.265 ; 11.265 ; Rise       ; car_exited      ;
+;  parked_car[7]         ; car_exited  ; 13.334 ; 13.334 ; Rise       ; car_exited      ;
+;  parked_car[8]         ; car_exited  ; 11.330 ; 11.330 ; Rise       ; car_exited      ;
+;  parked_car[9]         ; car_exited  ; 12.353 ; 12.353 ; Rise       ; car_exited      ;
+;  parked_car[10]        ; car_exited  ; 13.629 ; 13.629 ; Rise       ; car_exited      ;
+;  parked_car[11]        ; car_exited  ; 12.159 ; 12.159 ; Rise       ; car_exited      ;
+;  parked_car[12]        ; car_exited  ; 12.262 ; 12.262 ; Rise       ; car_exited      ;
+;  parked_car[13]        ; car_exited  ; 11.261 ; 11.261 ; Rise       ; car_exited      ;
+;  parked_car[14]        ; car_exited  ; 11.735 ; 11.735 ; Rise       ; car_exited      ;
+;  parked_car[15]        ; car_exited  ; 11.869 ; 11.869 ; Rise       ; car_exited      ;
+;  parked_car[16]        ; car_exited  ; 11.736 ; 11.736 ; Rise       ; car_exited      ;
+;  parked_car[17]        ; car_exited  ; 11.734 ; 11.734 ; Rise       ; car_exited      ;
+;  parked_car[18]        ; car_exited  ; 12.352 ; 12.352 ; Rise       ; car_exited      ;
+;  parked_car[19]        ; car_exited  ; 11.736 ; 11.736 ; Rise       ; car_exited      ;
+;  parked_car[20]        ; car_exited  ; 11.722 ; 11.722 ; Rise       ; car_exited      ;
+;  parked_car[21]        ; car_exited  ; 13.162 ; 13.162 ; Rise       ; car_exited      ;
+;  parked_car[22]        ; car_exited  ; 12.720 ; 12.720 ; Rise       ; car_exited      ;
+;  parked_car[23]        ; car_exited  ; 12.629 ; 12.629 ; Rise       ; car_exited      ;
+;  parked_car[24]        ; car_exited  ; 11.844 ; 11.844 ; Rise       ; car_exited      ;
+;  parked_car[25]        ; car_exited  ; 14.006 ; 14.006 ; Rise       ; car_exited      ;
+;  parked_car[26]        ; car_exited  ; 12.265 ; 12.265 ; Rise       ; car_exited      ;
+;  parked_car[27]        ; car_exited  ; 13.216 ; 13.216 ; Rise       ; car_exited      ;
+;  parked_car[28]        ; car_exited  ; 12.260 ; 12.260 ; Rise       ; car_exited      ;
+;  parked_car[29]        ; car_exited  ; 12.251 ; 12.251 ; Rise       ; car_exited      ;
+;  parked_car[30]        ; car_exited  ; 15.681 ; 15.681 ; Rise       ; car_exited      ;
+;  parked_car[31]        ; car_exited  ; 13.704 ; 13.704 ; Rise       ; car_exited      ;
+; uni_is_vacated_space   ; car_exited  ; 25.022 ; 25.022 ; Rise       ; car_exited      ;
+; uni_parked_car[*]      ; car_exited  ; 13.481 ; 13.481 ; Rise       ; car_exited      ;
+;  uni_parked_car[0]     ; car_exited  ; 10.347 ; 10.347 ; Rise       ; car_exited      ;
+;  uni_parked_car[1]     ; car_exited  ; 11.045 ; 11.045 ; Rise       ; car_exited      ;
+;  uni_parked_car[2]     ; car_exited  ; 11.422 ; 11.422 ; Rise       ; car_exited      ;
+;  uni_parked_car[3]     ; car_exited  ; 11.094 ; 11.094 ; Rise       ; car_exited      ;
+;  uni_parked_car[4]     ; car_exited  ; 11.538 ; 11.538 ; Rise       ; car_exited      ;
+;  uni_parked_car[5]     ; car_exited  ; 11.743 ; 11.743 ; Rise       ; car_exited      ;
+;  uni_parked_car[6]     ; car_exited  ; 11.930 ; 11.930 ; Rise       ; car_exited      ;
+;  uni_parked_car[7]     ; car_exited  ; 12.115 ; 12.115 ; Rise       ; car_exited      ;
+;  uni_parked_car[8]     ; car_exited  ; 12.528 ; 12.528 ; Rise       ; car_exited      ;
+;  uni_parked_car[9]     ; car_exited  ; 12.815 ; 12.815 ; Rise       ; car_exited      ;
+;  uni_parked_car[10]    ; car_exited  ; 11.336 ; 11.336 ; Rise       ; car_exited      ;
+;  uni_parked_car[11]    ; car_exited  ; 12.487 ; 12.487 ; Rise       ; car_exited      ;
+;  uni_parked_car[12]    ; car_exited  ; 11.561 ; 11.561 ; Rise       ; car_exited      ;
+;  uni_parked_car[13]    ; car_exited  ; 12.493 ; 12.493 ; Rise       ; car_exited      ;
+;  uni_parked_car[14]    ; car_exited  ; 11.320 ; 11.320 ; Rise       ; car_exited      ;
+;  uni_parked_car[15]    ; car_exited  ; 11.353 ; 11.353 ; Rise       ; car_exited      ;
+;  uni_parked_car[16]    ; car_exited  ; 12.420 ; 12.420 ; Rise       ; car_exited      ;
+;  uni_parked_car[17]    ; car_exited  ; 12.425 ; 12.425 ; Rise       ; car_exited      ;
+;  uni_parked_car[18]    ; car_exited  ; 12.802 ; 12.802 ; Rise       ; car_exited      ;
+;  uni_parked_car[19]    ; car_exited  ; 12.420 ; 12.420 ; Rise       ; car_exited      ;
+;  uni_parked_car[20]    ; car_exited  ; 13.481 ; 13.481 ; Rise       ; car_exited      ;
+;  uni_parked_car[21]    ; car_exited  ; 12.435 ; 12.435 ; Rise       ; car_exited      ;
+;  uni_parked_car[22]    ; car_exited  ; 12.363 ; 12.363 ; Rise       ; car_exited      ;
+;  uni_parked_car[23]    ; car_exited  ; 13.254 ; 13.254 ; Rise       ; car_exited      ;
+;  uni_parked_car[24]    ; car_exited  ; 12.418 ; 12.418 ; Rise       ; car_exited      ;
+;  uni_parked_car[25]    ; car_exited  ; 12.308 ; 12.308 ; Rise       ; car_exited      ;
+;  uni_parked_car[26]    ; car_exited  ; 12.855 ; 12.855 ; Rise       ; car_exited      ;
+;  uni_parked_car[27]    ; car_exited  ; 12.422 ; 12.422 ; Rise       ; car_exited      ;
+;  uni_parked_car[28]    ; car_exited  ; 13.448 ; 13.448 ; Rise       ; car_exited      ;
+;  uni_parked_car[29]    ; car_exited  ; 12.924 ; 12.924 ; Rise       ; car_exited      ;
+;  uni_parked_car[30]    ; car_exited  ; 13.427 ; 13.427 ; Rise       ; car_exited      ;
+;  uni_parked_car[31]    ; car_exited  ; 12.877 ; 12.877 ; Rise       ; car_exited      ;
+; uni_vacated_space[*]   ; car_exited  ; 21.565 ; 21.565 ; Rise       ; car_exited      ;
+;  uni_vacated_space[0]  ; car_exited  ; 10.367 ; 10.367 ; Rise       ; car_exited      ;
+;  uni_vacated_space[1]  ; car_exited  ; 14.641 ; 14.641 ; Rise       ; car_exited      ;
+;  uni_vacated_space[2]  ; car_exited  ; 15.143 ; 15.143 ; Rise       ; car_exited      ;
+;  uni_vacated_space[3]  ; car_exited  ; 16.338 ; 16.338 ; Rise       ; car_exited      ;
+;  uni_vacated_space[4]  ; car_exited  ; 16.639 ; 16.639 ; Rise       ; car_exited      ;
+;  uni_vacated_space[5]  ; car_exited  ; 17.329 ; 17.329 ; Rise       ; car_exited      ;
+;  uni_vacated_space[6]  ; car_exited  ; 18.570 ; 18.570 ; Rise       ; car_exited      ;
+;  uni_vacated_space[7]  ; car_exited  ; 18.954 ; 18.954 ; Rise       ; car_exited      ;
+;  uni_vacated_space[8]  ; car_exited  ; 18.088 ; 18.088 ; Rise       ; car_exited      ;
+;  uni_vacated_space[9]  ; car_exited  ; 18.040 ; 18.040 ; Rise       ; car_exited      ;
+;  uni_vacated_space[10] ; car_exited  ; 18.718 ; 18.718 ; Rise       ; car_exited      ;
+;  uni_vacated_space[11] ; car_exited  ; 18.886 ; 18.886 ; Rise       ; car_exited      ;
+;  uni_vacated_space[12] ; car_exited  ; 20.499 ; 20.499 ; Rise       ; car_exited      ;
+;  uni_vacated_space[13] ; car_exited  ; 18.888 ; 18.888 ; Rise       ; car_exited      ;
+;  uni_vacated_space[14] ; car_exited  ; 18.983 ; 18.983 ; Rise       ; car_exited      ;
+;  uni_vacated_space[15] ; car_exited  ; 19.771 ; 19.771 ; Rise       ; car_exited      ;
+;  uni_vacated_space[16] ; car_exited  ; 20.867 ; 20.867 ; Rise       ; car_exited      ;
+;  uni_vacated_space[17] ; car_exited  ; 20.349 ; 20.349 ; Rise       ; car_exited      ;
+;  uni_vacated_space[18] ; car_exited  ; 19.826 ; 19.826 ; Rise       ; car_exited      ;
+;  uni_vacated_space[19] ; car_exited  ; 19.904 ; 19.904 ; Rise       ; car_exited      ;
+;  uni_vacated_space[20] ; car_exited  ; 20.482 ; 20.482 ; Rise       ; car_exited      ;
+;  uni_vacated_space[21] ; car_exited  ; 20.409 ; 20.409 ; Rise       ; car_exited      ;
+;  uni_vacated_space[22] ; car_exited  ; 20.524 ; 20.524 ; Rise       ; car_exited      ;
+;  uni_vacated_space[23] ; car_exited  ; 20.475 ; 20.475 ; Rise       ; car_exited      ;
+;  uni_vacated_space[24] ; car_exited  ; 20.352 ; 20.352 ; Rise       ; car_exited      ;
+;  uni_vacated_space[25] ; car_exited  ; 20.871 ; 20.871 ; Rise       ; car_exited      ;
+;  uni_vacated_space[26] ; car_exited  ; 20.641 ; 20.641 ; Rise       ; car_exited      ;
+;  uni_vacated_space[27] ; car_exited  ; 21.193 ; 21.193 ; Rise       ; car_exited      ;
+;  uni_vacated_space[28] ; car_exited  ; 21.309 ; 21.309 ; Rise       ; car_exited      ;
+;  uni_vacated_space[29] ; car_exited  ; 21.377 ; 21.377 ; Rise       ; car_exited      ;
+;  uni_vacated_space[30] ; car_exited  ; 20.270 ; 20.270 ; Rise       ; car_exited      ;
+;  uni_vacated_space[31] ; car_exited  ; 21.565 ; 21.565 ; Rise       ; car_exited      ;
+; vacated_space[*]       ; car_exited  ; 23.901 ; 23.901 ; Rise       ; car_exited      ;
+;  vacated_space[0]      ; car_exited  ; 21.847 ; 21.847 ; Rise       ; car_exited      ;
+;  vacated_space[1]      ; car_exited  ; 21.950 ; 21.950 ; Rise       ; car_exited      ;
+;  vacated_space[2]      ; car_exited  ; 21.503 ; 21.503 ; Rise       ; car_exited      ;
+;  vacated_space[3]      ; car_exited  ; 21.857 ; 21.857 ; Rise       ; car_exited      ;
+;  vacated_space[4]      ; car_exited  ; 21.404 ; 21.404 ; Rise       ; car_exited      ;
+;  vacated_space[5]      ; car_exited  ; 21.502 ; 21.502 ; Rise       ; car_exited      ;
+;  vacated_space[6]      ; car_exited  ; 21.360 ; 21.360 ; Rise       ; car_exited      ;
+;  vacated_space[7]      ; car_exited  ; 21.370 ; 21.370 ; Rise       ; car_exited      ;
+;  vacated_space[8]      ; car_exited  ; 21.202 ; 21.202 ; Rise       ; car_exited      ;
+;  vacated_space[9]      ; car_exited  ; 21.575 ; 21.575 ; Rise       ; car_exited      ;
+;  vacated_space[10]     ; car_exited  ; 21.738 ; 21.738 ; Rise       ; car_exited      ;
+;  vacated_space[11]     ; car_exited  ; 21.685 ; 21.685 ; Rise       ; car_exited      ;
+;  vacated_space[12]     ; car_exited  ; 22.545 ; 22.545 ; Rise       ; car_exited      ;
+;  vacated_space[13]     ; car_exited  ; 22.091 ; 22.091 ; Rise       ; car_exited      ;
+;  vacated_space[14]     ; car_exited  ; 22.588 ; 22.588 ; Rise       ; car_exited      ;
+;  vacated_space[15]     ; car_exited  ; 22.653 ; 22.653 ; Rise       ; car_exited      ;
+;  vacated_space[16]     ; car_exited  ; 22.036 ; 22.036 ; Rise       ; car_exited      ;
+;  vacated_space[17]     ; car_exited  ; 22.020 ; 22.020 ; Rise       ; car_exited      ;
+;  vacated_space[18]     ; car_exited  ; 22.892 ; 22.892 ; Rise       ; car_exited      ;
+;  vacated_space[19]     ; car_exited  ; 22.435 ; 22.435 ; Rise       ; car_exited      ;
+;  vacated_space[20]     ; car_exited  ; 22.986 ; 22.986 ; Rise       ; car_exited      ;
+;  vacated_space[21]     ; car_exited  ; 22.490 ; 22.490 ; Rise       ; car_exited      ;
+;  vacated_space[22]     ; car_exited  ; 21.530 ; 21.530 ; Rise       ; car_exited      ;
+;  vacated_space[23]     ; car_exited  ; 21.648 ; 21.648 ; Rise       ; car_exited      ;
+;  vacated_space[24]     ; car_exited  ; 22.829 ; 22.829 ; Rise       ; car_exited      ;
+;  vacated_space[25]     ; car_exited  ; 22.822 ; 22.822 ; Rise       ; car_exited      ;
+;  vacated_space[26]     ; car_exited  ; 22.730 ; 22.730 ; Rise       ; car_exited      ;
+;  vacated_space[27]     ; car_exited  ; 22.125 ; 22.125 ; Rise       ; car_exited      ;
+;  vacated_space[28]     ; car_exited  ; 23.901 ; 23.901 ; Rise       ; car_exited      ;
+;  vacated_space[29]     ; car_exited  ; 21.923 ; 21.923 ; Rise       ; car_exited      ;
+;  vacated_space[30]     ; car_exited  ; 22.045 ; 22.045 ; Rise       ; car_exited      ;
+;  vacated_space[31]     ; car_exited  ; 23.724 ; 23.724 ; Rise       ; car_exited      ;
+; is_vacated_space       ; clk         ; 23.291 ; 23.291 ; Rise       ; clk             ;
+; vacated_space[*]       ; clk         ; 19.523 ; 19.523 ; Rise       ; clk             ;
+;  vacated_space[0]      ; clk         ; 17.646 ; 17.646 ; Rise       ; clk             ;
+;  vacated_space[1]      ; clk         ; 17.749 ; 17.749 ; Rise       ; clk             ;
+;  vacated_space[2]      ; clk         ; 17.302 ; 17.302 ; Rise       ; clk             ;
+;  vacated_space[3]      ; clk         ; 17.656 ; 17.656 ; Rise       ; clk             ;
+;  vacated_space[4]      ; clk         ; 17.203 ; 17.203 ; Rise       ; clk             ;
+;  vacated_space[5]      ; clk         ; 17.301 ; 17.301 ; Rise       ; clk             ;
+;  vacated_space[6]      ; clk         ; 17.159 ; 17.159 ; Rise       ; clk             ;
+;  vacated_space[7]      ; clk         ; 17.169 ; 17.169 ; Rise       ; clk             ;
+;  vacated_space[8]      ; clk         ; 17.001 ; 17.001 ; Rise       ; clk             ;
+;  vacated_space[9]      ; clk         ; 16.765 ; 16.765 ; Rise       ; clk             ;
+;  vacated_space[10]     ; clk         ; 17.283 ; 17.283 ; Rise       ; clk             ;
+;  vacated_space[11]     ; clk         ; 17.484 ; 17.484 ; Rise       ; clk             ;
+;  vacated_space[12]     ; clk         ; 18.100 ; 18.100 ; Rise       ; clk             ;
+;  vacated_space[13]     ; clk         ; 17.718 ; 17.718 ; Rise       ; clk             ;
+;  vacated_space[14]     ; clk         ; 18.115 ; 18.115 ; Rise       ; clk             ;
+;  vacated_space[15]     ; clk         ; 17.638 ; 17.638 ; Rise       ; clk             ;
+;  vacated_space[16]     ; clk         ; 17.120 ; 17.120 ; Rise       ; clk             ;
+;  vacated_space[17]     ; clk         ; 17.080 ; 17.080 ; Rise       ; clk             ;
+;  vacated_space[18]     ; clk         ; 17.732 ; 17.732 ; Rise       ; clk             ;
+;  vacated_space[19]     ; clk         ; 17.803 ; 17.803 ; Rise       ; clk             ;
+;  vacated_space[20]     ; clk         ; 18.246 ; 18.246 ; Rise       ; clk             ;
+;  vacated_space[21]     ; clk         ; 18.289 ; 18.289 ; Rise       ; clk             ;
+;  vacated_space[22]     ; clk         ; 17.329 ; 17.329 ; Rise       ; clk             ;
+;  vacated_space[23]     ; clk         ; 17.447 ; 17.447 ; Rise       ; clk             ;
+;  vacated_space[24]     ; clk         ; 18.628 ; 18.628 ; Rise       ; clk             ;
+;  vacated_space[25]     ; clk         ; 18.170 ; 18.170 ; Rise       ; clk             ;
+;  vacated_space[26]     ; clk         ; 17.903 ; 17.903 ; Rise       ; clk             ;
+;  vacated_space[27]     ; clk         ; 17.353 ; 17.353 ; Rise       ; clk             ;
+;  vacated_space[28]     ; clk         ; 19.118 ; 19.118 ; Rise       ; clk             ;
+;  vacated_space[29]     ; clk         ; 16.185 ; 16.185 ; Rise       ; clk             ;
+;  vacated_space[30]     ; clk         ; 17.639 ; 17.639 ; Rise       ; clk             ;
+;  vacated_space[31]     ; clk         ; 19.523 ; 19.523 ; Rise       ; clk             ;
++------------------------+-------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                         ;
++------------------------+-------------+--------+--------+------------+-----------------+
+; Data Port              ; Clock Port  ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------------------+-------------+--------+--------+------------+-----------------+
+; is_vacated_space       ; car_entered ; 16.667 ; 16.667 ; Rise       ; car_entered     ;
+; parked_car[*]          ; car_entered ; 9.147  ; 9.147  ; Rise       ; car_entered     ;
+;  parked_car[0]         ; car_entered ; 10.512 ; 10.512 ; Rise       ; car_entered     ;
+;  parked_car[1]         ; car_entered ; 10.409 ; 10.409 ; Rise       ; car_entered     ;
+;  parked_car[2]         ; car_entered ; 9.559  ; 9.559  ; Rise       ; car_entered     ;
+;  parked_car[3]         ; car_entered ; 10.496 ; 10.496 ; Rise       ; car_entered     ;
+;  parked_car[4]         ; car_entered ; 9.835  ; 9.835  ; Rise       ; car_entered     ;
+;  parked_car[5]         ; car_entered ; 9.768  ; 9.768  ; Rise       ; car_entered     ;
+;  parked_car[6]         ; car_entered ; 9.621  ; 9.621  ; Rise       ; car_entered     ;
+;  parked_car[7]         ; car_entered ; 12.326 ; 12.326 ; Rise       ; car_entered     ;
+;  parked_car[8]         ; car_entered ; 9.390  ; 9.390  ; Rise       ; car_entered     ;
+;  parked_car[9]         ; car_entered ; 10.244 ; 10.244 ; Rise       ; car_entered     ;
+;  parked_car[10]        ; car_entered ; 12.094 ; 12.094 ; Rise       ; car_entered     ;
+;  parked_car[11]        ; car_entered ; 10.730 ; 10.730 ; Rise       ; car_entered     ;
+;  parked_car[12]        ; car_entered ; 10.313 ; 10.313 ; Rise       ; car_entered     ;
+;  parked_car[13]        ; car_entered ; 10.014 ; 10.014 ; Rise       ; car_entered     ;
+;  parked_car[14]        ; car_entered ; 9.861  ; 9.861  ; Rise       ; car_entered     ;
+;  parked_car[15]        ; car_entered ; 9.737  ; 9.737  ; Rise       ; car_entered     ;
+;  parked_car[16]        ; car_entered ; 9.628  ; 9.628  ; Rise       ; car_entered     ;
+;  parked_car[17]        ; car_entered ; 9.616  ; 9.616  ; Rise       ; car_entered     ;
+;  parked_car[18]        ; car_entered ; 9.915  ; 9.915  ; Rise       ; car_entered     ;
+;  parked_car[19]        ; car_entered ; 9.864  ; 9.864  ; Rise       ; car_entered     ;
+;  parked_car[20]        ; car_entered ; 10.077 ; 10.077 ; Rise       ; car_entered     ;
+;  parked_car[21]        ; car_entered ; 11.237 ; 11.237 ; Rise       ; car_entered     ;
+;  parked_car[22]        ; car_entered ; 10.287 ; 10.287 ; Rise       ; car_entered     ;
+;  parked_car[23]        ; car_entered ; 10.676 ; 10.676 ; Rise       ; car_entered     ;
+;  parked_car[24]        ; car_entered ; 9.478  ; 9.478  ; Rise       ; car_entered     ;
+;  parked_car[25]        ; car_entered ; 12.342 ; 12.342 ; Rise       ; car_entered     ;
+;  parked_car[26]        ; car_entered ; 9.877  ; 9.877  ; Rise       ; car_entered     ;
+;  parked_car[27]        ; car_entered ; 11.483 ; 11.483 ; Rise       ; car_entered     ;
+;  parked_car[28]        ; car_entered ; 9.947  ; 9.947  ; Rise       ; car_entered     ;
+;  parked_car[29]        ; car_entered ; 9.147  ; 9.147  ; Rise       ; car_entered     ;
+;  parked_car[30]        ; car_entered ; 13.232 ; 13.232 ; Rise       ; car_entered     ;
+;  parked_car[31]        ; car_entered ; 11.223 ; 11.223 ; Rise       ; car_entered     ;
+; uni_is_vacated_space   ; car_entered ; 14.901 ; 14.901 ; Rise       ; car_entered     ;
+; uni_parked_car[*]      ; car_entered ; 8.981  ; 8.981  ; Rise       ; car_entered     ;
+;  uni_parked_car[0]     ; car_entered ; 11.281 ; 11.281 ; Rise       ; car_entered     ;
+;  uni_parked_car[1]     ; car_entered ; 11.200 ; 11.200 ; Rise       ; car_entered     ;
+;  uni_parked_car[2]     ; car_entered ; 10.836 ; 10.836 ; Rise       ; car_entered     ;
+;  uni_parked_car[3]     ; car_entered ; 9.764  ; 9.764  ; Rise       ; car_entered     ;
+;  uni_parked_car[4]     ; car_entered ; 10.650 ; 10.650 ; Rise       ; car_entered     ;
+;  uni_parked_car[5]     ; car_entered ; 10.857 ; 10.857 ; Rise       ; car_entered     ;
+;  uni_parked_car[6]     ; car_entered ; 10.372 ; 10.372 ; Rise       ; car_entered     ;
+;  uni_parked_car[7]     ; car_entered ; 9.923  ; 9.923  ; Rise       ; car_entered     ;
+;  uni_parked_car[8]     ; car_entered ; 10.462 ; 10.462 ; Rise       ; car_entered     ;
+;  uni_parked_car[9]     ; car_entered ; 10.988 ; 10.988 ; Rise       ; car_entered     ;
+;  uni_parked_car[10]    ; car_entered ; 8.981  ; 8.981  ; Rise       ; car_entered     ;
+;  uni_parked_car[11]    ; car_entered ; 11.108 ; 11.108 ; Rise       ; car_entered     ;
+;  uni_parked_car[12]    ; car_entered ; 9.967  ; 9.967  ; Rise       ; car_entered     ;
+;  uni_parked_car[13]    ; car_entered ; 10.335 ; 10.335 ; Rise       ; car_entered     ;
+;  uni_parked_car[14]    ; car_entered ; 9.125  ; 9.125  ; Rise       ; car_entered     ;
+;  uni_parked_car[15]    ; car_entered ; 9.860  ; 9.860  ; Rise       ; car_entered     ;
+;  uni_parked_car[16]    ; car_entered ; 10.156 ; 10.156 ; Rise       ; car_entered     ;
+;  uni_parked_car[17]    ; car_entered ; 10.802 ; 10.802 ; Rise       ; car_entered     ;
+;  uni_parked_car[18]    ; car_entered ; 10.133 ; 10.133 ; Rise       ; car_entered     ;
+;  uni_parked_car[19]    ; car_entered ; 10.406 ; 10.406 ; Rise       ; car_entered     ;
+;  uni_parked_car[20]    ; car_entered ; 10.682 ; 10.682 ; Rise       ; car_entered     ;
+;  uni_parked_car[21]    ; car_entered ; 10.612 ; 10.612 ; Rise       ; car_entered     ;
+;  uni_parked_car[22]    ; car_entered ; 10.540 ; 10.540 ; Rise       ; car_entered     ;
+;  uni_parked_car[23]    ; car_entered ; 10.580 ; 10.580 ; Rise       ; car_entered     ;
+;  uni_parked_car[24]    ; car_entered ; 9.762  ; 9.762  ; Rise       ; car_entered     ;
+;  uni_parked_car[25]    ; car_entered ; 10.354 ; 10.354 ; Rise       ; car_entered     ;
+;  uni_parked_car[26]    ; car_entered ; 10.272 ; 10.272 ; Rise       ; car_entered     ;
+;  uni_parked_car[27]    ; car_entered ; 9.632  ; 9.632  ; Rise       ; car_entered     ;
+;  uni_parked_car[28]    ; car_entered ; 10.832 ; 10.832 ; Rise       ; car_entered     ;
+;  uni_parked_car[29]    ; car_entered ; 10.825 ; 10.825 ; Rise       ; car_entered     ;
+;  uni_parked_car[30]    ; car_entered ; 10.112 ; 10.112 ; Rise       ; car_entered     ;
+;  uni_parked_car[31]    ; car_entered ; 10.287 ; 10.287 ; Rise       ; car_entered     ;
+; uni_vacated_space[*]   ; car_entered ; 11.301 ; 11.301 ; Rise       ; car_entered     ;
+;  uni_vacated_space[0]  ; car_entered ; 11.301 ; 11.301 ; Rise       ; car_entered     ;
+;  uni_vacated_space[1]  ; car_entered ; 14.752 ; 14.752 ; Rise       ; car_entered     ;
+;  uni_vacated_space[2]  ; car_entered ; 14.506 ; 14.506 ; Rise       ; car_entered     ;
+;  uni_vacated_space[3]  ; car_entered ; 14.215 ; 14.215 ; Rise       ; car_entered     ;
+;  uni_vacated_space[4]  ; car_entered ; 14.094 ; 14.094 ; Rise       ; car_entered     ;
+;  uni_vacated_space[5]  ; car_entered ; 14.667 ; 14.667 ; Rise       ; car_entered     ;
+;  uni_vacated_space[6]  ; car_entered ; 14.667 ; 14.667 ; Rise       ; car_entered     ;
+;  uni_vacated_space[7]  ; car_entered ; 14.610 ; 14.610 ; Rise       ; car_entered     ;
+;  uni_vacated_space[8]  ; car_entered ; 13.990 ; 13.990 ; Rise       ; car_entered     ;
+;  uni_vacated_space[9]  ; car_entered ; 13.315 ; 13.315 ; Rise       ; car_entered     ;
+;  uni_vacated_space[10] ; car_entered ; 14.595 ; 14.595 ; Rise       ; car_entered     ;
+;  uni_vacated_space[11] ; car_entered ; 14.032 ; 14.032 ; Rise       ; car_entered     ;
+;  uni_vacated_space[12] ; car_entered ; 14.907 ; 14.907 ; Rise       ; car_entered     ;
+;  uni_vacated_space[13] ; car_entered ; 13.576 ; 13.576 ; Rise       ; car_entered     ;
+;  uni_vacated_space[14] ; car_entered ; 13.624 ; 13.624 ; Rise       ; car_entered     ;
+;  uni_vacated_space[15] ; car_entered ; 15.014 ; 15.014 ; Rise       ; car_entered     ;
+;  uni_vacated_space[16] ; car_entered ; 15.352 ; 15.352 ; Rise       ; car_entered     ;
+;  uni_vacated_space[17] ; car_entered ; 14.693 ; 14.693 ; Rise       ; car_entered     ;
+;  uni_vacated_space[18] ; car_entered ; 14.591 ; 14.591 ; Rise       ; car_entered     ;
+;  uni_vacated_space[19] ; car_entered ; 14.546 ; 14.546 ; Rise       ; car_entered     ;
+;  uni_vacated_space[20] ; car_entered ; 15.107 ; 15.107 ; Rise       ; car_entered     ;
+;  uni_vacated_space[21] ; car_entered ; 15.200 ; 15.200 ; Rise       ; car_entered     ;
+;  uni_vacated_space[22] ; car_entered ; 14.543 ; 14.543 ; Rise       ; car_entered     ;
+;  uni_vacated_space[23] ; car_entered ; 14.604 ; 14.604 ; Rise       ; car_entered     ;
+;  uni_vacated_space[24] ; car_entered ; 14.362 ; 14.362 ; Rise       ; car_entered     ;
+;  uni_vacated_space[25] ; car_entered ; 15.536 ; 15.536 ; Rise       ; car_entered     ;
+;  uni_vacated_space[26] ; car_entered ; 14.950 ; 14.950 ; Rise       ; car_entered     ;
+;  uni_vacated_space[27] ; car_entered ; 15.428 ; 15.428 ; Rise       ; car_entered     ;
+;  uni_vacated_space[28] ; car_entered ; 15.689 ; 15.689 ; Rise       ; car_entered     ;
+;  uni_vacated_space[29] ; car_entered ; 15.347 ; 15.347 ; Rise       ; car_entered     ;
+;  uni_vacated_space[30] ; car_entered ; 14.942 ; 14.942 ; Rise       ; car_entered     ;
+;  uni_vacated_space[31] ; car_entered ; 14.320 ; 14.320 ; Rise       ; car_entered     ;
+; vacated_space[*]       ; car_entered ; 13.378 ; 13.378 ; Rise       ; car_entered     ;
+;  vacated_space[0]      ; car_entered ; 13.378 ; 13.378 ; Rise       ; car_entered     ;
+;  vacated_space[1]      ; car_entered ; 15.344 ; 15.344 ; Rise       ; car_entered     ;
+;  vacated_space[2]      ; car_entered ; 14.897 ; 14.897 ; Rise       ; car_entered     ;
+;  vacated_space[3]      ; car_entered ; 15.251 ; 15.251 ; Rise       ; car_entered     ;
+;  vacated_space[4]      ; car_entered ; 14.798 ; 14.798 ; Rise       ; car_entered     ;
+;  vacated_space[5]      ; car_entered ; 14.896 ; 14.896 ; Rise       ; car_entered     ;
+;  vacated_space[6]      ; car_entered ; 14.754 ; 14.754 ; Rise       ; car_entered     ;
+;  vacated_space[7]      ; car_entered ; 14.764 ; 14.764 ; Rise       ; car_entered     ;
+;  vacated_space[8]      ; car_entered ; 14.596 ; 14.596 ; Rise       ; car_entered     ;
+;  vacated_space[9]      ; car_entered ; 14.360 ; 14.360 ; Rise       ; car_entered     ;
+;  vacated_space[10]     ; car_entered ; 14.878 ; 14.878 ; Rise       ; car_entered     ;
+;  vacated_space[11]     ; car_entered ; 15.079 ; 15.079 ; Rise       ; car_entered     ;
+;  vacated_space[12]     ; car_entered ; 15.462 ; 15.462 ; Rise       ; car_entered     ;
+;  vacated_space[13]     ; car_entered ; 15.313 ; 15.313 ; Rise       ; car_entered     ;
+;  vacated_space[14]     ; car_entered ; 15.710 ; 15.710 ; Rise       ; car_entered     ;
+;  vacated_space[15]     ; car_entered ; 15.233 ; 15.233 ; Rise       ; car_entered     ;
+;  vacated_space[16]     ; car_entered ; 14.715 ; 14.715 ; Rise       ; car_entered     ;
+;  vacated_space[17]     ; car_entered ; 14.675 ; 14.675 ; Rise       ; car_entered     ;
+;  vacated_space[18]     ; car_entered ; 15.327 ; 15.327 ; Rise       ; car_entered     ;
+;  vacated_space[19]     ; car_entered ; 15.398 ; 15.398 ; Rise       ; car_entered     ;
+;  vacated_space[20]     ; car_entered ; 15.841 ; 15.841 ; Rise       ; car_entered     ;
+;  vacated_space[21]     ; car_entered ; 15.884 ; 15.884 ; Rise       ; car_entered     ;
+;  vacated_space[22]     ; car_entered ; 13.993 ; 13.993 ; Rise       ; car_entered     ;
+;  vacated_space[23]     ; car_entered ; 15.042 ; 15.042 ; Rise       ; car_entered     ;
+;  vacated_space[24]     ; car_entered ; 16.223 ; 16.223 ; Rise       ; car_entered     ;
+;  vacated_space[25]     ; car_entered ; 15.765 ; 15.765 ; Rise       ; car_entered     ;
+;  vacated_space[26]     ; car_entered ; 15.498 ; 15.498 ; Rise       ; car_entered     ;
+;  vacated_space[27]     ; car_entered ; 14.948 ; 14.948 ; Rise       ; car_entered     ;
+;  vacated_space[28]     ; car_entered ; 16.713 ; 16.713 ; Rise       ; car_entered     ;
+;  vacated_space[29]     ; car_entered ; 13.780 ; 13.780 ; Rise       ; car_entered     ;
+;  vacated_space[30]     ; car_entered ; 15.234 ; 15.234 ; Rise       ; car_entered     ;
+;  vacated_space[31]     ; car_entered ; 14.733 ; 14.733 ; Rise       ; car_entered     ;
+; is_vacated_space       ; car_exited  ; 16.116 ; 16.116 ; Rise       ; car_exited      ;
+; parked_car[*]          ; car_exited  ; 8.747  ; 8.747  ; Rise       ; car_exited      ;
+;  parked_car[0]         ; car_exited  ; 8.747  ; 8.747  ; Rise       ; car_exited      ;
+;  parked_car[1]         ; car_exited  ; 9.615  ; 9.615  ; Rise       ; car_exited      ;
+;  parked_car[2]         ; car_exited  ; 9.037  ; 9.037  ; Rise       ; car_exited      ;
+;  parked_car[3]         ; car_exited  ; 9.940  ; 9.940  ; Rise       ; car_exited      ;
+;  parked_car[4]         ; car_exited  ; 9.252  ; 9.252  ; Rise       ; car_exited      ;
+;  parked_car[5]         ; car_exited  ; 9.061  ; 9.061  ; Rise       ; car_exited      ;
+;  parked_car[6]         ; car_exited  ; 9.320  ; 9.320  ; Rise       ; car_exited      ;
+;  parked_car[7]         ; car_exited  ; 11.624 ; 11.624 ; Rise       ; car_exited      ;
+;  parked_car[8]         ; car_exited  ; 9.603  ; 9.603  ; Rise       ; car_exited      ;
+;  parked_car[9]         ; car_exited  ; 10.705 ; 10.705 ; Rise       ; car_exited      ;
+;  parked_car[10]        ; car_exited  ; 11.981 ; 11.981 ; Rise       ; car_exited      ;
+;  parked_car[11]        ; car_exited  ; 9.944  ; 9.944  ; Rise       ; car_exited      ;
+;  parked_car[12]        ; car_exited  ; 10.519 ; 10.519 ; Rise       ; car_exited      ;
+;  parked_car[13]        ; car_exited  ; 9.561  ; 9.561  ; Rise       ; car_exited      ;
+;  parked_car[14]        ; car_exited  ; 10.087 ; 10.087 ; Rise       ; car_exited      ;
+;  parked_car[15]        ; car_exited  ; 10.221 ; 10.221 ; Rise       ; car_exited      ;
+;  parked_car[16]        ; car_exited  ; 9.299  ; 9.299  ; Rise       ; car_exited      ;
+;  parked_car[17]        ; car_exited  ; 9.782  ; 9.782  ; Rise       ; car_exited      ;
+;  parked_car[18]        ; car_exited  ; 10.250 ; 10.250 ; Rise       ; car_exited      ;
+;  parked_car[19]        ; car_exited  ; 9.071  ; 9.071  ; Rise       ; car_exited      ;
+;  parked_car[20]        ; car_exited  ; 9.712  ; 9.712  ; Rise       ; car_exited      ;
+;  parked_car[21]        ; car_exited  ; 10.463 ; 10.463 ; Rise       ; car_exited      ;
+;  parked_car[22]        ; car_exited  ; 10.575 ; 10.575 ; Rise       ; car_exited      ;
+;  parked_car[23]        ; car_exited  ; 10.456 ; 10.456 ; Rise       ; car_exited      ;
+;  parked_car[24]        ; car_exited  ; 9.765  ; 9.765  ; Rise       ; car_exited      ;
+;  parked_car[25]        ; car_exited  ; 11.341 ; 11.341 ; Rise       ; car_exited      ;
+;  parked_car[26]        ; car_exited  ; 9.354  ; 9.354  ; Rise       ; car_exited      ;
+;  parked_car[27]        ; car_exited  ; 10.641 ; 10.641 ; Rise       ; car_exited      ;
+;  parked_car[28]        ; car_exited  ; 9.679  ; 9.679  ; Rise       ; car_exited      ;
+;  parked_car[29]        ; car_exited  ; 9.855  ; 9.855  ; Rise       ; car_exited      ;
+;  parked_car[30]        ; car_exited  ; 13.742 ; 13.742 ; Rise       ; car_exited      ;
+;  parked_car[31]        ; car_exited  ; 10.672 ; 10.672 ; Rise       ; car_exited      ;
+; uni_is_vacated_space   ; car_exited  ; 14.249 ; 14.249 ; Rise       ; car_exited      ;
+; uni_parked_car[*]      ; car_exited  ; 8.981  ; 8.981  ; Rise       ; car_exited      ;
+;  uni_parked_car[0]     ; car_exited  ; 10.347 ; 10.347 ; Rise       ; car_exited      ;
+;  uni_parked_car[1]     ; car_exited  ; 10.447 ; 10.447 ; Rise       ; car_exited      ;
+;  uni_parked_car[2]     ; car_exited  ; 10.016 ; 10.016 ; Rise       ; car_exited      ;
+;  uni_parked_car[3]     ; car_exited  ; 9.728  ; 9.728  ; Rise       ; car_exited      ;
+;  uni_parked_car[4]     ; car_exited  ; 10.052 ; 10.052 ; Rise       ; car_exited      ;
+;  uni_parked_car[5]     ; car_exited  ; 10.003 ; 10.003 ; Rise       ; car_exited      ;
+;  uni_parked_car[6]     ; car_exited  ; 9.655  ; 9.655  ; Rise       ; car_exited      ;
+;  uni_parked_car[7]     ; car_exited  ; 10.303 ; 10.303 ; Rise       ; car_exited      ;
+;  uni_parked_car[8]     ; car_exited  ; 10.669 ; 10.669 ; Rise       ; car_exited      ;
+;  uni_parked_car[9]     ; car_exited  ; 10.576 ; 10.576 ; Rise       ; car_exited      ;
+;  uni_parked_car[10]    ; car_exited  ; 9.580  ; 9.580  ; Rise       ; car_exited      ;
+;  uni_parked_car[11]    ; car_exited  ; 10.731 ; 10.731 ; Rise       ; car_exited      ;
+;  uni_parked_car[12]    ; car_exited  ; 9.738  ; 9.738  ; Rise       ; car_exited      ;
+;  uni_parked_car[13]    ; car_exited  ; 10.629 ; 10.629 ; Rise       ; car_exited      ;
+;  uni_parked_car[14]    ; car_exited  ; 9.564  ; 9.564  ; Rise       ; car_exited      ;
+;  uni_parked_car[15]    ; car_exited  ; 8.981  ; 8.981  ; Rise       ; car_exited      ;
+;  uni_parked_car[16]    ; car_exited  ; 9.791  ; 9.791  ; Rise       ; car_exited      ;
+;  uni_parked_car[17]    ; car_exited  ; 10.044 ; 10.044 ; Rise       ; car_exited      ;
+;  uni_parked_car[18]    ; car_exited  ; 10.631 ; 10.631 ; Rise       ; car_exited      ;
+;  uni_parked_car[19]    ; car_exited  ; 9.681  ; 9.681  ; Rise       ; car_exited      ;
+;  uni_parked_car[20]    ; car_exited  ; 11.444 ; 11.444 ; Rise       ; car_exited      ;
+;  uni_parked_car[21]    ; car_exited  ; 10.120 ; 10.120 ; Rise       ; car_exited      ;
+;  uni_parked_car[22]    ; car_exited  ; 10.140 ; 10.140 ; Rise       ; car_exited      ;
+;  uni_parked_car[23]    ; car_exited  ; 11.498 ; 11.498 ; Rise       ; car_exited      ;
+;  uni_parked_car[24]    ; car_exited  ; 10.082 ; 10.082 ; Rise       ; car_exited      ;
+;  uni_parked_car[25]    ; car_exited  ; 9.436  ; 9.436  ; Rise       ; car_exited      ;
+;  uni_parked_car[26]    ; car_exited  ; 9.747  ; 9.747  ; Rise       ; car_exited      ;
+;  uni_parked_car[27]    ; car_exited  ; 9.669  ; 9.669  ; Rise       ; car_exited      ;
+;  uni_parked_car[28]    ; car_exited  ; 10.111 ; 10.111 ; Rise       ; car_exited      ;
+;  uni_parked_car[29]    ; car_exited  ; 9.713  ; 9.713  ; Rise       ; car_exited      ;
+;  uni_parked_car[30]    ; car_exited  ; 10.835 ; 10.835 ; Rise       ; car_exited      ;
+;  uni_parked_car[31]    ; car_exited  ; 9.635  ; 9.635  ; Rise       ; car_exited      ;
+; uni_vacated_space[*]   ; car_exited  ; 10.286 ; 10.286 ; Rise       ; car_exited      ;
+;  uni_vacated_space[0]  ; car_exited  ; 10.286 ; 10.286 ; Rise       ; car_exited      ;
+;  uni_vacated_space[1]  ; car_exited  ; 13.894 ; 13.894 ; Rise       ; car_exited      ;
+;  uni_vacated_space[2]  ; car_exited  ; 13.686 ; 13.686 ; Rise       ; car_exited      ;
+;  uni_vacated_space[3]  ; car_exited  ; 14.163 ; 14.163 ; Rise       ; car_exited      ;
+;  uni_vacated_space[4]  ; car_exited  ; 13.448 ; 13.448 ; Rise       ; car_exited      ;
+;  uni_vacated_space[5]  ; car_exited  ; 13.960 ; 13.960 ; Rise       ; car_exited      ;
+;  uni_vacated_space[6]  ; car_exited  ; 14.178 ; 14.178 ; Rise       ; car_exited      ;
+;  uni_vacated_space[7]  ; car_exited  ; 14.648 ; 14.648 ; Rise       ; car_exited      ;
+;  uni_vacated_space[8]  ; car_exited  ; 13.844 ; 13.844 ; Rise       ; car_exited      ;
+;  uni_vacated_space[9]  ; car_exited  ; 13.515 ; 13.515 ; Rise       ; car_exited      ;
+;  uni_vacated_space[10] ; car_exited  ; 14.795 ; 14.795 ; Rise       ; car_exited      ;
+;  uni_vacated_space[11] ; car_exited  ; 13.246 ; 13.246 ; Rise       ; car_exited      ;
+;  uni_vacated_space[12] ; car_exited  ; 15.113 ; 15.113 ; Rise       ; car_exited      ;
+;  uni_vacated_space[13] ; car_exited  ; 13.855 ; 13.855 ; Rise       ; car_exited      ;
+;  uni_vacated_space[14] ; car_exited  ; 13.893 ; 13.893 ; Rise       ; car_exited      ;
+;  uni_vacated_space[15] ; car_exited  ; 14.487 ; 14.487 ; Rise       ; car_exited      ;
+;  uni_vacated_space[16] ; car_exited  ; 15.023 ; 15.023 ; Rise       ; car_exited      ;
+;  uni_vacated_space[17] ; car_exited  ; 14.859 ; 14.859 ; Rise       ; car_exited      ;
+;  uni_vacated_space[18] ; car_exited  ; 14.710 ; 14.710 ; Rise       ; car_exited      ;
+;  uni_vacated_space[19] ; car_exited  ; 13.753 ; 13.753 ; Rise       ; car_exited      ;
+;  uni_vacated_space[20] ; car_exited  ; 15.033 ; 15.033 ; Rise       ; car_exited      ;
+;  uni_vacated_space[21] ; car_exited  ; 14.426 ; 14.426 ; Rise       ; car_exited      ;
+;  uni_vacated_space[22] ; car_exited  ; 14.831 ; 14.831 ; Rise       ; car_exited      ;
+;  uni_vacated_space[23] ; car_exited  ; 15.243 ; 15.243 ; Rise       ; car_exited      ;
+;  uni_vacated_space[24] ; car_exited  ; 14.649 ; 14.649 ; Rise       ; car_exited      ;
+;  uni_vacated_space[25] ; car_exited  ; 15.274 ; 15.274 ; Rise       ; car_exited      ;
+;  uni_vacated_space[26] ; car_exited  ; 14.425 ; 14.425 ; Rise       ; car_exited      ;
+;  uni_vacated_space[27] ; car_exited  ; 15.235 ; 15.235 ; Rise       ; car_exited      ;
+;  uni_vacated_space[28] ; car_exited  ; 14.968 ; 14.968 ; Rise       ; car_exited      ;
+;  uni_vacated_space[29] ; car_exited  ; 15.691 ; 15.691 ; Rise       ; car_exited      ;
+;  uni_vacated_space[30] ; car_exited  ; 14.674 ; 14.674 ; Rise       ; car_exited      ;
+;  uni_vacated_space[31] ; car_exited  ; 13.668 ; 13.668 ; Rise       ; car_exited      ;
+; vacated_space[*]       ; car_exited  ; 11.613 ; 11.613 ; Rise       ; car_exited      ;
+;  vacated_space[0]      ; car_exited  ; 11.613 ; 11.613 ; Rise       ; car_exited      ;
+;  vacated_space[1]      ; car_exited  ; 14.777 ; 14.777 ; Rise       ; car_exited      ;
+;  vacated_space[2]      ; car_exited  ; 14.306 ; 14.306 ; Rise       ; car_exited      ;
+;  vacated_space[3]      ; car_exited  ; 14.565 ; 14.565 ; Rise       ; car_exited      ;
+;  vacated_space[4]      ; car_exited  ; 14.340 ; 14.340 ; Rise       ; car_exited      ;
+;  vacated_space[5]      ; car_exited  ; 14.484 ; 14.484 ; Rise       ; car_exited      ;
+;  vacated_space[6]      ; car_exited  ; 14.342 ; 14.342 ; Rise       ; car_exited      ;
+;  vacated_space[7]      ; car_exited  ; 14.352 ; 14.352 ; Rise       ; car_exited      ;
+;  vacated_space[8]      ; car_exited  ; 14.184 ; 14.184 ; Rise       ; car_exited      ;
+;  vacated_space[9]      ; car_exited  ; 13.948 ; 13.948 ; Rise       ; car_exited      ;
+;  vacated_space[10]     ; car_exited  ; 14.466 ; 14.466 ; Rise       ; car_exited      ;
+;  vacated_space[11]     ; car_exited  ; 14.667 ; 14.667 ; Rise       ; car_exited      ;
+;  vacated_space[12]     ; car_exited  ; 15.283 ; 15.283 ; Rise       ; car_exited      ;
+;  vacated_space[13]     ; car_exited  ; 14.901 ; 14.901 ; Rise       ; car_exited      ;
+;  vacated_space[14]     ; car_exited  ; 15.298 ; 15.298 ; Rise       ; car_exited      ;
+;  vacated_space[15]     ; car_exited  ; 14.821 ; 14.821 ; Rise       ; car_exited      ;
+;  vacated_space[16]     ; car_exited  ; 14.303 ; 14.303 ; Rise       ; car_exited      ;
+;  vacated_space[17]     ; car_exited  ; 14.263 ; 14.263 ; Rise       ; car_exited      ;
+;  vacated_space[18]     ; car_exited  ; 14.915 ; 14.915 ; Rise       ; car_exited      ;
+;  vacated_space[19]     ; car_exited  ; 14.986 ; 14.986 ; Rise       ; car_exited      ;
+;  vacated_space[20]     ; car_exited  ; 15.429 ; 15.429 ; Rise       ; car_exited      ;
+;  vacated_space[21]     ; car_exited  ; 15.148 ; 15.148 ; Rise       ; car_exited      ;
+;  vacated_space[22]     ; car_exited  ; 14.281 ; 14.281 ; Rise       ; car_exited      ;
+;  vacated_space[23]     ; car_exited  ; 14.630 ; 14.630 ; Rise       ; car_exited      ;
+;  vacated_space[24]     ; car_exited  ; 15.811 ; 15.811 ; Rise       ; car_exited      ;
+;  vacated_space[25]     ; car_exited  ; 15.353 ; 15.353 ; Rise       ; car_exited      ;
+;  vacated_space[26]     ; car_exited  ; 15.086 ; 15.086 ; Rise       ; car_exited      ;
+;  vacated_space[27]     ; car_exited  ; 14.536 ; 14.536 ; Rise       ; car_exited      ;
+;  vacated_space[28]     ; car_exited  ; 16.301 ; 16.301 ; Rise       ; car_exited      ;
+;  vacated_space[29]     ; car_exited  ; 13.368 ; 13.368 ; Rise       ; car_exited      ;
+;  vacated_space[30]     ; car_exited  ; 14.822 ; 14.822 ; Rise       ; car_exited      ;
+;  vacated_space[31]     ; car_exited  ; 14.182 ; 14.182 ; Rise       ; car_exited      ;
+; is_vacated_space       ; clk         ; 16.420 ; 16.420 ; Rise       ; clk             ;
+; vacated_space[*]       ; clk         ; 12.073 ; 12.073 ; Rise       ; clk             ;
+;  vacated_space[0]      ; clk         ; 14.646 ; 14.646 ; Rise       ; clk             ;
+;  vacated_space[1]      ; clk         ; 12.468 ; 12.468 ; Rise       ; clk             ;
+;  vacated_space[2]      ; clk         ; 12.073 ; 12.073 ; Rise       ; clk             ;
+;  vacated_space[3]      ; clk         ; 12.271 ; 12.271 ; Rise       ; clk             ;
+;  vacated_space[4]      ; clk         ; 12.701 ; 12.701 ; Rise       ; clk             ;
+;  vacated_space[5]      ; clk         ; 13.280 ; 13.280 ; Rise       ; clk             ;
+;  vacated_space[6]      ; clk         ; 12.833 ; 12.833 ; Rise       ; clk             ;
+;  vacated_space[7]      ; clk         ; 12.752 ; 12.752 ; Rise       ; clk             ;
+;  vacated_space[8]      ; clk         ; 13.066 ; 13.066 ; Rise       ; clk             ;
+;  vacated_space[9]      ; clk         ; 13.765 ; 13.765 ; Rise       ; clk             ;
+;  vacated_space[10]     ; clk         ; 14.097 ; 14.097 ; Rise       ; clk             ;
+;  vacated_space[11]     ; clk         ; 14.005 ; 14.005 ; Rise       ; clk             ;
+;  vacated_space[12]     ; clk         ; 14.371 ; 14.371 ; Rise       ; clk             ;
+;  vacated_space[13]     ; clk         ; 14.238 ; 14.238 ; Rise       ; clk             ;
+;  vacated_space[14]     ; clk         ; 15.115 ; 15.115 ; Rise       ; clk             ;
+;  vacated_space[15]     ; clk         ; 14.638 ; 14.638 ; Rise       ; clk             ;
+;  vacated_space[16]     ; clk         ; 14.120 ; 14.120 ; Rise       ; clk             ;
+;  vacated_space[17]     ; clk         ; 14.080 ; 14.080 ; Rise       ; clk             ;
+;  vacated_space[18]     ; clk         ; 14.732 ; 14.732 ; Rise       ; clk             ;
+;  vacated_space[19]     ; clk         ; 14.522 ; 14.522 ; Rise       ; clk             ;
+;  vacated_space[20]     ; clk         ; 14.660 ; 14.660 ; Rise       ; clk             ;
+;  vacated_space[21]     ; clk         ; 14.693 ; 14.693 ; Rise       ; clk             ;
+;  vacated_space[22]     ; clk         ; 13.382 ; 13.382 ; Rise       ; clk             ;
+;  vacated_space[23]     ; clk         ; 13.920 ; 13.920 ; Rise       ; clk             ;
+;  vacated_space[24]     ; clk         ; 15.628 ; 15.628 ; Rise       ; clk             ;
+;  vacated_space[25]     ; clk         ; 15.170 ; 15.170 ; Rise       ; clk             ;
+;  vacated_space[26]     ; clk         ; 14.903 ; 14.903 ; Rise       ; clk             ;
+;  vacated_space[27]     ; clk         ; 14.353 ; 14.353 ; Rise       ; clk             ;
+;  vacated_space[28]     ; clk         ; 15.976 ; 15.976 ; Rise       ; clk             ;
+;  vacated_space[29]     ; clk         ; 13.185 ; 13.185 ; Rise       ; clk             ;
+;  vacated_space[30]     ; clk         ; 14.639 ; 14.639 ; Rise       ; clk             ;
+;  vacated_space[31]     ; clk         ; 14.486 ; 14.486 ; Rise       ; clk             ;
++------------------------+-------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Transfers                                                       ;
++-------------+-------------+----------+----------+----------+----------+
+; From Clock  ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------+-------------+----------+----------+----------+----------+
+; car_entered ; car_entered ; 33783004 ; 0        ; 0        ; 0        ;
+; car_exited  ; car_entered ; 33781120 ; 0        ; 0        ; 0        ;
+; clk         ; car_entered ; 90816    ; 0        ; 0        ; 0        ;
+; car_entered ; car_exited  ; 3584     ; 0        ; 0        ; 0        ;
+; car_exited  ; car_exited  ; 5468     ; 0        ; 0        ; 0        ;
+; clk         ; clk         ; 16701    ; 0        ; 0        ; 0        ;
++-------------+-------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------+
+; Hold Transfers                                                        ;
++-------------+-------------+----------+----------+----------+----------+
+; From Clock  ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------+-------------+----------+----------+----------+----------+
+; car_entered ; car_entered ; 33783004 ; 0        ; 0        ; 0        ;
+; car_exited  ; car_entered ; 33781120 ; 0        ; 0        ; 0        ;
+; clk         ; car_entered ; 90816    ; 0        ; 0        ; 0        ;
+; car_entered ; car_exited  ; 3584     ; 0        ; 0        ; 0        ;
+; car_exited  ; car_exited  ; 5468     ; 0        ; 0        ; 0        ;
+; clk         ; clk         ; 16701    ; 0        ; 0        ; 0        ;
++-------------+-------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 128   ; 128  ;
+; Unconstrained Output Ports      ; 130   ; 130  ;
+; Unconstrained Output Port Paths ; 7815  ; 7815 ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Wed Jun 26 00:35:31 2024
+Info: Command: quartus_sta simulation -c simulation
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'simulation.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name car_exited car_exited
+    Info (332105): create_clock -period 1.000 -name car_entered car_entered
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -20.873
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -20.873           -1269.973 car_entered 
+    Info (332119):   -11.209            -509.366 clk 
+    Info (332119):    -8.910            -532.422 car_exited 
+Info (332146): Worst-case hold slack is 1.550
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.550               0.000 car_entered 
+    Info (332119):     1.712               0.000 car_exited 
+    Info (332119):     1.908               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 car_entered 
+    Info (332119):    -2.289              -2.289 car_exited 
+    Info (332119):    -2.289              -2.289 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4568 megabytes
+    Info: Processing ended: Wed Jun 26 00:35:36 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
+
+

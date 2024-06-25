@@ -1,0 +1,41 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'car_entered'
+Slack : -20.873
+TNS   : -1269.973
+
+Type  : Setup 'clk'
+Slack : -11.209
+TNS   : -509.366
+
+Type  : Setup 'car_exited'
+Slack : -8.910
+TNS   : -532.422
+
+Type  : Hold 'car_entered'
+Slack : 1.550
+TNS   : 0.000
+
+Type  : Hold 'car_exited'
+Slack : 1.712
+TNS   : 0.000
+
+Type  : Hold 'clk'
+Slack : 1.908
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'car_entered'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'car_exited'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+------------------------------------------------------------

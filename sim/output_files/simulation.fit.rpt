@@ -1,0 +1,2149 @@
+Fitter report for simulation
+Wed Jun 26 00:35:25 2024
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Parallel Compilation
+  5. Pin-Out File
+  6. Fitter Resource Usage Summary
+  7. Input Pins
+  8. Output Pins
+  9. I/O Bank Usage
+ 10. All Package Pins
+ 11. Output Pin Default Load For Reported TCO
+ 12. Fitter Resource Utilization by Entity
+ 13. Delay Chain Summary
+ 14. Control Signals
+ 15. Global & Other Fast Signals
+ 16. Non-Global High Fan-Out Signals
+ 17. Routing Usage Summary
+ 18. LAB Logic Elements
+ 19. LAB-wide Signals
+ 20. LAB Signals Sourced
+ 21. LAB Signals Sourced Out
+ 22. LAB Distinct Inputs
+ 23. Fitter Device Options
+ 24. Fitter Messages
+ 25. Fitter Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Fitter Summary                                                         ;
++---------------------------+--------------------------------------------+
+; Fitter Status             ; Successful - Wed Jun 26 00:35:25 2024      ;
+; Quartus II 64-Bit Version ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name             ; simulation                                 ;
+; Top-level Entity Name     ; PARKING_CU                                 ;
+; Family                    ; MAX V                                      ;
+; Device                    ; 5M1270ZF256C4                              ;
+; Timing Models             ; Final                                      ;
+; Total logic elements      ; 587 / 1,270 ( 46 % )                       ;
+; Total pins                ; 135 / 211 ( 64 % )                         ;
+; Total virtual pins        ; 0                                          ;
+; UFM blocks                ; 0 / 1 ( 0 % )                              ;
++---------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                                                              ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+; Option                                                                     ; Setting                        ; Default Value                  ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+; Device                                                                     ; auto                           ;                                ;
+; Fit Attempts to Skip                                                       ; 0                              ; 0.0                            ;
+; Use smart compilation                                                      ; Off                            ; Off                            ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                             ; On                             ;
+; Enable compact report table                                                ; Off                            ; Off                            ;
+; Router Timing Optimization Level                                           ; Normal                         ; Normal                         ;
+; Placement Effort Multiplier                                                ; 1.0                            ; 1.0                            ;
+; Router Effort Multiplier                                                   ; 1.0                            ; 1.0                            ;
+; Always Enable Input Buffers                                                ; Off                            ; Off                            ;
+; Optimize Hold Timing                                                       ; IO Paths and Minimum TPD Paths ; IO Paths and Minimum TPD Paths ;
+; Optimize Multi-Corner Timing                                               ; Off                            ; Off                            ;
+; Guarantee I/O Paths Have Zero Hold Time at Fast Corner                     ; On                             ; On                             ;
+; PowerPlay Power Optimization                                               ; Normal compilation             ; Normal compilation             ;
+; Optimize Timing                                                            ; Normal compilation             ; Normal compilation             ;
+; Optimize Timing for ECOs                                                   ; Off                            ; Off                            ;
+; Regenerate full fit report during ECO compiles                             ; Off                            ; Off                            ;
+; Optimize IOC Register Placement for Timing                                 ; Normal                         ; Normal                         ;
+; Limit to One Fitting Attempt                                               ; Off                            ; Off                            ;
+; Final Placement Optimizations                                              ; Automatically                  ; Automatically                  ;
+; Fitter Aggressive Routability Optimizations                                ; Automatically                  ; Automatically                  ;
+; Fitter Initial Placement Seed                                              ; 1                              ; 1                              ;
+; Slow Slew Rate                                                             ; Off                            ; Off                            ;
+; PCI I/O                                                                    ; Off                            ; Off                            ;
+; Weak Pull-Up Resistor                                                      ; Off                            ; Off                            ;
+; Enable Bus-Hold Circuitry                                                  ; Off                            ; Off                            ;
+; Auto Delay Chains                                                          ; On                             ; On                             ;
+; Auto Delay Chains for High Fanout Input Pins                               ; Off                            ; Off                            ;
+; Perform Physical Synthesis for Combinational Logic for Performance         ; Off                            ; Off                            ;
+; Perform Register Duplication for Performance                               ; Off                            ; Off                            ;
+; Perform Register Retiming for Performance                                  ; Off                            ; Off                            ;
+; Perform Asynchronous Signal Pipelining                                     ; Off                            ; Off                            ;
+; Fitter Effort                                                              ; Auto Fit                       ; Auto Fit                       ;
+; Physical Synthesis Effort Level                                            ; Normal                         ; Normal                         ;
+; Logic Cell Insertion - Logic Duplication                                   ; Auto                           ; Auto                           ;
+; Auto Register Duplication                                                  ; Auto                           ; Auto                           ;
+; Auto Global Clock                                                          ; On                             ; On                             ;
+; Auto Global Register Control Signals                                       ; On                             ; On                             ;
+; Force Fitter to Avoid Periphery Placement Warnings                         ; Off                            ; Off                            ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------+
+; Pin-Out File ;
++--------------+
+The pin-out file can be found in C:/University/DSD/Project/sim/output_files/simulation.pin.
+
+
++--------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                      ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Total logic elements                        ; 587 / 1,270 ( 46 % ) ;
+;     -- Combinational with no register       ; 388                  ;
+;     -- Register only                        ; 42                   ;
+;     -- Combinational with a register        ; 157                  ;
+;                                             ;                      ;
+; Logic element usage by number of LUT inputs ;                      ;
+;     -- 4 input functions                    ; 67                   ;
+;     -- 3 input functions                    ; 211                  ;
+;     -- 2 input functions                    ; 261                  ;
+;     -- 1 input functions                    ; 6                    ;
+;     -- 0 input functions                    ; 0                    ;
+;                                             ;                      ;
+; Logic elements by mode                      ;                      ;
+;     -- normal mode                          ; 181                  ;
+;     -- arithmetic mode                      ; 406                  ;
+;     -- qfbk mode                            ; 17                   ;
+;     -- register cascade mode                ; 0                    ;
+;     -- synchronous clear/load mode          ; 43                   ;
+;     -- asynchronous clear/load mode         ; 0                    ;
+;                                             ;                      ;
+; Total registers                             ; 199 / 1,270 ( 16 % ) ;
+; Total LABs                                  ; 71 / 127 ( 56 % )    ;
+; Logic elements in carry chains              ; 420                  ;
+; Virtual pins                                ; 0                    ;
+; I/O pins                                    ; 135 / 211 ( 64 % )   ;
+;     -- Clock pins                           ; 4 / 4 ( 100 % )      ;
+;                                             ;                      ;
+; Global signals                              ; 3                    ;
+; UFM blocks                                  ; 0 / 1 ( 0 % )        ;
+; Global clocks                               ; 3 / 4 ( 75 % )       ;
+; JTAGs                                       ; 0 / 1 ( 0 % )        ;
+; Average interconnect usage (total/H/V)      ; 26% / 25% / 26%      ;
+; Peak interconnect usage (total/H/V)         ; 27% / 29% / 26%      ;
+; Maximum fan-out                             ; 71                   ;
+; Highest non-global fan-out                  ; 43                   ;
+; Total fan-out                               ; 2258                 ;
+; Average fan-out                             ; 3.13                 ;
++---------------------------------------------+----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                                ;
++--------------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+; Name               ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
++--------------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+; car_entered        ; J5    ; 1        ; 0            ; 7            ; 6           ; 64                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
+; car_exited         ; H12   ; 3        ; 17           ; 5            ; 0           ; 64                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
+; clk                ; H5    ; 1        ; 0            ; 7            ; 5           ; 71                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
+; is_uni_car_entered ; K13   ; 3        ; 17           ; 4            ; 4           ; 3                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
+; is_uni_car_exited  ; A4    ; 2        ; 4            ; 11           ; 1           ; 4                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Fitter               ;
++--------------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                                             ;
++-----------------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; Name                  ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++-----------------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; is_vacated_space      ; C11   ; 2        ; 15           ; 11           ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[0]         ; T4    ; 4        ; 4            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[10]        ; M7    ; 4        ; 5            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[11]        ; P6    ; 4        ; 3            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[12]        ; N5    ; 4        ; 2            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[13]        ; T5    ; 4        ; 5            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[14]        ; P5    ; 4        ; 2            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[15]        ; R4    ; 4        ; 3            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[16]        ; F7    ; 2        ; 6            ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[17]        ; E7    ; 2        ; 6            ; 11           ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[18]        ; N6    ; 4        ; 3            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[19]        ; R7    ; 4        ; 6            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[1]         ; N2    ; 1        ; 0            ; 4            ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[20]        ; A6    ; 2        ; 6            ; 11           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[21]        ; L7    ; 4        ; 6            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[22]        ; J4    ; 1        ; 0            ; 6            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[23]        ; R3    ; 4        ; 2            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[24]        ; T6    ; 4        ; 6            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[25]        ; R5    ; 4        ; 4            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[26]        ; N8    ; 4        ; 7            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[27]        ; M10   ; 4        ; 10           ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[28]        ; R8    ; 4        ; 7            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[29]        ; P8    ; 4        ; 7            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[2]         ; H2    ; 1        ; 0            ; 7            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[30]        ; T7    ; 4        ; 7            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[31]        ; P9    ; 4        ; 9            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[3]         ; T2    ; 4        ; 2            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[4]         ; M6    ; 4        ; 4            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[5]         ; P7    ; 4        ; 4            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[6]         ; G6    ; 1        ; 0            ; 7            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[7]         ; H3    ; 1        ; 0            ; 7            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[8]         ; N7    ; 4        ; 5            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; parked_car[9]         ; R6    ; 4        ; 5            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_is_vacated_space  ; K11   ; 3        ; 17           ; 4            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[0]     ; N10   ; 4        ; 12           ; 0            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[10]    ; F15   ; 3        ; 17           ; 7            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[11]    ; G11   ; 3        ; 17           ; 7            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[12]    ; B12   ; 2        ; 13           ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[13]    ; G13   ; 3        ; 17           ; 7            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[14]    ; F16   ; 3        ; 17           ; 7            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[15]    ; G15   ; 3        ; 17           ; 7            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[16]    ; H14   ; 3        ; 17           ; 6            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[17]    ; G12   ; 3        ; 17           ; 6            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[18]    ; E15   ; 3        ; 17           ; 8            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[19]    ; F11   ; 3        ; 17           ; 8            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[1]     ; J16   ; 3        ; 17           ; 5            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[20]    ; H16   ; 3        ; 17           ; 6            ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[21]    ; G14   ; 3        ; 17           ; 8            ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[22]    ; H15   ; 3        ; 17           ; 6            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[23]    ; D16   ; 3        ; 17           ; 8            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[24]    ; G16   ; 3        ; 17           ; 6            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[25]    ; F12   ; 3        ; 17           ; 8            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[26]    ; D14   ; 3        ; 17           ; 9            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[27]    ; D12   ; 2        ; 15           ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[28]    ; E12   ; 3        ; 17           ; 9            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[29]    ; D15   ; 3        ; 17           ; 9            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[2]     ; K16   ; 3        ; 17           ; 4            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[30]    ; F14   ; 3        ; 17           ; 9            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[31]    ; F13   ; 3        ; 17           ; 9            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[3]     ; J12   ; 3        ; 17           ; 5            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[4]     ; T11   ; 4        ; 12           ; 0            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[5]     ; K15   ; 3        ; 17           ; 4            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[6]     ; J15   ; 3        ; 17           ; 5            ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[7]     ; P10   ; 4        ; 13           ; 0            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[8]     ; J14   ; 3        ; 17           ; 5            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_parked_car[9]     ; J13   ; 3        ; 17           ; 5            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[0]  ; A7    ; 2        ; 8            ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[10] ; R10   ; 4        ; 10           ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[11] ; M8    ; 4        ; 9            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[12] ; E8    ; 2        ; 8            ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[13] ; M9    ; 4        ; 10           ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[14] ; T9    ; 4        ; 8            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[15] ; J2    ; 1        ; 0            ; 6            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[16] ; A10   ; 2        ; 10           ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[17] ; A11   ; 2        ; 11           ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[18] ; E10   ; 2        ; 11           ; 11           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[19] ; F10   ; 2        ; 11           ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[1]  ; K1    ; 1        ; 0            ; 6            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[20] ; D10   ; 2        ; 12           ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[21] ; E16   ; 3        ; 17           ; 8            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[22] ; C10   ; 2        ; 13           ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[23] ; A12   ; 2        ; 12           ; 11           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[24] ; B10   ; 2        ; 11           ; 11           ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[25] ; A8    ; 2        ; 9            ; 11           ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[26] ; A15   ; 2        ; 15           ; 11           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[27] ; D11   ; 2        ; 14           ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[28] ; E11   ; 2        ; 13           ; 11           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[29] ; R11   ; 4        ; 12           ; 0            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[2]  ; H4    ; 1        ; 0            ; 6            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[30] ; H13   ; 3        ; 17           ; 6            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[31] ; B11   ; 2        ; 12           ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[3]  ; K6    ; 1        ; 0            ; 6            ; 6           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[4]  ; T8    ; 4        ; 8            ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[5]  ; K2    ; 1        ; 0            ; 6            ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[6]  ; R9    ; 4        ; 8            ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[7]  ; J3    ; 1        ; 0            ; 6            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[8]  ; L10   ; 4        ; 10           ; 3            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; uni_vacated_space[9]  ; N9    ; 4        ; 8            ; 3            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[0]      ; M1    ; 1        ; 0            ; 5            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[10]     ; K12   ; 3        ; 17           ; 4            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[11]     ; T12   ; 4        ; 13           ; 0            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[12]     ; D8    ; 2        ; 7            ; 11           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[13]     ; C8    ; 2        ; 7            ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[14]     ; B9    ; 2        ; 9            ; 11           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[15]     ; B7    ; 2        ; 7            ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[16]     ; A13   ; 2        ; 14           ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[17]     ; B13   ; 2        ; 14           ; 11           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[18]     ; R12   ; 4        ; 13           ; 0            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[19]     ; E13   ; 3        ; 17           ; 10           ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[1]      ; L3    ; 1        ; 0            ; 4            ; 4           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[20]     ; D13   ; 3        ; 17           ; 10           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[21]     ; A5    ; 2        ; 5            ; 11           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[22]     ; C9    ; 2        ; 10           ; 11           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[23]     ; D9    ; 2        ; 10           ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[24]     ; B5    ; 2        ; 5            ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[25]     ; D7    ; 2        ; 5            ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[26]     ; A9    ; 2        ; 9            ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[27]     ; E9    ; 2        ; 9            ; 11           ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[28]     ; B6    ; 2        ; 6            ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[29]     ; T10   ; 4        ; 9            ; 3            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[2]      ; L1    ; 1        ; 0            ; 5            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[30]     ; B8    ; 2        ; 8            ; 11           ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[31]     ; B14   ; 2        ; 15           ; 11           ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[3]      ; K4    ; 1        ; 0            ; 5            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[4]      ; M2    ; 1        ; 0            ; 5            ; 6           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[5]      ; K3    ; 1        ; 0            ; 5            ; 5           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[6]      ; L2    ; 1        ; 0            ; 5            ; 2           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[7]      ; K5    ; 1        ; 0            ; 5            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[8]      ; L16   ; 3        ; 17           ; 3            ; 0           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; vacated_space[9]      ; M11   ; 4        ; 13           ; 0            ; 1           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
++-----------------------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+
+
++------------------------------------------------------------+
+; I/O Bank Usage                                             ;
++----------+------------------+---------------+--------------+
+; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
++----------+------------------+---------------+--------------+
+; 1        ; 21 / 50 ( 42 % ) ; 3.3V          ; --           ;
+; 2        ; 38 / 53 ( 72 % ) ; 3.3V          ; --           ;
+; 3        ; 36 / 55 ( 65 % ) ; 3.3V          ; --           ;
+; 4        ; 40 / 53 ( 75 % ) ; 3.3V          ; --           ;
++----------+------------------+---------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                                                                    ;
++----------+------------+----------+-----------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage        ; Dir.   ; I/O Standard ; Voltage ; I/O Type   ; User Assignment ; Bus Hold ; Weak Pull Up ;
++----------+------------+----------+-----------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
+; A1       ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; A2       ; 212        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; A3       ;            ; 2        ; VCCIO2                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; A4       ; 204        ; 2        ; is_uni_car_exited     ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A5       ; 200        ; 2        ; vacated_space[21]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A6       ; 196        ; 2        ; parked_car[20]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A7       ; 192        ; 2        ; uni_vacated_space[0]  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A8       ; 189        ; 2        ; uni_vacated_space[25] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A9       ; 188        ; 2        ; vacated_space[26]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A10      ; 184        ; 2        ; uni_vacated_space[16] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A11      ; 180        ; 2        ; uni_vacated_space[17] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A12      ; 176        ; 2        ; uni_vacated_space[23] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A13      ; 172        ; 2        ; vacated_space[16]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A14      ;            ; 2        ; VCCIO2                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; A15      ; 166        ; 2        ; uni_vacated_space[26] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A16      ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; B1       ; 214        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B2       ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; B3       ; 210        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B4       ; 206        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B5       ; 202        ; 2        ; vacated_space[24]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B6       ; 198        ; 2        ; vacated_space[28]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B7       ; 194        ; 2        ; vacated_space[15]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B8       ; 190        ; 2        ; vacated_space[30]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B9       ; 186        ; 2        ; vacated_space[14]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B10      ; 182        ; 2        ; uni_vacated_space[24] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B11      ; 178        ; 2        ; uni_vacated_space[31] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B12      ; 174        ; 2        ; uni_parked_car[12]    ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B13      ; 170        ; 2        ; vacated_space[17]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B14      ; 168        ; 2        ; vacated_space[31]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B15      ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; B16      ; 164        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C1       ;            ; 1        ; VCCIO1                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; C2       ; 1          ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; C3       ; 3          ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; C4       ; 208        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C5       ; 211        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C6       ; 209        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C7       ; 203        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C8       ; 195        ; 2        ; vacated_space[13]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C9       ; 183        ; 2        ; vacated_space[22]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C10      ; 175        ; 2        ; uni_vacated_space[22] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C11      ; 169        ; 2        ; is_vacated_space      ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C12      ; 165        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C13      ; 163        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; C14      ; 160        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; C15      ; 158        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; C16      ;            ; 3        ; VCCIO3                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; D1       ; 7          ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; D2       ; 5          ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; D3       ; 0          ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; D4       ; 215        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; D5       ; 213        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; D6       ; 207        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; D7       ; 201        ; 2        ; vacated_space[25]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D8       ; 193        ; 2        ; vacated_space[12]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D9       ; 185        ; 2        ; vacated_space[23]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D10      ; 177        ; 2        ; uni_vacated_space[20] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D11      ; 171        ; 2        ; uni_vacated_space[27] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D12      ; 167        ; 2        ; uni_parked_car[27]    ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D13      ; 162        ; 3        ; vacated_space[20]     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; D14      ; 156        ; 3        ; uni_parked_car[26]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; D15      ; 154        ; 3        ; uni_parked_car[29]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; D16      ; 152        ; 3        ; uni_parked_car[23]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; E1       ; 11         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; E2       ; 9          ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; E3       ; 2          ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; E4       ; 4          ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; E5       ; 6          ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; E6       ; 205        ; 2        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; E7       ; 199        ; 2        ; parked_car[17]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; E8       ; 191        ; 2        ; uni_vacated_space[12] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; E9       ; 187        ; 2        ; vacated_space[27]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; E10      ; 179        ; 2        ; uni_vacated_space[18] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; E11      ; 173        ; 2        ; uni_vacated_space[28] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; E12      ; 157        ; 3        ; uni_parked_car[28]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; E13      ; 159        ; 3        ; vacated_space[19]     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; E14      ; 161        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; E15      ; 150        ; 3        ; uni_parked_car[18]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; E16      ; 148        ; 3        ; uni_vacated_space[21] ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F1       ; 15         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; F2       ; 13         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; F3       ; 8          ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; F4       ; 10         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; F5       ; 12         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; F6       ; 14         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; F7       ; 197        ; 2        ; parked_car[16]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F8       ;            ; 2        ; VCCIO2                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; F9       ;            ; 2        ; VCCIO2                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; F10      ; 181        ; 2        ; uni_vacated_space[19] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F11      ; 149        ; 3        ; uni_parked_car[19]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F12      ; 151        ; 3        ; uni_parked_car[25]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F13      ; 153        ; 3        ; uni_parked_car[31]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F14      ; 155        ; 3        ; uni_parked_car[30]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F15      ; 146        ; 3        ; uni_parked_car[10]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F16      ; 144        ; 3        ; uni_parked_car[14]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G1       ; 19         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; G2       ; 17         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; G3       ; 16         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; G4       ; 18         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; G5       ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; G6       ; 22         ; 1        ; parked_car[6]         ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G7       ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; G8       ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; G9       ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; G10      ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; G11      ; 143        ; 3        ; uni_parked_car[11]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G12      ; 141        ; 3        ; uni_parked_car[17]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G13      ; 145        ; 3        ; uni_parked_car[13]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G14      ; 147        ; 3        ; uni_parked_car[21]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G15      ; 142        ; 3        ; uni_parked_car[15]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G16      ; 140        ; 3        ; uni_parked_car[24]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H1       ; 23         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; H2       ; 21         ; 1        ; parked_car[2]         ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H3       ; 24         ; 1        ; parked_car[7]         ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H4       ; 28         ; 1        ; uni_vacated_space[2]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H5       ; 26         ; 1        ; clk                   ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H6       ;            ; 1        ; VCCIO1                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; H7       ;            ;          ; GNDINT                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; H8       ;            ;          ; VCCINT                ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
+; H9       ;            ;          ; GNDINT                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; H10      ;            ;          ; VCCINT                ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
+; H11      ;            ; 3        ; VCCIO3                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; H12      ; 135        ; 3        ; car_exited            ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H13      ; 137        ; 3        ; uni_vacated_space[30] ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H14      ; 139        ; 3        ; uni_parked_car[16]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H15      ; 138        ; 3        ; uni_parked_car[22]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H16      ; 136        ; 3        ; uni_parked_car[20]    ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J1       ; 25         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; J2       ; 29         ; 1        ; uni_vacated_space[15] ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J3       ; 32         ; 1        ; uni_vacated_space[7]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J4       ; 30         ; 1        ; parked_car[22]        ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J5       ; 27         ; 1        ; car_entered           ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J6       ;            ; 1        ; VCCIO1                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; J7       ;            ;          ; VCCINT                ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
+; J8       ;            ;          ; GNDINT                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; J9       ;            ;          ; VCCINT                ; power  ;              ; 1.8V    ; --         ;                 ; --       ; --           ;
+; J10      ;            ;          ; GNDINT                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; J11      ;            ; 3        ; VCCIO3                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; J12      ; 134        ; 3        ; uni_parked_car[3]     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J13      ; 133        ; 3        ; uni_parked_car[9]     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J14      ; 131        ; 3        ; uni_parked_car[8]     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J15      ; 130        ; 3        ; uni_parked_car[6]     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J16      ; 132        ; 3        ; uni_parked_car[1]     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K1       ; 31         ; 1        ; uni_vacated_space[1]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K2       ; 33         ; 1        ; uni_vacated_space[5]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K3       ; 40         ; 1        ; vacated_space[5]      ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K4       ; 38         ; 1        ; vacated_space[3]      ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K5       ; 36         ; 1        ; vacated_space[7]      ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K6       ; 34         ; 1        ; uni_vacated_space[3]  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K7       ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; K8       ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; K9       ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; K10      ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; K11      ; 129        ; 3        ; uni_is_vacated_space  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K12      ; 127        ; 3        ; vacated_space[10]     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K13      ; 125        ; 3        ; is_uni_car_entered    ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K14      ; 123        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; K15      ; 126        ; 3        ; uni_parked_car[5]     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K16      ; 128        ; 3        ; uni_parked_car[2]     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; L1       ; 35         ; 1        ; vacated_space[2]      ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; L2       ; 37         ; 1        ; vacated_space[6]      ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; L3       ; 46         ; 1        ; vacated_space[1]      ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; L4       ; 44         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; L5       ; 42         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; L6       ; 51         ; 1        ; #TDI                  ; input  ;              ;         ; --         ;                 ; --       ; --           ;
+; L7       ; 73         ; 4        ; parked_car[21]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; L8       ;            ; 4        ; VCCIO4                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; L9       ;            ; 4        ; VCCIO4                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; L10      ; 87         ; 4        ; uni_vacated_space[8]  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; L11      ; 121        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; L12      ; 119        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; L13      ; 117        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; L14      ; 115        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; L15      ; 122        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; L16      ; 124        ; 3        ; vacated_space[8]      ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; M1       ; 39         ; 1        ; vacated_space[0]      ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; M2       ; 41         ; 1        ; vacated_space[4]      ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; M3       ; 43         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; M4       ; 48         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; M5       ; 53         ; 1        ; #TDO                  ; output ;              ;         ; --         ;                 ; --       ; --           ;
+; M6       ; 65         ; 4        ; parked_car[4]         ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; M7       ; 71         ; 4        ; parked_car[10]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; M8       ; 85         ; 4        ; uni_vacated_space[11] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; M9       ; 86         ; 4        ; uni_vacated_space[13] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; M10      ; 89         ; 4        ; parked_car[27]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; M11      ; 95         ; 4        ; vacated_space[9]      ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; M12      ; 101        ; 4        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; M13      ; 113        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; M14      ; 111        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; M15      ; 118        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; M16      ; 120        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; N1       ; 45         ; 1        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; N2       ; 47         ; 1        ; parked_car[1]         ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; N3       ; 49         ; 1        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; N4       ; 50         ; 1        ; #TMS                  ; input  ;              ;         ; --         ;                 ; --       ; --           ;
+; N5       ; 59         ; 4        ; parked_car[12]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; N6       ; 63         ; 4        ; parked_car[18]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; N7       ; 69         ; 4        ; parked_car[8]         ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; N8       ; 77         ; 4        ; parked_car[26]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; N9       ; 79         ; 4        ; uni_vacated_space[9]  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; N10      ; 91         ; 4        ; uni_parked_car[0]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; N11      ; 97         ; 4        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; N12      ; 103        ; 4        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; N13      ; 109        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; N14      ; 112        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; N15      ; 114        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; N16      ; 116        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; P1       ;            ; 1        ; VCCIO1                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; P2       ; 54         ; 1        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; P3       ; 52         ; 1        ; #TCK                  ; input  ;              ;         ; --         ;                 ; --       ; --           ;
+; P4       ; 55         ; 4        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; P5       ; 57         ; 4        ; parked_car[14]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; P6       ; 61         ; 4        ; parked_car[11]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; P7       ; 67         ; 4        ; parked_car[5]         ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; P8       ; 75         ; 4        ; parked_car[29]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; P9       ; 83         ; 4        ; parked_car[31]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; P10      ; 93         ; 4        ; uni_parked_car[7]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; P11      ; 99         ; 4        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; P12      ; 105        ; 4        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; P13      ; 107        ; 4        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; P14      ; 108        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; P15      ; 110        ; 3        ; GND*                  ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; P16      ;            ; 3        ; VCCIO3                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; R1       ; 56         ; 4        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; R2       ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; R3       ; 60         ; 4        ; parked_car[23]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; R4       ; 62         ; 4        ; parked_car[15]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; R5       ; 66         ; 4        ; parked_car[25]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; R6       ; 70         ; 4        ; parked_car[9]         ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; R7       ; 74         ; 4        ; parked_car[19]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; R8       ; 78         ; 4        ; parked_car[28]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; R9       ; 82         ; 4        ; uni_vacated_space[6]  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; R10      ; 88         ; 4        ; uni_vacated_space[10] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; R11      ; 92         ; 4        ; uni_vacated_space[29] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; R12      ; 96         ; 4        ; vacated_space[18]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; R13      ; 100        ; 4        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; R14      ; 102        ; 4        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; R15      ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; R16      ; 106        ; 4        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; T1       ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; T2       ; 58         ; 4        ; parked_car[3]         ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; T3       ;            ; 4        ; VCCIO4                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; T4       ; 64         ; 4        ; parked_car[0]         ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; T5       ; 68         ; 4        ; parked_car[13]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; T6       ; 72         ; 4        ; parked_car[24]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; T7       ; 76         ; 4        ; parked_car[30]        ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; T8       ; 80         ; 4        ; uni_vacated_space[4]  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; T9       ; 81         ; 4        ; uni_vacated_space[14] ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; T10      ; 84         ; 4        ; vacated_space[29]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; T11      ; 90         ; 4        ; uni_parked_car[4]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; T12      ; 94         ; 4        ; vacated_space[11]     ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; T13      ; 98         ; 4        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; T14      ;            ; 4        ; VCCIO4                ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; T15      ; 104        ; 4        ; GND*                  ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; T16      ;            ;          ; GNDIO                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
++----------+------------+----------+-----------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++-------------------------------------------------------------+
+; Output Pin Default Load For Reported TCO                    ;
++----------------------------+-------+------------------------+
+; I/O Standard               ; Load  ; Termination Resistance ;
++----------------------------+-------+------------------------+
+; 3.3-V LVTTL                ; 10 pF ; Not Available          ;
+; 3.3-V LVCMOS               ; 10 pF ; Not Available          ;
+; 2.5 V                      ; 10 pF ; Not Available          ;
+; 1.8 V                      ; 10 pF ; Not Available          ;
+; 1.5 V                      ; 10 pF ; Not Available          ;
+; 3.3V Schmitt Trigger Input ; 10 pF ; Not Available          ;
+; 2.5V Schmitt Trigger Input ; 10 pF ; Not Available          ;
+; 1.2 V                      ; 10 pF ; Not Available          ;
+; LVDS_E_3R                  ; 10 pF ; Not Available          ;
+; RSDS_E_3R                  ; 10 pF ; Not Available          ;
+; 3.3-V PCI                  ; 10 pF ; 25 Ohm (Parallel)      ;
++----------------------------+-------+------------------------+
+Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+; |PARKING_CU                ; 587 (587)   ; 199          ; 0          ; 135  ; 0            ; 388 (388)    ; 42 (42)           ; 157 (157)        ; 420 (420)       ; 17 (17)    ; |PARKING_CU         ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------+
+; Delay Chain Summary                              ;
++-----------------------+----------+---------------+
+; Name                  ; Pin Type ; Pad to Core 0 ;
++-----------------------+----------+---------------+
+; uni_parked_car[0]     ; Output   ; --            ;
+; uni_parked_car[1]     ; Output   ; --            ;
+; uni_parked_car[2]     ; Output   ; --            ;
+; uni_parked_car[3]     ; Output   ; --            ;
+; uni_parked_car[4]     ; Output   ; --            ;
+; uni_parked_car[5]     ; Output   ; --            ;
+; uni_parked_car[6]     ; Output   ; --            ;
+; uni_parked_car[7]     ; Output   ; --            ;
+; uni_parked_car[8]     ; Output   ; --            ;
+; uni_parked_car[9]     ; Output   ; --            ;
+; uni_parked_car[10]    ; Output   ; --            ;
+; uni_parked_car[11]    ; Output   ; --            ;
+; uni_parked_car[12]    ; Output   ; --            ;
+; uni_parked_car[13]    ; Output   ; --            ;
+; uni_parked_car[14]    ; Output   ; --            ;
+; uni_parked_car[15]    ; Output   ; --            ;
+; uni_parked_car[16]    ; Output   ; --            ;
+; uni_parked_car[17]    ; Output   ; --            ;
+; uni_parked_car[18]    ; Output   ; --            ;
+; uni_parked_car[19]    ; Output   ; --            ;
+; uni_parked_car[20]    ; Output   ; --            ;
+; uni_parked_car[21]    ; Output   ; --            ;
+; uni_parked_car[22]    ; Output   ; --            ;
+; uni_parked_car[23]    ; Output   ; --            ;
+; uni_parked_car[24]    ; Output   ; --            ;
+; uni_parked_car[25]    ; Output   ; --            ;
+; uni_parked_car[26]    ; Output   ; --            ;
+; uni_parked_car[27]    ; Output   ; --            ;
+; uni_parked_car[28]    ; Output   ; --            ;
+; uni_parked_car[29]    ; Output   ; --            ;
+; uni_parked_car[30]    ; Output   ; --            ;
+; uni_parked_car[31]    ; Output   ; --            ;
+; parked_car[0]         ; Output   ; --            ;
+; parked_car[1]         ; Output   ; --            ;
+; parked_car[2]         ; Output   ; --            ;
+; parked_car[3]         ; Output   ; --            ;
+; parked_car[4]         ; Output   ; --            ;
+; parked_car[5]         ; Output   ; --            ;
+; parked_car[6]         ; Output   ; --            ;
+; parked_car[7]         ; Output   ; --            ;
+; parked_car[8]         ; Output   ; --            ;
+; parked_car[9]         ; Output   ; --            ;
+; parked_car[10]        ; Output   ; --            ;
+; parked_car[11]        ; Output   ; --            ;
+; parked_car[12]        ; Output   ; --            ;
+; parked_car[13]        ; Output   ; --            ;
+; parked_car[14]        ; Output   ; --            ;
+; parked_car[15]        ; Output   ; --            ;
+; parked_car[16]        ; Output   ; --            ;
+; parked_car[17]        ; Output   ; --            ;
+; parked_car[18]        ; Output   ; --            ;
+; parked_car[19]        ; Output   ; --            ;
+; parked_car[20]        ; Output   ; --            ;
+; parked_car[21]        ; Output   ; --            ;
+; parked_car[22]        ; Output   ; --            ;
+; parked_car[23]        ; Output   ; --            ;
+; parked_car[24]        ; Output   ; --            ;
+; parked_car[25]        ; Output   ; --            ;
+; parked_car[26]        ; Output   ; --            ;
+; parked_car[27]        ; Output   ; --            ;
+; parked_car[28]        ; Output   ; --            ;
+; parked_car[29]        ; Output   ; --            ;
+; parked_car[30]        ; Output   ; --            ;
+; parked_car[31]        ; Output   ; --            ;
+; uni_vacated_space[0]  ; Output   ; --            ;
+; uni_vacated_space[1]  ; Output   ; --            ;
+; uni_vacated_space[2]  ; Output   ; --            ;
+; uni_vacated_space[3]  ; Output   ; --            ;
+; uni_vacated_space[4]  ; Output   ; --            ;
+; uni_vacated_space[5]  ; Output   ; --            ;
+; uni_vacated_space[6]  ; Output   ; --            ;
+; uni_vacated_space[7]  ; Output   ; --            ;
+; uni_vacated_space[8]  ; Output   ; --            ;
+; uni_vacated_space[9]  ; Output   ; --            ;
+; uni_vacated_space[10] ; Output   ; --            ;
+; uni_vacated_space[11] ; Output   ; --            ;
+; uni_vacated_space[12] ; Output   ; --            ;
+; uni_vacated_space[13] ; Output   ; --            ;
+; uni_vacated_space[14] ; Output   ; --            ;
+; uni_vacated_space[15] ; Output   ; --            ;
+; uni_vacated_space[16] ; Output   ; --            ;
+; uni_vacated_space[17] ; Output   ; --            ;
+; uni_vacated_space[18] ; Output   ; --            ;
+; uni_vacated_space[19] ; Output   ; --            ;
+; uni_vacated_space[20] ; Output   ; --            ;
+; uni_vacated_space[21] ; Output   ; --            ;
+; uni_vacated_space[22] ; Output   ; --            ;
+; uni_vacated_space[23] ; Output   ; --            ;
+; uni_vacated_space[24] ; Output   ; --            ;
+; uni_vacated_space[25] ; Output   ; --            ;
+; uni_vacated_space[26] ; Output   ; --            ;
+; uni_vacated_space[27] ; Output   ; --            ;
+; uni_vacated_space[28] ; Output   ; --            ;
+; uni_vacated_space[29] ; Output   ; --            ;
+; uni_vacated_space[30] ; Output   ; --            ;
+; uni_vacated_space[31] ; Output   ; --            ;
+; vacated_space[0]      ; Output   ; --            ;
+; vacated_space[1]      ; Output   ; --            ;
+; vacated_space[2]      ; Output   ; --            ;
+; vacated_space[3]      ; Output   ; --            ;
+; vacated_space[4]      ; Output   ; --            ;
+; vacated_space[5]      ; Output   ; --            ;
+; vacated_space[6]      ; Output   ; --            ;
+; vacated_space[7]      ; Output   ; --            ;
+; vacated_space[8]      ; Output   ; --            ;
+; vacated_space[9]      ; Output   ; --            ;
+; vacated_space[10]     ; Output   ; --            ;
+; vacated_space[11]     ; Output   ; --            ;
+; vacated_space[12]     ; Output   ; --            ;
+; vacated_space[13]     ; Output   ; --            ;
+; vacated_space[14]     ; Output   ; --            ;
+; vacated_space[15]     ; Output   ; --            ;
+; vacated_space[16]     ; Output   ; --            ;
+; vacated_space[17]     ; Output   ; --            ;
+; vacated_space[18]     ; Output   ; --            ;
+; vacated_space[19]     ; Output   ; --            ;
+; vacated_space[20]     ; Output   ; --            ;
+; vacated_space[21]     ; Output   ; --            ;
+; vacated_space[22]     ; Output   ; --            ;
+; vacated_space[23]     ; Output   ; --            ;
+; vacated_space[24]     ; Output   ; --            ;
+; vacated_space[25]     ; Output   ; --            ;
+; vacated_space[26]     ; Output   ; --            ;
+; vacated_space[27]     ; Output   ; --            ;
+; vacated_space[28]     ; Output   ; --            ;
+; vacated_space[29]     ; Output   ; --            ;
+; vacated_space[30]     ; Output   ; --            ;
+; vacated_space[31]     ; Output   ; --            ;
+; uni_is_vacated_space  ; Output   ; --            ;
+; is_vacated_space      ; Output   ; --            ;
+; clk                   ; Input    ; (0)           ;
+; is_uni_car_exited     ; Input    ; (1)           ;
+; car_exited            ; Input    ; (0)           ;
+; is_uni_car_entered    ; Input    ; (1)           ;
+; car_entered           ; Input    ; (0)           ;
++-----------------------+----------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                  ;
++-----------------------+--------------+---------+--------------+--------+----------------------+------------------+
+; Name                  ; Location     ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
++-----------------------+--------------+---------+--------------+--------+----------------------+------------------+
+; Equal0~10             ; LC_X13_Y4_N0 ; 43      ; Clock enable ; no     ; --                   ; --               ;
+; car_entered           ; PIN_J5       ; 64      ; Clock        ; yes    ; Global Clock         ; GCLK1            ;
+; car_exited            ; PIN_H12      ; 64      ; Clock        ; yes    ; Global Clock         ; GCLK3            ;
+; clk                   ; PIN_H5       ; 71      ; Clock        ; yes    ; Global Clock         ; GCLK0            ;
+; reg_departures[8]~63  ; LC_X7_Y9_N7  ; 31      ; Clock enable ; no     ; --                   ; --               ;
+; reg_entrances[31]~63  ; LC_X9_Y8_N9  ; 32      ; Clock enable ; no     ; --                   ; --               ;
+; uni_departures[31]~63 ; LC_X15_Y8_N6 ; 31      ; Clock enable ; no     ; --                   ; --               ;
+; uni_entrances[31]~63  ; LC_X12_Y6_N4 ; 31      ; Clock enable ; no     ; --                   ; --               ;
++-----------------------+--------------+---------+--------------+--------+----------------------+------------------+
+
+
++----------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                ;
++-------------+----------+---------+----------------------+------------------+
+; Name        ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ;
++-------------+----------+---------+----------------------+------------------+
+; car_entered ; PIN_J5   ; 64      ; Global Clock         ; GCLK1            ;
+; car_exited  ; PIN_H12  ; 64      ; Global Clock         ; GCLK3            ;
+; clk         ; PIN_H5   ; 71      ; Global Clock         ; GCLK0            ;
++-------------+----------+---------+----------------------+------------------+
+
+
++------------------------------------------+
+; Non-Global High Fan-Out Signals          ;
++--------------------------------+---------+
+; Name                           ; Fan-Out ;
++--------------------------------+---------+
+; Equal0~10                      ; 43      ;
+; LessThan2~16                   ; 34      ;
+; reg_entrances[31]~63           ; 32      ;
+; reg_departures[8]~63           ; 31      ;
+; uni_entrances[31]~63           ; 31      ;
+; uni_departures[31]~63          ; 31      ;
+; Add0~155                       ; 8       ;
+; Add0~0                         ; 8       ;
+; always0~10                     ; 7       ;
+; Equal2~0                       ; 7       ;
+; Add5~150                       ; 6       ;
+; LessThan6~157                  ; 5       ;
+; LessThan5~157                  ; 5       ;
+; LessThan6~132                  ; 5       ;
+; LessThan5~132                  ; 5       ;
+; LessThan6~107                  ; 5       ;
+; LessThan5~107                  ; 5       ;
+; LessThan6~82                   ; 5       ;
+; LessThan5~82                   ; 5       ;
+; LessThan6~57                   ; 5       ;
+; LessThan5~57                   ; 5       ;
+; LessThan6~32                   ; 5       ;
+; LessThan5~32                   ; 5       ;
+; Add1~127                       ; 5       ;
+; Add1~92                        ; 5       ;
+; Add1~77                        ; 5       ;
+; Add1~47                        ; 5       ;
+; Add1~27                        ; 5       ;
+; Add1~2                         ; 5       ;
+; Add7~189                       ; 5       ;
+; Add0~142                       ; 5       ;
+; Add0~117                       ; 5       ;
+; Add0~92                        ; 5       ;
+; Add0~67                        ; 5       ;
+; Add0~27                        ; 5       ;
+; Add0~2                         ; 5       ;
+; Add4~127                       ; 5       ;
+; Add4~102                       ; 5       ;
+; Add4~77                        ; 5       ;
+; Add4~52                        ; 5       ;
+; Add4~27                        ; 5       ;
+; reg_entrances[25]~49           ; 5       ;
+; reg_departures[25]~49          ; 5       ;
+; reg_entrances[20]~39           ; 5       ;
+; reg_departures[20]~39          ; 5       ;
+; reg_entrances[15]~29           ; 5       ;
+; reg_departures[15]~29          ; 5       ;
+; reg_entrances[10]~19           ; 5       ;
+; reg_departures[10]~19          ; 5       ;
+; reg_departures[5]~9            ; 5       ;
+; reg_entrances[5]~9             ; 5       ;
+; uni_entrances[25]~49           ; 5       ;
+; uni_departures[25]~49          ; 5       ;
+; uni_entrances[20]~39           ; 5       ;
+; uni_departures[20]~39          ; 5       ;
+; uni_entrances[15]~29           ; 5       ;
+; uni_departures[15]~29          ; 5       ;
+; uni_entrances[10]~19           ; 5       ;
+; uni_departures[10]~19          ; 5       ;
+; uni_entrances[5]~9             ; 5       ;
+; uni_departures[5]~9            ; 5       ;
+; Add7~147                       ; 5       ;
+; Add7~117                       ; 5       ;
+; Add7~87                        ; 5       ;
+; Add7~57                        ; 5       ;
+; Add7~27                        ; 5       ;
+; Add5~122                       ; 5       ;
+; Add5~97                        ; 5       ;
+; Add5~72                        ; 5       ;
+; Add5~47                        ; 5       ;
+; Add5~22                        ; 5       ;
+; Add4~2                         ; 5       ;
+; Add2~127                       ; 5       ;
+; Add2~102                       ; 5       ;
+; Add2~77                        ; 5       ;
+; Add2~52                        ; 5       ;
+; Add2~27                        ; 5       ;
+; Add2~2                         ; 5       ;
+; Add3~127                       ; 5       ;
+; Add3~102                       ; 5       ;
+; Add3~77                        ; 5       ;
+; Add3~52                        ; 5       ;
+; Add3~27                        ; 5       ;
+; Add3~2                         ; 5       ;
+; is_uni_car_exited              ; 4       ;
+; reg_capacity[2]                ; 4       ;
+; reg_departures[0]              ; 4       ;
+; reg_entrances[0]               ; 4       ;
+; uni_entrances[0]               ; 4       ;
+; uni_departures[0]              ; 4       ;
+; Add6~22                        ; 4       ;
+; Add5~85                        ; 4       ;
+; Add2~0                         ; 4       ;
+; is_uni_car_entered             ; 3       ;
+; Add0~145                       ; 3       ;
+; reg_entrances[31]              ; 3       ;
+; reg_departures[31]             ; 3       ;
+; reg_entrances[30]              ; 3       ;
+; reg_departures[30]             ; 3       ;
+; reg_entrances[29]              ; 3       ;
+; reg_departures[29]             ; 3       ;
+; reg_entrances[28]              ; 3       ;
+; reg_departures[28]             ; 3       ;
+; reg_entrances[27]              ; 3       ;
+; reg_departures[27]             ; 3       ;
+; reg_entrances[26]              ; 3       ;
+; reg_departures[26]             ; 3       ;
+; reg_entrances[25]              ; 3       ;
+; reg_departures[25]             ; 3       ;
+; reg_entrances[24]              ; 3       ;
+; reg_departures[24]             ; 3       ;
+; reg_entrances[23]              ; 3       ;
+; reg_departures[23]             ; 3       ;
+; reg_entrances[22]              ; 3       ;
+; reg_departures[22]             ; 3       ;
+; reg_entrances[21]              ; 3       ;
+; reg_departures[21]             ; 3       ;
+; reg_entrances[20]              ; 3       ;
+; reg_departures[20]             ; 3       ;
+; reg_entrances[19]              ; 3       ;
+; reg_departures[19]             ; 3       ;
+; reg_entrances[18]              ; 3       ;
+; reg_departures[18]             ; 3       ;
+; reg_entrances[17]              ; 3       ;
+; reg_departures[17]             ; 3       ;
+; reg_entrances[16]              ; 3       ;
+; reg_departures[16]             ; 3       ;
+; reg_entrances[15]              ; 3       ;
+; reg_departures[15]             ; 3       ;
+; reg_entrances[14]              ; 3       ;
+; reg_departures[14]             ; 3       ;
+; reg_entrances[13]              ; 3       ;
+; reg_departures[13]             ; 3       ;
+; reg_entrances[12]              ; 3       ;
+; reg_departures[12]             ; 3       ;
+; reg_entrances[11]              ; 3       ;
+; reg_departures[11]             ; 3       ;
+; reg_entrances[10]              ; 3       ;
+; reg_departures[10]             ; 3       ;
+; reg_entrances[9]               ; 3       ;
+; reg_departures[9]              ; 3       ;
+; reg_departures[8]              ; 3       ;
+; reg_entrances[8]               ; 3       ;
+; reg_departures[7]              ; 3       ;
+; reg_entrances[7]               ; 3       ;
+; reg_departures[6]              ; 3       ;
+; reg_entrances[6]               ; 3       ;
+; reg_departures[5]              ; 3       ;
+; reg_entrances[5]               ; 3       ;
+; reg_departures[4]              ; 3       ;
+; reg_entrances[4]               ; 3       ;
+; reg_departures[3]              ; 3       ;
+; reg_entrances[3]               ; 3       ;
+; reg_departures[2]              ; 3       ;
+; reg_entrances[2]               ; 3       ;
+; reg_departures[1]              ; 3       ;
+; reg_entrances[1]               ; 3       ;
+; uni_entrances[31]              ; 3       ;
+; uni_departures[31]             ; 3       ;
+; uni_entrances[30]              ; 3       ;
+; uni_departures[30]             ; 3       ;
+; uni_entrances[29]              ; 3       ;
+; uni_departures[29]             ; 3       ;
+; uni_entrances[28]              ; 3       ;
+; uni_departures[28]             ; 3       ;
+; uni_entrances[27]              ; 3       ;
+; uni_departures[27]             ; 3       ;
+; uni_entrances[26]              ; 3       ;
+; uni_departures[26]             ; 3       ;
+; uni_entrances[25]              ; 3       ;
+; uni_departures[25]             ; 3       ;
+; uni_entrances[24]              ; 3       ;
+; uni_departures[24]             ; 3       ;
+; uni_entrances[23]              ; 3       ;
+; uni_departures[23]             ; 3       ;
+; uni_entrances[22]              ; 3       ;
+; uni_departures[22]             ; 3       ;
+; uni_entrances[21]              ; 3       ;
+; uni_departures[21]             ; 3       ;
+; uni_entrances[20]              ; 3       ;
+; uni_departures[20]             ; 3       ;
+; uni_entrances[19]              ; 3       ;
+; uni_departures[19]             ; 3       ;
+; uni_entrances[18]              ; 3       ;
+; uni_departures[18]             ; 3       ;
+; uni_entrances[17]              ; 3       ;
+; uni_departures[17]             ; 3       ;
+; uni_entrances[16]              ; 3       ;
+; uni_departures[16]             ; 3       ;
+; uni_entrances[15]              ; 3       ;
+; uni_departures[15]             ; 3       ;
+; uni_entrances[14]              ; 3       ;
+; uni_departures[14]             ; 3       ;
+; uni_entrances[13]              ; 3       ;
+; uni_departures[13]             ; 3       ;
+; uni_entrances[12]              ; 3       ;
+; uni_departures[12]             ; 3       ;
+; uni_entrances[11]              ; 3       ;
+; uni_departures[11]             ; 3       ;
+; uni_entrances[10]              ; 3       ;
+; uni_departures[10]             ; 3       ;
+; uni_entrances[9]               ; 3       ;
+; uni_departures[9]              ; 3       ;
+; uni_entrances[8]               ; 3       ;
+; uni_departures[8]              ; 3       ;
+; uni_entrances[7]               ; 3       ;
+; uni_departures[7]              ; 3       ;
+; uni_entrances[6]               ; 3       ;
+; uni_departures[6]              ; 3       ;
+; uni_entrances[5]               ; 3       ;
+; uni_departures[5]              ; 3       ;
+; uni_entrances[4]               ; 3       ;
+; uni_departures[4]              ; 3       ;
+; uni_entrances[3]               ; 3       ;
+; uni_departures[3]              ; 3       ;
+; uni_entrances[2]               ; 3       ;
+; uni_departures[2]              ; 3       ;
+; uni_entrances[1]               ; 3       ;
+; uni_departures[1]              ; 3       ;
+; LessThan3~9                    ; 3       ;
+; reg_capacity[1]                ; 3       ;
+; Add5~145                       ; 3       ;
+; Add5~140                       ; 3       ;
+; Add5~135                       ; 3       ;
+; Add5~130                       ; 3       ;
+; Add5~125                       ; 3       ;
+; Add5~120                       ; 3       ;
+; Add5~115                       ; 3       ;
+; Add5~110                       ; 3       ;
+; Add5~105                       ; 3       ;
+; Add5~100                       ; 3       ;
+; Add5~95                        ; 3       ;
+; Add5~90                        ; 3       ;
+; Add5~80                        ; 3       ;
+; Add5~75                        ; 3       ;
+; Add5~70                        ; 3       ;
+; Add5~65                        ; 3       ;
+; Add5~60                        ; 3       ;
+; Add5~55                        ; 3       ;
+; Add5~50                        ; 3       ;
+; Add5~45                        ; 3       ;
+; Add5~40                        ; 3       ;
+; Add5~35                        ; 3       ;
+; Add5~30                        ; 3       ;
+; Add5~25                        ; 3       ;
+; Add5~20                        ; 3       ;
+; Add5~15                        ; 3       ;
+; Add5~10                        ; 3       ;
+; Add5~5                         ; 3       ;
+; Add5~0                         ; 3       ;
+; Add4~0                         ; 3       ;
+; Add2~155                       ; 3       ;
+; Add2~150                       ; 3       ;
+; Add2~145                       ; 3       ;
+; Add2~140                       ; 3       ;
+; Add2~135                       ; 3       ;
+; Add2~130                       ; 3       ;
+; Add2~125                       ; 3       ;
+; Add2~120                       ; 3       ;
+; Add2~115                       ; 3       ;
+; Add2~110                       ; 3       ;
+; Add2~105                       ; 3       ;
+; Add2~100                       ; 3       ;
+; Add2~95                        ; 3       ;
+; Add2~90                        ; 3       ;
+; Add2~85                        ; 3       ;
+; Add2~80                        ; 3       ;
+; Add2~75                        ; 3       ;
+; Add2~70                        ; 3       ;
+; Add2~65                        ; 3       ;
+; Add2~60                        ; 3       ;
+; Add2~55                        ; 3       ;
+; Add2~50                        ; 3       ;
+; Add2~45                        ; 3       ;
+; Add2~40                        ; 3       ;
+; Add2~35                        ; 3       ;
+; Add2~30                        ; 3       ;
+; Add2~25                        ; 3       ;
+; Add2~20                        ; 3       ;
+; Add2~15                        ; 3       ;
+; Add2~10                        ; 3       ;
+; Add2~5                         ; 3       ;
+; Add3~155                       ; 3       ;
+; Add3~150                       ; 3       ;
+; Add3~145                       ; 3       ;
+; Add3~140                       ; 3       ;
+; Add3~135                       ; 3       ;
+; Add3~130                       ; 3       ;
+; Add3~125                       ; 3       ;
+; Add3~120                       ; 3       ;
+; Add3~115                       ; 3       ;
+; Add3~110                       ; 3       ;
+; Add3~105                       ; 3       ;
+; Add3~100                       ; 3       ;
+; Add3~95                        ; 3       ;
+; Add3~90                        ; 3       ;
+; Add3~85                        ; 3       ;
+; Add3~80                        ; 3       ;
+; Add3~75                        ; 3       ;
+; Add3~70                        ; 3       ;
+; Add3~65                        ; 3       ;
+; Add3~60                        ; 3       ;
+; Add3~55                        ; 3       ;
+; Add3~50                        ; 3       ;
+; Add3~45                        ; 3       ;
+; Add3~40                        ; 3       ;
+; Add3~35                        ; 3       ;
+; Add3~30                        ; 3       ;
+; Add3~25                        ; 3       ;
+; Add3~20                        ; 3       ;
+; Add3~15                        ; 3       ;
+; Add3~10                        ; 3       ;
+; Add3~5                         ; 3       ;
+; Add3~0                         ; 3       ;
+; LessThan6~0                    ; 2       ;
+; LessThan5~0                    ; 2       ;
+; sec[31]                        ; 2       ;
+; sec[30]                        ; 2       ;
+; sec[29]                        ; 2       ;
+; sec[27]                        ; 2       ;
+; sec[26]                        ; 2       ;
+; sec[25]                        ; 2       ;
+; sec[19]                        ; 2       ;
+; sec[23]                        ; 2       ;
+; sec[22]                        ; 2       ;
+; sec[21]                        ; 2       ;
+; sec[17]                        ; 2       ;
+; sec[15]                        ; 2       ;
+; sec[14]                        ; 2       ;
+; sec[13]                        ; 2       ;
+; sec[11]                        ; 2       ;
+; sec[10]                        ; 2       ;
+; sec[9]                         ; 2       ;
+; sec[7]                         ; 2       ;
+; sec[6]                         ; 2       ;
+; sec[4]                         ; 2       ;
+; sec[3]                         ; 2       ;
+; sec[2]                         ; 2       ;
+; sec[1]                         ; 2       ;
+; daytime~1                      ; 2       ;
+; Add0~150                       ; 2       ;
+; always0~8                      ; 2       ;
+; Add0~140                       ; 2       ;
+; Add0~135                       ; 2       ;
+; Add0~130                       ; 2       ;
+; Add0~125                       ; 2       ;
+; Add0~120                       ; 2       ;
+; Add0~115                       ; 2       ;
+; Add0~110                       ; 2       ;
+; Add0~105                       ; 2       ;
+; Add0~100                       ; 2       ;
+; Add0~95                        ; 2       ;
+; Add0~90                        ; 2       ;
+; Add0~85                        ; 2       ;
+; Add0~80                        ; 2       ;
+; Add0~75                        ; 2       ;
+; Add0~70                        ; 2       ;
+; Add0~65                        ; 2       ;
+; daytime[3]                     ; 2       ;
+; Equal1~9                       ; 2       ;
+; daytime[31]                    ; 2       ;
+; daytime[30]                    ; 2       ;
+; daytime[29]                    ; 2       ;
+; daytime[27]                    ; 2       ;
+; daytime[26]                    ; 2       ;
+; daytime[25]                    ; 2       ;
+; daytime[23]                    ; 2       ;
+; daytime[22]                    ; 2       ;
+; daytime[21]                    ; 2       ;
+; daytime[19]                    ; 2       ;
+; daytime[18]                    ; 2       ;
+; daytime[17]                    ; 2       ;
+; Equal1~4                       ; 2       ;
+; daytime[15]                    ; 2       ;
+; daytime[14]                    ; 2       ;
+; daytime[13]                    ; 2       ;
+; daytime[11]                    ; 2       ;
+; daytime[10]                    ; 2       ;
+; daytime[9]                     ; 2       ;
+; daytime[7]                     ; 2       ;
+; daytime[6]                     ; 2       ;
+; daytime[5]                     ; 2       ;
+; daytime[2]                     ; 2       ;
+; daytime[1]                     ; 2       ;
+; Add0~55                        ; 2       ;
+; Add0~50                        ; 2       ;
+; Add0~45                        ; 2       ;
+; Add0~40                        ; 2       ;
+; Add0~35                        ; 2       ;
+; Add0~30                        ; 2       ;
+; Add0~25                        ; 2       ;
+; Add0~20                        ; 2       ;
+; Add0~15                        ; 2       ;
+; Add0~10                        ; 2       ;
+; Add0~5                         ; 2       ;
+; reg_capacity[3]                ; 2       ;
+; reg_capacity[4]                ; 2       ;
+; reg_capacity[5]                ; 2       ;
+; reg_capacity[6]                ; 2       ;
+; reg_capacity[7]                ; 2       ;
+; LessThan4~9                    ; 2       ;
+; LessThan4~7                    ; 2       ;
+; LessThan4~4                    ; 2       ;
+; Add7~186                       ; 2       ;
+; Add7~181                       ; 2       ;
+; Add7~180                       ; 2       ;
+; Add7~174                       ; 2       ;
+; Add7~168                       ; 2       ;
+; Add7~162                       ; 2       ;
+; Add7~156                       ; 2       ;
+; Add7~150                       ; 2       ;
+; Add7~144                       ; 2       ;
+; Add7~138                       ; 2       ;
+; Add7~132                       ; 2       ;
+; Add7~126                       ; 2       ;
+; Add7~120                       ; 2       ;
+; Add7~114                       ; 2       ;
+; Add7~103                       ; 2       ;
+; Add7~102                       ; 2       ;
+; Add7~96                        ; 2       ;
+; Add7~90                        ; 2       ;
+; Add7~84                        ; 2       ;
+; Add7~78                        ; 2       ;
+; Add7~72                        ; 2       ;
+; Add7~66                        ; 2       ;
+; Add7~60                        ; 2       ;
+; Add7~54                        ; 2       ;
+; Add7~48                        ; 2       ;
+; Add7~42                        ; 2       ;
+; Add7~36                        ; 2       ;
+; Add7~30                        ; 2       ;
+; Add7~24                        ; 2       ;
+; Add7~18                        ; 2       ;
+; Add7~12                        ; 2       ;
+; Add7~6                         ; 2       ;
+; Add7~0                         ; 2       ;
+; LessThan2~17                   ; 1       ;
+; LessThan6~152COUT1_186         ; 1       ;
+; LessThan6~152                  ; 1       ;
+; LessThan5~152COUT1_186         ; 1       ;
+; LessThan5~152                  ; 1       ;
+; LessThan6~147COUT1_188         ; 1       ;
+; LessThan6~147                  ; 1       ;
+; LessThan5~147COUT1_188         ; 1       ;
+; LessThan5~147                  ; 1       ;
+; LessThan6~142COUT1_190         ; 1       ;
+; LessThan6~142                  ; 1       ;
+; LessThan5~142COUT1_190         ; 1       ;
+; LessThan5~142                  ; 1       ;
+; LessThan6~137COUT1_192         ; 1       ;
+; LessThan6~137                  ; 1       ;
+; LessThan5~137COUT1_192         ; 1       ;
+; LessThan5~137                  ; 1       ;
+; LessThan6~127COUT1_194         ; 1       ;
+; LessThan6~127                  ; 1       ;
+; LessThan5~127COUT1_194         ; 1       ;
+; LessThan5~127                  ; 1       ;
+; LessThan6~122COUT1_196         ; 1       ;
+; LessThan6~122                  ; 1       ;
+; LessThan5~122COUT1_196         ; 1       ;
+; LessThan5~122                  ; 1       ;
+; LessThan6~117COUT1_198         ; 1       ;
+; LessThan6~117                  ; 1       ;
+; LessThan5~117COUT1_198         ; 1       ;
+; LessThan5~117                  ; 1       ;
+; LessThan6~112COUT1_200         ; 1       ;
+; LessThan6~112                  ; 1       ;
+; LessThan5~112COUT1_200         ; 1       ;
+; LessThan5~112                  ; 1       ;
+; LessThan6~102COUT1_202         ; 1       ;
+; LessThan6~102                  ; 1       ;
+; LessThan5~102COUT1_202         ; 1       ;
+; LessThan5~102                  ; 1       ;
+; LessThan6~97COUT1_204          ; 1       ;
+; LessThan6~97                   ; 1       ;
+; LessThan5~97COUT1_204          ; 1       ;
+; LessThan5~97                   ; 1       ;
+; LessThan6~92COUT1_206          ; 1       ;
+; LessThan6~92                   ; 1       ;
+; LessThan5~92COUT1_206          ; 1       ;
+; LessThan5~92                   ; 1       ;
+; LessThan6~87COUT1_208          ; 1       ;
+; LessThan6~87                   ; 1       ;
+; LessThan5~87COUT1_208          ; 1       ;
+; LessThan5~87                   ; 1       ;
+; LessThan6~77COUT1_210          ; 1       ;
+; LessThan6~77                   ; 1       ;
+; LessThan5~77COUT1_210          ; 1       ;
+; LessThan5~77                   ; 1       ;
+; LessThan6~72COUT1_212          ; 1       ;
+; LessThan6~72                   ; 1       ;
+; LessThan5~72COUT1_212          ; 1       ;
+; LessThan5~72                   ; 1       ;
+; LessThan6~67COUT1_214          ; 1       ;
+; LessThan6~67                   ; 1       ;
+; LessThan5~67COUT1_214          ; 1       ;
+; LessThan5~67                   ; 1       ;
+; LessThan6~62COUT1_216          ; 1       ;
+; LessThan6~62                   ; 1       ;
+; LessThan5~62COUT1_216          ; 1       ;
+; LessThan5~62                   ; 1       ;
+; LessThan6~52COUT1_218          ; 1       ;
+; LessThan6~52                   ; 1       ;
+; LessThan5~52COUT1_218          ; 1       ;
+; LessThan5~52                   ; 1       ;
+; LessThan6~47COUT1_220          ; 1       ;
+; LessThan6~47                   ; 1       ;
+; LessThan5~47COUT1_220          ; 1       ;
+; LessThan5~47                   ; 1       ;
+; LessThan6~42COUT1_222          ; 1       ;
+; LessThan6~42                   ; 1       ;
+; LessThan5~42COUT1_222          ; 1       ;
+; LessThan5~42                   ; 1       ;
+; LessThan6~37COUT1_224          ; 1       ;
+; LessThan6~37                   ; 1       ;
+; LessThan5~37COUT1_224          ; 1       ;
+; LessThan5~37                   ; 1       ;
+; LessThan6~27COUT1_226          ; 1       ;
+; LessThan6~27                   ; 1       ;
+; LessThan5~27COUT1_226          ; 1       ;
+; LessThan5~27                   ; 1       ;
+; LessThan6~22COUT1_228          ; 1       ;
+; LessThan6~22                   ; 1       ;
+; LessThan5~22COUT1_228          ; 1       ;
+; LessThan5~22                   ; 1       ;
+; LessThan6~17COUT1_230          ; 1       ;
+; LessThan6~17                   ; 1       ;
+; LessThan5~17COUT1_230          ; 1       ;
+; LessThan5~17                   ; 1       ;
+; LessThan6~12COUT1_232          ; 1       ;
+; LessThan6~12                   ; 1       ;
+; LessThan5~12COUT1_232          ; 1       ;
+; LessThan5~12                   ; 1       ;
+; LessThan6~7                    ; 1       ;
+; LessThan5~7                    ; 1       ;
+; Add1~155                       ; 1       ;
+; Add1~152                       ; 1       ;
+; Add1~150                       ; 1       ;
+; Add1~147COUT1_232              ; 1       ;
+; Add1~147                       ; 1       ;
+; Add1~145                       ; 1       ;
+; Add1~142COUT1_230              ; 1       ;
+; Add1~142                       ; 1       ;
+; Add1~140                       ; 1       ;
+; Add1~137COUT1_228              ; 1       ;
+; Add1~137                       ; 1       ;
+; Add1~135                       ; 1       ;
+; Add1~132COUT1_226              ; 1       ;
+; Add1~132                       ; 1       ;
+; Add1~130                       ; 1       ;
+; Add1~125                       ; 1       ;
+; Add1~122COUT1_224              ; 1       ;
+; Add1~122                       ; 1       ;
+; Add1~120                       ; 1       ;
+; Add1~117COUT1_216              ; 1       ;
+; Add1~117                       ; 1       ;
+; Add1~115                       ; 1       ;
+; Add1~112COUT1_214              ; 1       ;
+; Add1~112                       ; 1       ;
+; Add1~110                       ; 1       ;
+; Add1~107COUT1_222              ; 1       ;
+; Add1~107                       ; 1       ;
+; Add1~105                       ; 1       ;
+; Add1~102COUT1_220              ; 1       ;
+; Add1~102                       ; 1       ;
+; Add1~100                       ; 1       ;
+; Add1~97COUT1_218               ; 1       ;
+; Add1~97                        ; 1       ;
+; Add1~95                        ; 1       ;
+; Add1~90                        ; 1       ;
+; Add1~87COUT1_212               ; 1       ;
+; Add1~87                        ; 1       ;
+; Add1~85                        ; 1       ;
+; Add1~82COUT1_210               ; 1       ;
+; Add1~82                        ; 1       ;
+; Add1~80                        ; 1       ;
+; Add1~75                        ; 1       ;
+; Add1~72COUT1_208               ; 1       ;
+; Add1~72                        ; 1       ;
+; Add1~70                        ; 1       ;
+; Add1~67COUT1_206               ; 1       ;
+; Add1~67                        ; 1       ;
+; Add1~65                        ; 1       ;
+; Add1~62COUT1_204               ; 1       ;
+; Add1~62                        ; 1       ;
+; Add1~60                        ; 1       ;
+; Add1~57COUT1_198               ; 1       ;
+; Add1~57                        ; 1       ;
+; Add1~55                        ; 1       ;
+; Add1~52COUT1_202               ; 1       ;
+; Add1~52                        ; 1       ;
+; Add1~50                        ; 1       ;
+; Add1~45                        ; 1       ;
+; Add1~42COUT1_200               ; 1       ;
+; Add1~42                        ; 1       ;
+; Add1~40                        ; 1       ;
+; Add1~37COUT1_196               ; 1       ;
+; Add1~37                        ; 1       ;
+; Add1~35                        ; 1       ;
+; Add1~32COUT1_194               ; 1       ;
+; Add1~32                        ; 1       ;
+; Add1~30                        ; 1       ;
+; Add1~25                        ; 1       ;
+; Add1~22COUT1_192               ; 1       ;
+; Add1~22                        ; 1       ;
+; Add1~20                        ; 1       ;
+; Add1~17COUT1_190               ; 1       ;
+; Add1~17                        ; 1       ;
+; Add1~15                        ; 1       ;
+; Add1~12COUT1_188               ; 1       ;
+; Add1~12                        ; 1       ;
+; Add1~10                        ; 1       ;
+; Add1~7COUT1_186                ; 1       ;
+; Add1~7                         ; 1       ;
+; Add1~5                         ; 1       ;
+; Add1~0                         ; 1       ;
+; reg_entrances[31]~62           ; 1       ;
+; sec[28]                        ; 1       ;
+; Equal0~9                       ; 1       ;
+; sec[24]                        ; 1       ;
+; Equal0~8                       ; 1       ;
+; sec[18]                        ; 1       ;
+; Equal0~7                       ; 1       ;
+; sec[20]                        ; 1       ;
+; Equal0~6                       ; 1       ;
+; sec[16]                        ; 1       ;
+; Equal0~5                       ; 1       ;
+; Equal0~4                       ; 1       ;
+; sec[12]                        ; 1       ;
+; Equal0~3                       ; 1       ;
+; sec[8]                         ; 1       ;
+; Equal0~2                       ; 1       ;
+; sec[5]                         ; 1       ;
+; Equal0~1                       ; 1       ;
+; sec[0]                         ; 1       ;
+; Equal0~0                       ; 1       ;
+; always0~9                      ; 1       ;
+; Add0~157COUT1_186              ; 1       ;
+; Add0~157                       ; 1       ;
+; Add0~152COUT1_192              ; 1       ;
+; Add0~152                       ; 1       ;
+; Add0~147COUT1_188              ; 1       ;
+; Add0~147                       ; 1       ;
+; always0~7                      ; 1       ;
+; always0~6                      ; 1       ;
+; Add0~137COUT1_216              ; 1       ;
+; Add0~137                       ; 1       ;
+; Add0~132COUT1_214              ; 1       ;
+; Add0~132                       ; 1       ;
+; Add0~127COUT1_212              ; 1       ;
+; Add0~127                       ; 1       ;
+; always0~5                      ; 1       ;
+; Add0~122COUT1_210              ; 1       ;
+; Add0~122                       ; 1       ;
+; Add0~112COUT1_208              ; 1       ;
+; Add0~112                       ; 1       ;
+; Add0~107COUT1_206              ; 1       ;
+; Add0~107                       ; 1       ;
+; always0~4                      ; 1       ;
+; Add0~102COUT1_204              ; 1       ;
+; Add0~102                       ; 1       ;
+; Add0~97COUT1_202               ; 1       ;
+; Add0~97                        ; 1       ;
+; Add0~87COUT1_200               ; 1       ;
+; Add0~87                        ; 1       ;
+; always0~3                      ; 1       ;
+; Add0~82COUT1_198               ; 1       ;
+; Add0~82                        ; 1       ;
+; Add0~77COUT1_196               ; 1       ;
+; Add0~77                        ; 1       ;
+; Add0~72COUT1_194               ; 1       ;
+; Add0~72                        ; 1       ;
+; daytime~0                      ; 1       ;
+; daytime[28]                    ; 1       ;
+; Equal1~8                       ; 1       ;
+; daytime[24]                    ; 1       ;
+; Equal1~7                       ; 1       ;
+; daytime[20]                    ; 1       ;
+; Equal1~6                       ; 1       ;
+; daytime[16]                    ; 1       ;
+; Equal1~5                       ; 1       ;
+; daytime[12]                    ; 1       ;
+; Equal1~3                       ; 1       ;
+; daytime[8]                     ; 1       ;
+; Equal1~2                       ; 1       ;
+; daytime[4]                     ; 1       ;
+; Equal1~1                       ; 1       ;
+; daytime[0]                     ; 1       ;
+; Equal1~0                       ; 1       ;
+; Add0~62COUT1_190               ; 1       ;
+; Add0~62                        ; 1       ;
+; Add0~60                        ; 1       ;
+; always0~2                      ; 1       ;
+; Add0~52                        ; 1       ;
+; Add0~47COUT1_232               ; 1       ;
+; Add0~47                        ; 1       ;
+; always0~1                      ; 1       ;
+; Add0~42COUT1_230               ; 1       ;
+; Add0~42                        ; 1       ;
+; Add0~37COUT1_228               ; 1       ;
+; Add0~37                        ; 1       ;
+; Add0~32COUT1_226               ; 1       ;
+; Add0~32                        ; 1       ;
+; always0~0                      ; 1       ;
+; Add0~22COUT1_224               ; 1       ;
+; Add0~22                        ; 1       ;
+; Add0~17COUT1_222               ; 1       ;
+; Add0~17                        ; 1       ;
+; Add0~12COUT1_220               ; 1       ;
+; Add0~12                        ; 1       ;
+; Add0~7COUT1_218                ; 1       ;
+; Add0~7                         ; 1       ;
+; Add6~42COUT1_54                ; 1       ;
+; Add6~42                        ; 1       ;
+; Add4~155                       ; 1       ;
+; Add4~152                       ; 1       ;
+; Add4~150                       ; 1       ;
+; Add4~147COUT1_232              ; 1       ;
+; Add4~147                       ; 1       ;
+; Add4~145                       ; 1       ;
+; Add4~142COUT1_230              ; 1       ;
+; Add4~142                       ; 1       ;
+; Add4~140                       ; 1       ;
+; Add4~137COUT1_228              ; 1       ;
+; Add4~137                       ; 1       ;
+; Add4~135                       ; 1       ;
+; Add4~132COUT1_226              ; 1       ;
+; Add4~132                       ; 1       ;
+; Add4~130                       ; 1       ;
+; Add4~125                       ; 1       ;
+; Add4~122COUT1_224              ; 1       ;
+; Add4~122                       ; 1       ;
+; Add4~120                       ; 1       ;
+; Add4~117COUT1_222              ; 1       ;
+; Add4~117                       ; 1       ;
+; Add4~115                       ; 1       ;
+; Add4~112COUT1_220              ; 1       ;
+; Add4~112                       ; 1       ;
+; Add4~110                       ; 1       ;
+; Add4~107COUT1_218              ; 1       ;
+; Add4~107                       ; 1       ;
+; Add4~105                       ; 1       ;
+; Add4~100                       ; 1       ;
+; Add4~97COUT1_216               ; 1       ;
+; Add4~97                        ; 1       ;
+; Add4~95                        ; 1       ;
+; Add4~92COUT1_214               ; 1       ;
+; Add4~92                        ; 1       ;
+; Add4~90                        ; 1       ;
+; Add4~87COUT1_212               ; 1       ;
+; Add4~87                        ; 1       ;
+; Add4~85                        ; 1       ;
+; Add4~82COUT1_210               ; 1       ;
+; Add4~82                        ; 1       ;
+; Add4~80                        ; 1       ;
+; Add4~75                        ; 1       ;
+; Add4~72COUT1_208               ; 1       ;
+; Add4~72                        ; 1       ;
+; Add4~70                        ; 1       ;
+; Add4~67COUT1_206               ; 1       ;
+; Add4~67                        ; 1       ;
+; Add4~65                        ; 1       ;
+; Add4~62COUT1_204               ; 1       ;
+; Add4~62                        ; 1       ;
+; Add4~60                        ; 1       ;
+; Add4~57COUT1_202               ; 1       ;
+; Add4~57                        ; 1       ;
+; Add4~55                        ; 1       ;
+; Add4~50                        ; 1       ;
+; Add4~47COUT1_200               ; 1       ;
+; Add4~47                        ; 1       ;
+; Add4~45                        ; 1       ;
+; Add4~42COUT1_198               ; 1       ;
+; Add4~42                        ; 1       ;
+; Add4~40                        ; 1       ;
+; Add4~37COUT1_196               ; 1       ;
+; Add4~37                        ; 1       ;
+; Add4~35                        ; 1       ;
+; Add4~32COUT1_194               ; 1       ;
+; Add4~32                        ; 1       ;
+; Add4~30                        ; 1       ;
+; Add4~25                        ; 1       ;
+; Add4~22COUT1_192               ; 1       ;
+; Add4~22                        ; 1       ;
+; Add4~20                        ; 1       ;
+; Add4~17COUT1_190               ; 1       ;
+; Add4~17                        ; 1       ;
+; Add4~15                        ; 1       ;
+; Add4~12COUT1_188               ; 1       ;
+; Add4~12                        ; 1       ;
+; Add4~10                        ; 1       ;
+; Add4~7COUT1_186                ; 1       ;
+; Add4~7                         ; 1       ;
+; Add4~5                         ; 1       ;
+; reg_entrances[30]~59           ; 1       ;
+; reg_departures[30]~59          ; 1       ;
+; reg_entrances[29]~57COUT1_137  ; 1       ;
+; reg_entrances[29]~57           ; 1       ;
+; reg_departures[29]~57COUT1_136 ; 1       ;
+; reg_departures[29]~57          ; 1       ;
+; reg_entrances[28]~55COUT1_135  ; 1       ;
+; reg_entrances[28]~55           ; 1       ;
+; reg_departures[28]~55COUT1_134 ; 1       ;
+; reg_departures[28]~55          ; 1       ;
+; reg_entrances[27]~53COUT1_133  ; 1       ;
+; reg_entrances[27]~53           ; 1       ;
+; reg_departures[27]~53COUT1_132 ; 1       ;
+; reg_departures[27]~53          ; 1       ;
+; reg_entrances[26]~51COUT1_131  ; 1       ;
+; reg_entrances[26]~51           ; 1       ;
+; reg_departures[26]~51COUT1_130 ; 1       ;
+; reg_departures[26]~51          ; 1       ;
+; reg_entrances[24]~47COUT1_129  ; 1       ;
+; reg_entrances[24]~47           ; 1       ;
+; reg_departures[24]~47COUT1_128 ; 1       ;
+; reg_departures[24]~47          ; 1       ;
+; reg_entrances[23]~45COUT1_127  ; 1       ;
+; reg_entrances[23]~45           ; 1       ;
+; reg_departures[23]~45COUT1_126 ; 1       ;
+; reg_departures[23]~45          ; 1       ;
+; reg_entrances[22]~43COUT1_125  ; 1       ;
+; reg_entrances[22]~43           ; 1       ;
+; reg_departures[22]~43COUT1_124 ; 1       ;
+; reg_departures[22]~43          ; 1       ;
+; reg_entrances[21]~41COUT1_123  ; 1       ;
+; reg_entrances[21]~41           ; 1       ;
+; reg_departures[21]~41COUT1_122 ; 1       ;
+; reg_departures[21]~41          ; 1       ;
+; reg_entrances[19]~37COUT1_121  ; 1       ;
+; reg_entrances[19]~37           ; 1       ;
+; reg_departures[19]~37COUT1_120 ; 1       ;
+; reg_departures[19]~37          ; 1       ;
+; reg_entrances[18]~35COUT1_119  ; 1       ;
+; reg_entrances[18]~35           ; 1       ;
+; reg_departures[18]~35COUT1_118 ; 1       ;
+; reg_departures[18]~35          ; 1       ;
+; reg_entrances[17]~33COUT1_117  ; 1       ;
+; reg_entrances[17]~33           ; 1       ;
+; reg_departures[17]~33COUT1_116 ; 1       ;
+; reg_departures[17]~33          ; 1       ;
+; reg_entrances[16]~31COUT1_115  ; 1       ;
+; reg_entrances[16]~31           ; 1       ;
+; reg_departures[16]~31COUT1_114 ; 1       ;
+; reg_departures[16]~31          ; 1       ;
+; reg_entrances[14]~27COUT1_113  ; 1       ;
+; reg_entrances[14]~27           ; 1       ;
+; reg_departures[14]~27COUT1_112 ; 1       ;
+; reg_departures[14]~27          ; 1       ;
+; reg_entrances[13]~25COUT1_111  ; 1       ;
+; reg_entrances[13]~25           ; 1       ;
+; reg_departures[13]~25COUT1_110 ; 1       ;
+; reg_departures[13]~25          ; 1       ;
+; reg_entrances[12]~23COUT1_109  ; 1       ;
+; reg_entrances[12]~23           ; 1       ;
+; reg_departures[12]~23COUT1_108 ; 1       ;
+; reg_departures[12]~23          ; 1       ;
+; reg_entrances[11]~21COUT1_107  ; 1       ;
+; reg_entrances[11]~21           ; 1       ;
+; reg_departures[11]~21COUT1_106 ; 1       ;
+; reg_departures[11]~21          ; 1       ;
+; reg_entrances[9]~17COUT1_105   ; 1       ;
+; reg_entrances[9]~17            ; 1       ;
+; reg_departures[9]~17COUT1_104  ; 1       ;
+; reg_departures[9]~17           ; 1       ;
+; reg_departures[8]~15COUT1_102  ; 1       ;
+; reg_departures[8]~15           ; 1       ;
+; reg_entrances[8]~15COUT1_103   ; 1       ;
+; reg_entrances[8]~15            ; 1       ;
+; reg_departures[7]~13COUT1_100  ; 1       ;
+; reg_departures[7]~13           ; 1       ;
+; reg_entrances[7]~13COUT1_101   ; 1       ;
+; reg_entrances[7]~13            ; 1       ;
+; reg_departures[6]~11COUT1_98   ; 1       ;
+; reg_departures[6]~11           ; 1       ;
+; reg_entrances[6]~11COUT1_99    ; 1       ;
+; reg_entrances[6]~11            ; 1       ;
+; reg_departures[4]~7COUT1_96    ; 1       ;
+; reg_departures[4]~7            ; 1       ;
+; reg_entrances[4]~7COUT1_97     ; 1       ;
+; reg_entrances[4]~7             ; 1       ;
+; reg_departures[3]~5COUT1_94    ; 1       ;
+; reg_departures[3]~5            ; 1       ;
+; reg_entrances[3]~5COUT1_95     ; 1       ;
+; reg_entrances[3]~5             ; 1       ;
+; reg_departures[2]~3COUT1_92    ; 1       ;
+; reg_departures[2]~3            ; 1       ;
+; reg_entrances[2]~3COUT1_93     ; 1       ;
+; reg_entrances[2]~3             ; 1       ;
+; reg_departures[1]~1COUT1_90    ; 1       ;
+; reg_departures[1]~1            ; 1       ;
+; reg_entrances[1]~1COUT1_91     ; 1       ;
+; reg_entrances[1]~1             ; 1       ;
+; uni_entrances[30]~59           ; 1       ;
+; uni_departures[30]~59          ; 1       ;
+; uni_entrances[29]~57COUT1_136  ; 1       ;
+; uni_entrances[29]~57           ; 1       ;
+; uni_departures[29]~57COUT1_136 ; 1       ;
+; uni_departures[29]~57          ; 1       ;
+; uni_entrances[28]~55COUT1_134  ; 1       ;
+; uni_entrances[28]~55           ; 1       ;
+; uni_departures[28]~55COUT1_134 ; 1       ;
+; uni_departures[28]~55          ; 1       ;
+; uni_entrances[27]~53COUT1_132  ; 1       ;
+; uni_entrances[27]~53           ; 1       ;
+; uni_departures[27]~53COUT1_132 ; 1       ;
+; uni_departures[27]~53          ; 1       ;
+; uni_entrances[26]~51COUT1_130  ; 1       ;
+; uni_entrances[26]~51           ; 1       ;
+; uni_departures[26]~51COUT1_130 ; 1       ;
+; uni_departures[26]~51          ; 1       ;
+; uni_entrances[24]~47COUT1_128  ; 1       ;
+; uni_entrances[24]~47           ; 1       ;
+; uni_departures[24]~47COUT1_128 ; 1       ;
+; uni_departures[24]~47          ; 1       ;
+; uni_entrances[23]~45COUT1_126  ; 1       ;
+; uni_entrances[23]~45           ; 1       ;
+; uni_departures[23]~45COUT1_126 ; 1       ;
+; uni_departures[23]~45          ; 1       ;
+; uni_entrances[22]~43COUT1_124  ; 1       ;
+; uni_entrances[22]~43           ; 1       ;
+; uni_departures[22]~43COUT1_124 ; 1       ;
+; uni_departures[22]~43          ; 1       ;
+; uni_entrances[21]~41COUT1_122  ; 1       ;
+; uni_entrances[21]~41           ; 1       ;
+; uni_departures[21]~41COUT1_122 ; 1       ;
+; uni_departures[21]~41          ; 1       ;
+; uni_entrances[19]~37COUT1_120  ; 1       ;
+; uni_entrances[19]~37           ; 1       ;
+; uni_departures[19]~37COUT1_120 ; 1       ;
+; uni_departures[19]~37          ; 1       ;
+; uni_entrances[18]~35COUT1_118  ; 1       ;
+; uni_entrances[18]~35           ; 1       ;
+; uni_departures[18]~35COUT1_118 ; 1       ;
+; uni_departures[18]~35          ; 1       ;
+; uni_entrances[17]~33COUT1_116  ; 1       ;
+; uni_entrances[17]~33           ; 1       ;
+; uni_departures[17]~33COUT1_116 ; 1       ;
+; uni_departures[17]~33          ; 1       ;
+; uni_entrances[16]~31COUT1_114  ; 1       ;
+; uni_entrances[16]~31           ; 1       ;
+; uni_departures[16]~31COUT1_114 ; 1       ;
+; uni_departures[16]~31          ; 1       ;
+; uni_entrances[14]~27COUT1_112  ; 1       ;
+; uni_entrances[14]~27           ; 1       ;
+; uni_departures[14]~27COUT1_112 ; 1       ;
+; uni_departures[14]~27          ; 1       ;
+; uni_entrances[13]~25COUT1_110  ; 1       ;
+; uni_entrances[13]~25           ; 1       ;
+; uni_departures[13]~25COUT1_110 ; 1       ;
+; uni_departures[13]~25          ; 1       ;
+; uni_entrances[12]~23COUT1_108  ; 1       ;
+; uni_entrances[12]~23           ; 1       ;
+; uni_departures[12]~23COUT1_108 ; 1       ;
+; uni_departures[12]~23          ; 1       ;
+; uni_entrances[11]~21COUT1_106  ; 1       ;
+; uni_entrances[11]~21           ; 1       ;
+; uni_departures[11]~21COUT1_106 ; 1       ;
+; uni_departures[11]~21          ; 1       ;
+; uni_entrances[9]~17COUT1_104   ; 1       ;
+; uni_entrances[9]~17            ; 1       ;
+; uni_departures[9]~17COUT1_104  ; 1       ;
+; uni_departures[9]~17           ; 1       ;
+; uni_entrances[8]~15COUT1_102   ; 1       ;
+; uni_entrances[8]~15            ; 1       ;
+; uni_departures[8]~15COUT1_102  ; 1       ;
+; uni_departures[8]~15           ; 1       ;
+; uni_entrances[7]~13COUT1_100   ; 1       ;
+; uni_entrances[7]~13            ; 1       ;
+; uni_departures[7]~13COUT1_100  ; 1       ;
+; uni_departures[7]~13           ; 1       ;
+; uni_entrances[6]~11COUT1_98    ; 1       ;
+; uni_entrances[6]~11            ; 1       ;
+; uni_departures[6]~11COUT1_98   ; 1       ;
+; uni_departures[6]~11           ; 1       ;
+; uni_entrances[4]~7COUT1_96     ; 1       ;
+; uni_entrances[4]~7             ; 1       ;
+; uni_departures[4]~7COUT1_96    ; 1       ;
+; uni_departures[4]~7            ; 1       ;
+; uni_entrances[3]~5COUT1_94     ; 1       ;
+; uni_entrances[3]~5             ; 1       ;
+; uni_departures[3]~5COUT1_94    ; 1       ;
+; uni_departures[3]~5            ; 1       ;
+; uni_entrances[2]~3COUT1_92     ; 1       ;
+; uni_entrances[2]~3             ; 1       ;
+; uni_departures[2]~3COUT1_92    ; 1       ;
+; uni_departures[2]~3            ; 1       ;
+; uni_entrances[1]~1COUT1_90     ; 1       ;
+; uni_entrances[1]~1             ; 1       ;
+; uni_departures[1]~1COUT1_90    ; 1       ;
+; uni_departures[1]~1            ; 1       ;
+; LessThan4~10                   ; 1       ;
+; LessThan4~8                    ; 1       ;
+; LessThan4~6                    ; 1       ;
+; LessThan4~5                    ; 1       ;
+; LessThan4~3                    ; 1       ;
+; LessThan4~2                    ; 1       ;
+; LessThan4~1                    ; 1       ;
+; LessThan4~0                    ; 1       ;
+; LessThan3~10                   ; 1       ;
+; LessThan3~8                    ; 1       ;
++--------------------------------+---------+
+
+
++----------------------------------------------+
+; Routing Usage Summary                        ;
++-----------------------+----------------------+
+; Routing Resource Type ; Usage                ;
++-----------------------+----------------------+
+; C4s                   ; 626 / 2,870 ( 22 % ) ;
+; Direct links          ; 63 / 3,938 ( 2 % )   ;
+; Global clocks         ; 3 / 4 ( 75 % )       ;
+; LAB clocks            ; 30 / 72 ( 42 % )     ;
+; LUT chains            ; 16 / 1,143 ( 1 % )   ;
+; Local interconnects   ; 892 / 3,938 ( 23 % ) ;
+; R4s                   ; 627 / 2,832 ( 22 % ) ;
++-----------------------+----------------------+
+
+
++---------------------------------------------------------------------------+
+; LAB Logic Elements                                                        ;
++--------------------------------------------+------------------------------+
+; Number of Logic Elements  (Average = 8.27) ; Number of LABs  (Total = 71) ;
++--------------------------------------------+------------------------------+
+; 1                                          ; 0                            ;
+; 2                                          ; 0                            ;
+; 3                                          ; 2                            ;
+; 4                                          ; 3                            ;
+; 5                                          ; 5                            ;
+; 6                                          ; 11                           ;
+; 7                                          ; 5                            ;
+; 8                                          ; 2                            ;
+; 9                                          ; 3                            ;
+; 10                                         ; 40                           ;
++--------------------------------------------+------------------------------+
+
+
++-------------------------------------------------------------------+
+; LAB-wide Signals                                                  ;
++------------------------------------+------------------------------+
+; LAB-wide Signals  (Average = 0.85) ; Number of LABs  (Total = 71) ;
++------------------------------------+------------------------------+
+; 1 Clock                            ; 35                           ;
+; 1 Clock enable                     ; 25                           ;
++------------------------------------+------------------------------+
+
+
++----------------------------------------------------------------------------+
+; LAB Signals Sourced                                                        ;
++---------------------------------------------+------------------------------+
+; Number of Signals Sourced  (Average = 7.62) ; Number of LABs  (Total = 71) ;
++---------------------------------------------+------------------------------+
+; 0                                           ; 6                            ;
+; 1                                           ; 0                            ;
+; 2                                           ; 2                            ;
+; 3                                           ; 1                            ;
+; 4                                           ; 2                            ;
+; 5                                           ; 7                            ;
+; 6                                           ; 9                            ;
+; 7                                           ; 2                            ;
+; 8                                           ; 2                            ;
+; 9                                           ; 4                            ;
+; 10                                          ; 29                           ;
+; 11                                          ; 4                            ;
+; 12                                          ; 2                            ;
+; 13                                          ; 1                            ;
++---------------------------------------------+------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                        ;
++-------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 6.86) ; Number of LABs  (Total = 71) ;
++-------------------------------------------------+------------------------------+
+; 0                                               ; 6                            ;
+; 1                                               ; 1                            ;
+; 2                                               ; 2                            ;
+; 3                                               ; 4                            ;
+; 4                                               ; 2                            ;
+; 5                                               ; 7                            ;
+; 6                                               ; 9                            ;
+; 7                                               ; 5                            ;
+; 8                                               ; 4                            ;
+; 9                                               ; 4                            ;
+; 10                                              ; 27                           ;
++-------------------------------------------------+------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                         ;
++----------------------------------------------+------------------------------+
+; Number of Distinct Inputs  (Average = 11.61) ; Number of LABs  (Total = 71) ;
++----------------------------------------------+------------------------------+
+; 0                                            ; 0                            ;
+; 1                                            ; 0                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 16                           ;
+; 4                                            ; 1                            ;
+; 5                                            ; 2                            ;
+; 6                                            ; 1                            ;
+; 7                                            ; 3                            ;
+; 8                                            ; 0                            ;
+; 9                                            ; 1                            ;
+; 10                                           ; 2                            ;
+; 11                                           ; 10                           ;
+; 12                                           ; 4                            ;
+; 13                                           ; 3                            ;
+; 14                                           ; 6                            ;
+; 15                                           ; 2                            ;
+; 16                                           ; 1                            ;
+; 17                                           ; 3                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 2                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 12                           ;
++----------------------------------------------+------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Fitter Device Options                                                   ;
++----------------------------------------------+--------------------------+
+; Option                                       ; Setting                  ;
++----------------------------------------------+--------------------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off                      ;
+; Enable device-wide reset (DEV_CLRn)          ; Off                      ;
+; Enable device-wide output enable (DEV_OE)    ; Off                      ;
+; Enable INIT_DONE output                      ; Off                      ;
+; Configuration scheme                         ; Passive Serial           ;
+; Reserve all unused pins                      ; As output driving ground ;
+; Base pin-out file on sameframe device        ; Off                      ;
++----------------------------------------------+--------------------------+
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (119004): Automatically selected device 5M1270ZF256C4 for design simulation
+Info (119005): Fitting design with smaller device may be possible, but smaller device must be specified
+Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
+Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
+    Info (176445): Device 5M570ZF256C4 is compatible
+    Info (176445): Device 5M2210ZF256C4 is compatible
+Critical Warning (169085): No exact pin location assignment(s) for 135 pins of 135 total pins
+    Info (169086): Pin uni_parked_car[0] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[1] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[2] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[3] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[4] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[5] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[6] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[7] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[8] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[9] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[10] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[11] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[12] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[13] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[14] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[15] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[16] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[17] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[18] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[19] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[20] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[21] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[22] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[23] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[24] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[25] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[26] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[27] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[28] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[29] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[30] not assigned to an exact location on the device
+    Info (169086): Pin uni_parked_car[31] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[0] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[1] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[2] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[3] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[4] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[5] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[6] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[7] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[8] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[9] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[10] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[11] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[12] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[13] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[14] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[15] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[16] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[17] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[18] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[19] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[20] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[21] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[22] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[23] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[24] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[25] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[26] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[27] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[28] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[29] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[30] not assigned to an exact location on the device
+    Info (169086): Pin parked_car[31] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[0] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[1] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[2] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[3] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[4] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[5] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[6] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[7] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[8] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[9] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[10] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[11] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[12] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[13] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[14] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[15] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[16] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[17] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[18] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[19] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[20] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[21] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[22] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[23] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[24] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[25] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[26] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[27] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[28] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[29] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[30] not assigned to an exact location on the device
+    Info (169086): Pin uni_vacated_space[31] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[0] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[1] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[2] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[3] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[4] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[5] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[6] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[7] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[8] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[9] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[10] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[11] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[12] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[13] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[14] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[15] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[16] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[17] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[18] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[19] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[20] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[21] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[22] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[23] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[24] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[25] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[26] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[27] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[28] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[29] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[30] not assigned to an exact location on the device
+    Info (169086): Pin vacated_space[31] not assigned to an exact location on the device
+    Info (169086): Pin uni_is_vacated_space not assigned to an exact location on the device
+    Info (169086): Pin is_vacated_space not assigned to an exact location on the device
+    Info (169086): Pin clk not assigned to an exact location on the device
+    Info (169086): Pin is_uni_car_exited not assigned to an exact location on the device
+    Info (169086): Pin car_exited not assigned to an exact location on the device
+    Info (169086): Pin is_uni_car_entered not assigned to an exact location on the device
+    Info (169086): Pin car_entered not assigned to an exact location on the device
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'simulation.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332144): No user constrained base clocks found in the design
+Info (332128): Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
+    Info (332127): Assuming a default timing requirement
+Info (332111): Found 3 clocks
+    Info (332111):   Period   Clock Name
+    Info (332111): ======== ============
+    Info (332111):    1.000  car_entered
+    Info (332111):    1.000   car_exited
+    Info (332111):    1.000          clk
+Info (186079): Completed User Assigned Global Signals Promotion Operation
+Info (186215): Automatically promoted signal "clk" to use Global clock in PIN H5
+Info (186215): Automatically promoted signal "car_entered" to use Global clock in PIN J5
+Info (186215): Automatically promoted signal "car_exited" to use Global clock in PIN H12
+Info (186079): Completed Auto Global Promotion Operation
+Info (176234): Starting register packing
+Info (186468): Started processing fast register assignments
+Info (186469): Finished processing fast register assignments
+Info (176235): Finished register packing
+Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
+    Info (176211): Number of I/O pins in group: 132 (unused VREF, 3.3V VCCIO, 2 input, 130 output, 0 bidirectional)
+        Info (176212): I/O standards used: 3.3-V LVTTL.
+Info (176215): I/O bank details before I/O pin placement
+    Info (176214): Statistics of I/O banks
+        Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 2 total pin(s) used --  48 pins available
+        Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  53 pins available
+        Info (176213): I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  54 pins available
+        Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  53 pins available
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (170189): Fitter placement preparation operations beginning
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
+Info (170191): Fitter placement operations beginning
+Info (170137): Fitter placement was successful
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:07
+Info (170193): Fitter routing operations beginning
+Info (170195): Router estimated average interconnect usage is 20% of the available device resources
+    Info (170196): Router estimated peak interconnect usage is 21% of the available device resources in the region that extends from location X0_Y0 to location X8_Y11
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
+    Info (170201): Optimizations that may affect the design's routability were skipped
+Info (11888): Total time spent on timing analysis during the Fitter is 0.67 seconds.
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
+Info (144001): Generated suppressed messages file C:/University/DSD/Project/sim/output_files/simulation.fit.smsg
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4844 megabytes
+    Info: Processing ended: Wed Jun 26 00:35:25 2024
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:12
+
+
++----------------------------+
+; Fitter Suppressed Messages ;
++----------------------------+
+The suppressed messages can be found in C:/University/DSD/Project/sim/output_files/simulation.fit.smsg.
+
+
