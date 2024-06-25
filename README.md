@@ -31,7 +31,7 @@ It has 5 major parts, described below in brief:
 ### TestBench
 
 This module is implemented in order to test the above module.
-In this test, I'm testing all edge cases. some of these edge cases are listed below according to the case number within the simulation result:
+In this test, I'm testing all edge cases. some of these edge cases are listed below according to the case number within the simulation result (Check the document for better explanation):
 
 1) Initialize
 2) Adding a student.
